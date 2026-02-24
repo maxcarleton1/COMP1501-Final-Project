@@ -1,6 +1,26 @@
 [gd_scene format=3 uid="uid://c64apnm77bvxd"]
 
 [ext_resource type="Script" uid="uid://iv845wc6hlt1" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://bgls68hna65i2" path="res://assets/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="2_g2els"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1015420686]
 script = ExtResource("1_3vyb7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1423705133]
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2787974]
+shape = SubResource("CircleShape2D_3vyb7")

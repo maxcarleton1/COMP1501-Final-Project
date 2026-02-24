@@ -15,6 +15,10 @@ run/main_scene="uid://du06k368lhkru"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/art/icon.svg"
 
+[global_group]
+
+Player="The player character"
+
 [input]
 
 MoveLeft={

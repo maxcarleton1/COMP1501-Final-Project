@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg8hyow8wcw7m"]
 
-[ext_resource type="Texture2D" uid="uid://bkhlef835t22w" path="res://assets/kenney_pixel-platformer/Tilemap/tilemap.png" id="1_wipo8"]
+[ext_resource type="Texture2D" uid="uid://bkhlef835t22w" path="res://assets/art/kenney_pixel-platformer/Tilemap/tilemap.png" id="1_wipo8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okeva"]
 texture = ExtResource("1_wipo8")

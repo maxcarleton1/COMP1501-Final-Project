@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://24wkpeflfhnv"]
 
-[ext_resource type="Script" uid="uid://cmx1jnvrrdp5m" path="res://scenes/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://cmx1jnvrrdp5m" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://du06k368lhkru" path="res://scenes/bradys_test_map.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://ovlbwt6l4s0w" path="res://scenes/Button.tscn" id="3_bqqt6"]
 
 [node name="Main Menu" type="Control" unique_id=175561861]
 layout_mode = 3
@@ -13,7 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_l6cm7")
 mainGame = ExtResource("2_ekxnf")
 
-[node name="Label" type="Label" parent="." unique_id=826226148]
+[node name="Title" type="Label" parent="." unique_id=826226148]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -26,23 +27,12 @@ theme_override_colors/font_color = Color(1, 0, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
-text = "SuperMegaJumpingAndRunningSimulator2026"
+text = "SuperMegaJumpingAndRunningSimulator2027"
 
-[node name="Button" type="Button" parent="." unique_id=1436766540]
+[node name="StartGame" parent="." unique_id=1274237129 instance=ExtResource("3_bqqt6")]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -185.5
-offset_top = -37.0
-offset_right = 185.5
-offset_bottom = 37.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.8745098, 0, 0.8745098, 1)
-theme_override_font_sizes/font_size = 24
-text = "BE A GOOD BOY AND CLICK ME"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+offset_left = -71.0
+offset_right = 67.0
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+flat = true

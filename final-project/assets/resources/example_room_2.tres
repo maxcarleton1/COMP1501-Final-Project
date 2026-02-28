@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RoomData" format=3 uid="uid://cdux4t5bcwcar"]
+
+[ext_resource type="PackedScene" uid="uid://c8myvjjpmoq4a" path="res://scenes/rooms/example_room_2.tscn" id="1_lrqum"]
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://scripts/room_data.gd" id="1_p1tf4"]
+
+[resource]
+script = ExtResource("1_p1tf4")
+room_scene = ExtResource("1_lrqum")
+room_size = Vector2i(2000, 1100)
+room_name = "room 2"
+metadata/_custom_type_script = "uid://0u6dlawkgsme"

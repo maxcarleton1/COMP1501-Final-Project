@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://rdsxafjhxuly"]
+
+[ext_resource type="Script" uid="uid://dld8tvdufw1hr" path="res://scripts/level_builder.gd" id="2_6artv"]
+[ext_resource type="Resource" uid="uid://bxsod3idh8113" path="res://assets/resources/test_area.tres" id="2_yyvap"]
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="3_6artv"]
+
+[node name="LevelBuilder" type="Node2D" unique_id=769528092]
+script = ExtResource("2_6artv")
+test_area = ExtResource("2_yyvap")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1789610837]
+position = Vector2(1000, 550)
+zoom = Vector2(0.2, 0.2)
+
+[node name="StartPoint" type="Node2D" parent="." unique_id=1060394270]
+position = Vector2(1000, 550)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1502783443]
+texture = ExtResource("3_6artv")

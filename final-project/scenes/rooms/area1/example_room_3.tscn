@@ -39,7 +39,15 @@ position = Vector2(975, 0)
 shape = SubResource("RectangleShape2D_6lum8")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="SideHitboxes" unique_id=1004887936]
-position = Vector2(-219, -236)
+position = Vector2(417, 2)
+shape = SubResource("RectangleShape2D_labtf")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="SideHitboxes" unique_id=453220541]
+position = Vector2(-394, -351)
+shape = SubResource("RectangleShape2D_labtf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="SideHitboxes" unique_id=1413601891]
+position = Vector2(-385, 388)
 shape = SubResource("RectangleShape2D_labtf")
 
 [node name="RoomLimits" type="CollisionShape2D" parent="." unique_id=203734016]

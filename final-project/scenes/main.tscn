@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cl3x607upvmha"]
+
+[ext_resource type="Script" uid="uid://dhw5j56jpwwhj" path="res://scripts/main.gd" id="1_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://rdsxafjhxuly" path="res://scenes/level_builder.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/camera.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://8hfa5vatgnvp" path="res://scenes/lose_barrier.tscn" id="5_tbgi4"]
+
+[node name="Main" type="Node" unique_id=974304658]
+script = ExtResource("1_jyhfs")
+
+[node name="Player" parent="." unique_id=1015420686 instance=ExtResource("1_sugp2")]
+SPEED = null
+JUMP_VELOCITY = null
+JUMP_HOLD_MULTIPLIER = null
+
+[node name="LevelBuilder" parent="." unique_id=769528092 instance=ExtResource("2_jyhfs")]
+
+[node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("3_tbgi4")]
+
+[node name="LoseBarrier" parent="." unique_id=205154386 instance=ExtResource("5_tbgi4")]

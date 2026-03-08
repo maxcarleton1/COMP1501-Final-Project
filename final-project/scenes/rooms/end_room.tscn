@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://kbykx4cbnvbd"]
+
+[ext_resource type="Script" uid="uid://knjdy1e01ei0" path="res://scripts/end_room.gd" id="1_xnx2e"]
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_avya5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
+size = Vector2(50, 1100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lum8"]
+size = Vector2(50, 1100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbl62"]
+size = Vector2(2000, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngxw1"]
+size = Vector2(2000, 1100)
+
+[node name="EndRoom" type="Node2D" unique_id=668189479]
+script = ExtResource("1_xnx2e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023353773]
+position = Vector2(-975, 1.5)
+scale = Vector2(0.39062455, 8.6328125)
+texture = ExtResource("2_avya5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2112515524]
+position = Vector2(975, -0.5)
+scale = Vector2(0.39062455, 8.585938)
+texture = ExtResource("2_avya5")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=537441519]
+position = Vector2(0, -525)
+scale = Vector2(15.539063, 0.37499988)
+texture = ExtResource("2_avya5")
+
+[node name="Colliders" type="StaticBody2D" parent="." unique_id=95022218]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders" unique_id=1739399963]
+position = Vector2(-975, 0)
+shape = SubResource("RectangleShape2D_mm7tu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Colliders" unique_id=969075803]
+position = Vector2(975, 0)
+shape = SubResource("RectangleShape2D_6lum8")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders" unique_id=2050927249]
+position = Vector2(0, -525)
+shape = SubResource("RectangleShape2D_kbl62")
+
+[node name="RoomLimits" type="CollisionShape2D" parent="." unique_id=203734016]
+shape = SubResource("RectangleShape2D_ngxw1")
+disabled = true
+
+[node name="Entry" type="Marker2D" parent="." unique_id=220438535]
+position = Vector2(0, 550)

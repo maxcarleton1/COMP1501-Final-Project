@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED := 300.0
 @export var JUMP_VELOCITY := -400.0
-
+@export var JUMP_HOLD_MULTIPLIER:= 0.7
 var CoyoteTime = .1
 var Coyote = true
 func _physics_process(delta: float):
@@ -11,10 +11,12 @@ func _physics_process(delta: float):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
-	# Handle jump.
+	# Handle Jump
 	if Input.is_action_just_pressed("Jump") and (is_on_floor() or Coyote):
 		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_released("Jump") and velocity.y < 0:
+		velocity.y *= JUMP_HOLD_MULTIPLIER
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

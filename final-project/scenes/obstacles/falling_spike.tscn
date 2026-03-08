@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dckl2cklcq5yf"]
+
+[ext_resource type="Script" uid="uid://cfenhbvpeuu5f" path="res://scripts/falling_spike.gd" id="1_3ssek"]
+[ext_resource type="Texture2D" uid="uid://dccdinyu15o2a" path="res://assets/art/Spike_1x3.png" id="3_sly6d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ssek"]
+size = Vector2(200, 400)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gw67"]
+size = Vector2(20, 54)
+
+[node name="FallingSpike" type="Node2D" unique_id=955191419]
+script = ExtResource("1_3ssek")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1520061929]
+rotation = -3.1415925
+texture = ExtResource("3_sly6d")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=493079681]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1178420721]
+position = Vector2(1, 200)
+shape = SubResource("RectangleShape2D_3ssek")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=2073489085]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=188921180]
+shape = SubResource("RectangleShape2D_1gw67")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1328792198]
+position = Vector2(0, 15)
+target_position = Vector2(0, 13)
+
+[connection signal="area_entered" from="Trigger" to="." method="_on_trigger_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_player_detect_area_entered"]

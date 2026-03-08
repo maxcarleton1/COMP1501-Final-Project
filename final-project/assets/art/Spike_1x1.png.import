@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5snwcu3srn1d"
-path="res://.godot/imported/TripleSpike.png-f16c31b5ef0e2f70e50cbb07536fd5f1.ctex"
+uid="uid://cs6b8p2mvcwyw"
+path="res://.godot/imported/Spike_1x1.png-76e14954f48c30aaff1dbd8e70c2fa53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/TripleSpike.png"
-dest_files=["res://.godot/imported/TripleSpike.png-f16c31b5ef0e2f70e50cbb07536fd5f1.ctex"]
+source_file="res://assets/art/Spike_1x1.png"
+dest_files=["res://.godot/imported/Spike_1x1.png-76e14954f48c30aaff1dbd8e70c2fa53.ctex"]
 
 [params]
 

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://jrfeun3riaij"]
+
+[node name="EconomyDisplay" type="Control" unique_id=1476314222]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=602360723]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1763066294]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=960696955]
+layout_mode = 2
+
+[node name="HBoxContainerInfo" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159504861]
+layout_mode = 2
+
+[node name="EconomyPage" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1900528533]
+layout_mode = 2
+
+[node name="HBoxContainerButtons" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1844448464]
+layout_mode = 2

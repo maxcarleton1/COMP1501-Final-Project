@@ -24,3 +24,13 @@ sprite_frames = SubResource("SpriteFrames_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2787974]
 shape = SubResource("CircleShape2D_3vyb7")
+
+[node name="DashCooldown" type="Timer" parent="." unique_id=1972808067]
+one_shot = true
+
+[node name="DashSpeedBoost" type="Timer" parent="." unique_id=1881000975]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="DashSpeedBoost" to="." method="_on_dash_speed_boost_timeout"]

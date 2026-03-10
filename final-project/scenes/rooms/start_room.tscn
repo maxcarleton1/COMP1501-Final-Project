@@ -12,6 +12,9 @@ size = Vector2(50, 1100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kbl62"]
 size = Vector2(2000, 50)
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kbl62"]
+points = PackedVector2Array(657, -501, -460, 397, -253, 390, 811, -499)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngxw1"]
 size = Vector2(2000, 1100)
 
@@ -53,6 +56,9 @@ shape = SubResource("RectangleShape2D_6lum8")
 position = Vector2(0, 525)
 shape = SubResource("RectangleShape2D_kbl62")
 
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders" unique_id=2112231664]
+shape = SubResource("ConvexPolygonShape2D_kbl62")
+
 [node name="RoomLimits" type="CollisionShape2D" parent="." unique_id=203734016]
 shape = SubResource("RectangleShape2D_ngxw1")
 disabled = true
@@ -61,9 +67,11 @@ disabled = true
 position = Vector2(0, -550)
 
 [node name="StopFall" type="Area2D" parent="." unique_id=317354167]
+collision_layer = 0
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StopFall" unique_id=1460539946]
-position = Vector2(0, -450)
+position = Vector2(0, 400)
 shape = SubResource("RectangleShape2D_qr66m")
 
 [node name="StartBarrier" type="Area2D" parent="." unique_id=741887688]

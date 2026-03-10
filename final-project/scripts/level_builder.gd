@@ -11,10 +11,15 @@ var last_room_exit_position: Vector2
 # Tile size = Screen size + a little extra for padding
 # 1920x1080 -> 2000x1100
 
+signal start_barrier
+
 func _ready() -> void:
 	generate_start_room()
 	generate_area(test_area, 3, start_position)
 	generate_end_room()
+
+func call_start_barrier():
+	start_barrier.emit()
 
 # Generates the start room as the bottom of the tower, from there on rooms are randomized
 func generate_start_room():
@@ -26,6 +31,8 @@ func generate_start_room():
 	
 	start.global_position = start_position
 	start_position = start.get_exit_pos()
+	
+	start.start_barrier.connect(call_start_barrier) # Bubbles barrier signal up to main
 	
 # Generates the end room as the top of the tower
 func generate_end_room():

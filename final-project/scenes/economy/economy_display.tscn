@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://jrfeun3riaij"]
 
+[ext_resource type="Script" uid="uid://wrsn2mb02dt4" path="res://scripts/economy/economy_display.gd" id="1_h6nvt"]
+[ext_resource type="PackedScene" uid="uid://b7j2hru65uc7c" path="res://scenes/economy/shop_window.tscn" id="2_5lb0u"]
+
 [node name="EconomyDisplay" type="Control" unique_id=1476314222]
 layout_mode = 3
 anchors_preset = 15
@@ -7,9 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_h6nvt")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=602360723]
-layout_mode = 0
+layout_mode = 1
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -22,8 +26,39 @@ layout_mode = 2
 [node name="HBoxContainerInfo" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=159504861]
 layout_mode = 2
 
-[node name="EconomyPage" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1900528533]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerInfo" unique_id=1697637066]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Store"
+horizontal_alignment = 1
+
+[node name="EconomyPage" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=866945340]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopWindow" parent="PanelContainer/MarginContainer/VBoxContainer/EconomyPage" unique_id=1498467690 instance=ExtResource("2_5lb0u")]
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 
 [node name="HBoxContainerButtons" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1844448464]
+custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
+
+[node name="Items" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons" unique_id=594739436]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Items"
+
+[node name="Upgrades" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons" unique_id=94549534]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Upgrades"
+
+[node name="Exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons" unique_id=904019757]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Exit"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Items" to="." method="_on_items_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Upgrades" to="." method="_on_upgrades_pressed"]

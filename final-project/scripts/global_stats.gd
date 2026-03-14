@@ -4,4 +4,4 @@ extends Node
 enum difficulty {EASY, NORMAL, HARD, HELL_MODE}
 
 var current_difficulty := difficulty.NORMAL
-var barrier_speed := 15
+var barrier_speed := 200

@@ -26,6 +26,7 @@ scale = Vector2(0.39062455, 8.585938)
 texture = ExtResource("2_icy7q")
 
 [node name="SideHitboxes" type="StaticBody2D" parent="." unique_id=95022218]
+collision_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SideHitboxes" unique_id=1739399963]
 position = Vector2(-975, 0)

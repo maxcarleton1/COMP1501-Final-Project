@@ -3,14 +3,13 @@
 [ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/damage.gd" id="1_hu07w"]
 [ext_resource type="Texture2D" uid="uid://bljp0bt4kwrqm" path="res://assets/art/Spike_1x2.png" id="2_r5l4j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2u7i"]
-size = Vector2(18, 36)
-
 [node name="Spike_1x2" type="Area2D" unique_id=2092700260]
 script = ExtResource("1_hu07w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1227935435]
-shape = SubResource("RectangleShape2D_w2u7i")
+[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1164537009]
+polygon = PackedVector2Array(0.5, -17.5, -10, 17, 8, 16)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1935169261]
 texture = ExtResource("2_r5l4j")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

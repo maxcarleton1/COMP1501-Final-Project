@@ -1,11 +1,12 @@
 extends Area2D
 
+#should the spike to handle the damage detection
 #@export var damage := 1
 
-func _ready():
-	body_entered.connect(_on_body_entered)
+func _ready() -> void:
+	add_to_group("Obstacles")
 
-func _on_body_entered(body):
+func _on_area_entered(area: Area2D) -> void:
 	#if body.has_method("take_damage"):
 		#body.take_damage(damage)
 	print("Damage Detected")

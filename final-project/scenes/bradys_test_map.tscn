@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://du06k368lhkru"]
 
 [ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player.tscn" id="1_26m66"]
-[ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/tile_map_layer.tscn" id="2_d3i7o"]
+[ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/ForegroundLayer.tscn" id="2_d3i7o"]
 [ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/camera.tscn" id="3_sivyx"]
 
 [node name="BradysTestMap" type="Node" unique_id=1452501123]

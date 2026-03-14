@@ -26,7 +26,6 @@ func _physics_process(delta: float) -> void:
 		if ray.is_colliding():
 			current_speed = 0
 			print("Hit Ground")
-			await get_tree().create_timer(2).timeout
 			queue_free()
 
 func _on_trigger_area_entered(body: Node) -> void:

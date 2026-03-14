@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b7j2hru65uc7c"]
+
+[ext_resource type="Script" uid="uid://cfeyxwvhg0iop" path="res://scripts/economy/shop_window.gd" id="1_1yni7"]
+
+[node name="ShopWindow" type="Control" unique_id=1498467690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_1yni7")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=633686798]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=539232207]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=1109136932]
+custom_minimum_size = Vector2(0, 600)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemList" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBoxContainer" unique_id=1430521482]
+layout_mode = 2

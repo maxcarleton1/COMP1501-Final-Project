@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://nm1h4bpghsn7"]
+
+[ext_resource type="Script" uid="uid://v2a3q2l1lnpd" path="res://scripts/economy/list_item.gd" id="1_maw5p"]
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1042943031]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+script = ExtResource("1_maw5p")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1020021573]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1439694137]
+layout_mode = 2
+
+[node name="HBoxContainerTop" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=867493568]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ItemName" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainerTop" unique_id=2085846530]
+layout_mode = 2
+
+[node name="HBoxContainerMiddle" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1677189603]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ItemIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerMiddle" unique_id=29402195]
+layout_mode = 2
+
+[node name="HBoxContainerPrice" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1629992528]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemPrice" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainerPrice" unique_id=923487737]
+layout_mode = 2
+
+[node name="HBoxContainerBottom" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=172059473]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="SelectButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainerBottom" unique_id=294473092]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainerBottom/SelectButton" to="." method="_on_select_button_pressed"]

@@ -30,12 +30,25 @@ func item_selected(item: ItemData) -> void:
 			
 func purchase_item(item: ItemData):
 	print("Purchase item: " + item.name)
-	pass
+	if(CurrencyManager.remove_coins(item.price)):
+		add_item_to_inventory(item)
+	else: 
+		print("Not enough coins")
 	
 func upgrade_item(item: ItemData):
 	print("Upgrade item: " + item.name)
-	pass
-	
+	if(CurrencyManager.remove_coins(item.price)):
+		add_item_to_inventory(item)
+	else: 
+		print("Not enough coins")
+		
+func add_item_to_inventory(item: ItemData):
+	print("Success: Item inventory logic goes here: " + item.name)
+
+func add_upgrade_to_inventory(item: ItemData):
+	print("Success: Upgrade item: " + item.name)
+
+
 func display_items() -> void:
 	shop_window.create_items(item_list)
 

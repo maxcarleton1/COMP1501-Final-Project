@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cngmtxuidwop2"]
 
-[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/damage.gd" id="1_hu07w"]
+[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obst/damage.gd" id="1_hu07w"]
 [ext_resource type="Texture2D" uid="uid://bljp0bt4kwrqm" path="res://assets/art/Spike_1x2.png" id="2_r5l4j"]
 
 [node name="Spike_1x2" type="Area2D" unique_id=2092700260]

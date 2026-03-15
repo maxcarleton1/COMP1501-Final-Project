@@ -7,6 +7,6 @@ func _ready() -> void:
 	add_to_group("Obstacles")
 
 func _on_area_entered(area: Area2D) -> void:
-	#if body.has_method("take_damage"):
-		#body.take_damage(damage)
+	#if area.has_method("take_damage"):
+		#area.take_damage(damage)
 	print("Damage Detected")

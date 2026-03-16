@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://knjdy1e01ei0" path="res://scripts/end_room.gd" id="1_xnx2e"]
 [ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_avya5"]
+[ext_resource type="Texture2D" uid="uid://mc2pr3u6wqbs" path="res://assets/art/funny.png" id="3_avya5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
@@ -53,3 +54,7 @@ disabled = true
 
 [node name="Entry" type="Marker2D" parent="." unique_id=220438535]
 position = Vector2(0, 550)
+
+[node name="yippee" type="Sprite2D" parent="." unique_id=319678281]
+scale = Vector2(3, 3)
+texture = ExtResource("3_avya5")

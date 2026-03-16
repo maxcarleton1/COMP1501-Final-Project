@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var test_area: AreaSet
+@export var demo_area: Area
 @onready var start_room := preload("res://scenes/rooms/start_room.tscn")
 @onready var end_room := preload("res://scenes/rooms/end_room.tscn")
 
@@ -15,7 +15,7 @@ signal start_barrier
 
 func _ready() -> void:
 	generate_start_room()
-	generate_area(test_area, 3, start_position)
+	generate_area(demo_area, 3, start_position)
 	generate_end_room()
 
 func call_start_barrier():
@@ -45,17 +45,18 @@ func generate_end_room():
 	end.global_position = last_room_exit_position - end.get_entry_pos()
 
 # Generates the area given the tile set source and the number of rooms in the set
-func generate_area(area_set: AreaSet, num_rooms: int, build_from: Vector2):
+func generate_area(area: Area, num_rooms: int, build_from: Vector2):
 	# Ensure we can generate as many as requested
-	assert(num_rooms <= len(area_set.rooms))
+	assert(num_rooms <= len(area.rooms))
 	
-	var possible_rooms := area_set.rooms.duplicate() # Shallow copy just for shuffling order
+	var possible_rooms := area.rooms.duplicate() # Shallow copy just for shuffling order
 	
 	# Global position of previous room's exit
 	# Gets reset by each room, so the next room/area knows where to start generating
 	last_room_exit_position = build_from 
 
-	possible_rooms.shuffle()
+	if area.random_order: # Only randomize if the area allows it
+		possible_rooms.shuffle()
 	
 	for i in range(num_rooms):
 		# Pick a random room from the possible_rooms

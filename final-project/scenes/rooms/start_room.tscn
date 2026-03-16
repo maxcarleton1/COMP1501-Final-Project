@@ -1,19 +1,14 @@
-[gd_scene format=3 uid="uid://drh14te5oyhkw"]
+[gd_scene format=4 uid="uid://drh14te5oyhkw"]
 
 [ext_resource type="Script" uid="uid://cgp4nlk5fiuyo" path="res://scripts/start_room.gd" id="1_kbl62"]
 [ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_qr66m"]
+[ext_resource type="TileSet" uid="uid://dvgigf04nat18" path="res://assets/art/tilesets/start_room_tileset.tres" id="3_qr66m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lum8"]
 size = Vector2(50, 1100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbl62"]
-size = Vector2(2000, 50)
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_kbl62"]
-points = PackedVector2Array(657, -501, -460, 397, -253, 390, 811, -499)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngxw1"]
 size = Vector2(2000, 1100)
@@ -52,13 +47,6 @@ shape = SubResource("RectangleShape2D_mm7tu")
 position = Vector2(975, 0)
 shape = SubResource("RectangleShape2D_6lum8")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Colliders" unique_id=2050927249]
-position = Vector2(0, 525)
-shape = SubResource("RectangleShape2D_kbl62")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Colliders" unique_id=2112231664]
-shape = SubResource("ConvexPolygonShape2D_kbl62")
-
 [node name="RoomLimits" type="CollisionShape2D" parent="." unique_id=203734016]
 shape = SubResource("RectangleShape2D_ngxw1")
 disabled = true
@@ -79,6 +67,16 @@ shape = SubResource("RectangleShape2D_qr66m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StartBarrier" unique_id=1000398050]
 position = Vector2(0, -550)
 shape = SubResource("RectangleShape2D_86g8l")
+
+[node name="Base" type="TileMapLayer" parent="." unique_id=1312071928]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADz/wYAAwACAAEAAAD0/wYAAwACAAEAAAD1/wYAAwACAAEAAAD2/wYAAwACAAEAAAD3/wYAAwACAAEAAAD4/wYAAwACAAEAAAD5/wYAAwACAAEAAAD6/wYAAwACAAEAAAD7/wYAAwACAAEAAAD8/wYAAwACAAEAAAD9/wYAAwACAAEAAAD+/wYAAwACAAEAAAD//wYAAwACAAEAAAAAAAYAAwACAAEAAAABAAYAAwACAAEAAAACAAYAAwACAAEAAAADAAYAAwACAAEAAAAEAAYAAwACAAEAAAAFAAYAAwACAAEAAAAGAAYAAwACAAEAAAAHAAYAAwACAAEAAAAIAAYAAwACAAEAAAAJAAYAAwACAAEAAAAKAAYAAwACAAEAAAALAAYAAwACAAEAAAAMAAYAAwACAAEAAADy/wYAAwAEAAUAAADy/wUAAwAEAAUAAADy/wQAAwAEAAUAAADy/wMAAwAEAAUAAADy/wIAAwAEAAUAAADy/wEAAwAEAAUAAADy/wAAAwAEAAUAAADy////AwAEAAUAAADy//7/AwAEAAUAAADy//3/AwAEAAUAAADy/wcAAwAEAAUAAADz/wcAAwAEAAUAAAD0/wcAAwAEAAUAAAD1/wcAAwAEAAUAAAD2/wcAAwAEAAUAAAD3/wcAAwAEAAUAAAD4/wcAAwAEAAUAAAD5/wcAAwAEAAUAAAD6/wcAAwAEAAUAAAD7/wcAAwAEAAUAAAD8/wcAAwAEAAUAAAD9/wcAAwAEAAUAAAD+/wcAAwAEAAUAAAD//wcAAwAEAAUAAAAAAAcAAwAEAAUAAAABAAcAAwAEAAUAAAACAAcAAwAEAAUAAAADAAcAAwAEAAUAAAAEAAcAAwAEAAUAAAAFAAcAAwAEAAUAAAAGAAcAAwAEAAUAAAAHAAcAAwAEAAUAAAAIAAcAAwAEAAUAAAAJAAcAAwAEAAUAAAAKAAcAAwAEAAUAAAALAAcAAwAEAAUAAAAMAAcAAwAEAAUAAAANAAcAAwAEAAUAAAANAAYAAwAEAAUAAAANAAUAAwAEAAUAAAANAAQAAwAEAAUAAAANAAMAAwAEAAUAAAANAAIAAwAEAAUAAAANAAEAAwAEAAUAAAANAAAAAwAEAAUAAAANAP//AwAEAAUAAAANAP7/AwAEAAUAAAANAP3/AwAEAAUAAAANAPz/AwAEAAUAAAANAPv/AwAEAAUAAAANAPr/AwAEAAUAAAANAPn/AwAEAAUAAAANAPj/AwAEAAUAAADy//j/AwAEAAUAAADy//n/AwAEAAUAAADy//r/AwAEAAUAAADy//v/AwAEAAUAAADy//z/AwAEAAUAAAA=")
+tile_set = ExtResource("3_qr66m")
+
+[node name="Platforms" type="TileMapLayer" parent="." unique_id=689688234]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD+////AwABAAAAAAD/////AwACAAAAAAAAAP//AwACAAAAAAABAP//AwADAAAAAAD6//3/AwABAAAAAAD7//3/AwACAAAAAAD8//3/AwACAAAAAAD9//3/AwADAAAAAAD2//v/AwABAAAAAAD3//v/AwACAAAAAAD4//v/AwACAAAAAAD5//v/AwADAAAAAAACAAEAAwABAAAAAAADAAEAAwACAAAAAAAEAAEAAwACAAAAAAAFAAEAAwADAAAAAAAGAAMAAwABAAAAAAAHAAMAAwACAAAAAAAIAAMAAwACAAAAAAAJAAMAAwADAAAAAADz//n/AwACAAAAAAD0//n/AwACAAAAAAD1//n/AwADAAAAAAACAAUAAwAFAAcAAAD1/wUAAwAIAAYAAAALAAUAAwAFAAYAAAD///7/AwAFAAYAAAAHAAIAAwAEAAYAAAD3//r/AwAEAAYAAAD5/wUAAwAGAAYAAAAGAAUAAwAGAAYAAAAJAAIAAwAIAAYAAAA=")
+tile_set = ExtResource("3_qr66m")
 
 [connection signal="body_entered" from="StopFall" to="." method="_on_stop_fall_body_entered"]
 [connection signal="body_entered" from="StartBarrier" to="." method="_on_start_barrier_body_entered"]

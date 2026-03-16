@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dckl2cklcq5yf"]
 
-[ext_resource type="Script" uid="uid://cfenhbvpeuu5f" path="res://scripts/obst/falling_spike.gd" id="1_3ssek"]
+[ext_resource type="Script" uid="uid://cfenhbvpeuu5f" path="res://scripts/obstacles/falling_spike.gd" id="1_3ssek"]
 [ext_resource type="Texture2D" uid="uid://eekvadlg7k18" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0068.png" id="2_1gw67"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ssek"]

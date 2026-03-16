@@ -1,8 +1,8 @@
 extends Node2D
 
 @export var demo_area: Area
-@onready var start_room := preload("res://scenes/rooms/start_room.tscn")
-@onready var end_room := preload("res://scenes/rooms/end_room.tscn")
+@onready var start_room := preload("res://scenes/areas/common/start_room.tscn")
+@onready var end_room := preload("res://scenes/areas/common/end_room.tscn")
 
 # Variable to help each area decide where to start generating
 @onready var start_position: Vector2 = $StartPoint.global_position

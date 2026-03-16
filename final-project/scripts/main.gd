@@ -8,8 +8,8 @@ func _ready() -> void:
 	barrier.global_position = barrier_spawn_pos
 	
 	$LevelBuilder.start_barrier.connect(start_barrier)
-	$LevelBuilder.start_barrier.connect(start_barrier)
-		
+	$LevelBuilder.win_hitbox.connect(win)
+
 func start_barrier():
 	barrier.started = true
 
@@ -19,3 +19,6 @@ func fall_down():
 	barrier.started = false
 	barrier.global_position = barrier_spawn_pos
 	$Player.fall()
+
+func win():
+	print("You win!")

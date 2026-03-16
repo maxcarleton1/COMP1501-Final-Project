@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://kbykx4cbnvbd"]
 
-[ext_resource type="Script" uid="uid://knjdy1e01ei0" path="res://scripts/areas/common/end_room.gd" id="1_xnx2e"]
-[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_avya5"]
-[ext_resource type="Texture2D" uid="uid://mc2pr3u6wqbs" path="res://assets/art/funny.png" id="3_avya5"]
+[ext_resource type="Script" uid="uid://knjdy1e01ei0" path="res://scripts/areas/common/end_room.gd" id="1_buc22"]
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_ji2vw"]
+[ext_resource type="Texture2D" uid="uid://mc2pr3u6wqbs" path="res://assets/art/funny.png" id="3_jby35"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
@@ -20,22 +20,22 @@ size = Vector2(2000, 1100)
 size = Vector2(2000, 50)
 
 [node name="EndRoom" type="Node2D" unique_id=668189479]
-script = ExtResource("1_xnx2e")
+script = ExtResource("1_buc22")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023353773]
 position = Vector2(-975, 1.5)
 scale = Vector2(0.39062455, 8.6328125)
-texture = ExtResource("2_avya5")
+texture = ExtResource("2_ji2vw")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2112515524]
 position = Vector2(975, -0.5)
 scale = Vector2(0.39062455, 8.585938)
-texture = ExtResource("2_avya5")
+texture = ExtResource("2_ji2vw")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=537441519]
 position = Vector2(0, -525)
 scale = Vector2(15.539063, 0.37499988)
-texture = ExtResource("2_avya5")
+texture = ExtResource("2_ji2vw")
 
 [node name="Colliders" type="StaticBody2D" parent="." unique_id=95022218]
 
@@ -60,7 +60,7 @@ position = Vector2(0, 550)
 
 [node name="yippee" type="Sprite2D" parent="." unique_id=319678281]
 scale = Vector2(3, 3)
-texture = ExtResource("3_avya5")
+texture = ExtResource("3_jby35")
 
 [node name="WinHitbox" type="Area2D" parent="." unique_id=489043299]
 collision_layer = 0

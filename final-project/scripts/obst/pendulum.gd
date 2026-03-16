@@ -23,3 +23,10 @@ func update_chain():
 	chain.clear_points()
 	chain.add_point(Vector2.ZERO)
 	chain.add_point(Vector2(0, chain_length))
+
+
+
+func _on_blade_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		body.fall()
+		print("Damage detected")

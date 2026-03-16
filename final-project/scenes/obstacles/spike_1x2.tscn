@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://cngmtxuidwop2"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obst/damage.gd" id="1_hu07w"]
+=======
+[ext_resource type="Script" uid="uid://82arx5vhdtjj" path="res://scripts/obstacles/spike1x2.gd" id="1_hu07w"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://bljp0bt4kwrqm" path="res://assets/art/Spike_1x2.png" id="2_r5l4j"]
 
 [node name="Spike_1x2" type="Area2D" unique_id=2092700260]
@@ -12,4 +16,4 @@ polygon = PackedVector2Array(0.5, -17.5, -10, 17, 8, 16)
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1935169261]
 texture = ExtResource("2_r5l4j")
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

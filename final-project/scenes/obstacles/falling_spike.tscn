@@ -16,23 +16,19 @@ position = Vector2(1, 40)
 scale = Vector2(0.2, 0.5)
 shape = SubResource("RectangleShape2D_3ssek")
 
-[node name="HitBox" type="Area2D" parent="." unique_id=2073489085]
+[node name="Spike" type="Area2D" parent="." unique_id=2073489085]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox" unique_id=46240151]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike" unique_id=46240151]
 position = Vector2(2.0775121e-06, -13.758741)
 rotation = -3.1415925
 scale = Vector2(1, 0.49968213)
 polygon = PackedVector2Array(5.9999995, -27.534988, -5.9999995, -27.534985, -10, 27.5, 10, 27.5)
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1328792198]
-position = Vector2(0, 15)
-target_position = Vector2(0, 13)
-
-[node name="Tile0068" type="Sprite2D" parent="." unique_id=318150723]
+[node name="Tile0068" type="Sprite2D" parent="Spike" unique_id=318150723]
 position = Vector2(1.6863707e-07, 0.07101762)
-rotation = 3.1415927
+rotation = -3.1415925
 scale = Vector2(1, 3.0532427)
 texture = ExtResource("2_1gw67")
 
-[connection signal="area_entered" from="Trigger" to="." method="_on_trigger_area_entered"]
-[connection signal="area_entered" from="HitBox" to="." method="_on_player_detect_area_entered"]
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_entered" from="Spike" to="." method="_on_spike_body_entered"]

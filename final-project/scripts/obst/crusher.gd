@@ -14,7 +14,6 @@ enum {WAIT_TOP, DROP, WAIT_BOTTOM, RETRACT}
 var state = WAIT_TOP
 
 func _ready() -> void:
-	add_to_group("Obstacles")
 	top_y = position.y
 	bottom_y = top_y + travel_distance
 	start_wait(wait_top)
@@ -27,7 +26,7 @@ func _physics_process(delta: float) -> void:
 				position.y = bottom_y
 				state = WAIT_BOTTOM
 				start_wait(wait_bottom)
-
+		
 		RETRACT:
 			position.y -= retract_speed * delta
 			if position.y <= top_y:
@@ -41,3 +40,8 @@ func start_wait(time) -> void:
 		state = DROP
 	elif state == WAIT_BOTTOM:
 		state = RETRACT
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		body.fall()
+		print("Damage detected")

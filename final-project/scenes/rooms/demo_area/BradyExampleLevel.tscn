@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_gi511"]
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/ForegroundLayer.tscn" id="3_y6vno"]
 [ext_resource type="PackedScene" uid="uid://b2fyd67v4u5mh" path="res://scenes/BackgroundLayer.tscn" id="5_b6mbo"]
+[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player.tscn" id="6_cadmi"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obsical_layer.tscn" id="7_0bcpj"]
+[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/camera.tscn" id="7_2r0kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
@@ -63,3 +65,9 @@ tile_map_data = PackedByteArray("AAALAAQAAAAGAAIAAAAKAAQAAAAGAAIAAAAJAAQAAAAGAAI
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("7_0bcpj")]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAABAAYAAAAAAAAAAQACAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAEAAYAAAAAAAAAAQABAPj/AAAAAAAAAwACAPj/AAAAAAAAAwADAPj/AAAAAAAAAwAEAPj/AAAAAAAAAwD2//3/AAAAAAAAAQA=")
+
+[node name="Player" parent="." unique_id=1015420686 instance=ExtResource("6_cadmi")]
+position = Vector2(-485, 416)
+scale = Vector2(3, 3)
+
+[node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("7_2r0kw")]

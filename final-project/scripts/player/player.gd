@@ -8,6 +8,8 @@ extends CharacterBody2D
 @export var JUMP_VELOCITY := -650.0
 @export var JUMP_HOLD_MULTIPLIER := 0.7
 
+@onready var inventory_manager = $InventoryManager
+
 var coyote_time := 0.1
 var coyote := true
 var can_dash := true
@@ -43,9 +45,9 @@ func _physics_process(delta: float):
 
 		var direction := Input.get_axis("MoveLeft", "MoveRight")
 		if direction != 0 and !dash_speed_boost:
-			velocity.x = move_toward(velocity.x, SPEED * direction, ACCELERATION * delta)
+			velocity.x = move_toward(velocity.x, get_speed() * direction, ACCELERATION * delta)
 		elif direction != 0:
-			velocity.x = move_toward(velocity.x, (SPEED + 500) * direction, ACCELERATION * delta) 
+			velocity.x = move_toward(velocity.x, (get_speed() + 500) * direction, ACCELERATION * delta) 
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta) 
 		else:
@@ -56,18 +58,24 @@ func _physics_process(delta: float):
 			$DashCooldown.start()
 			$DashSpeedBoost.start()
 			if Input.is_action_pressed("Down") and direction == 0:
-				velocity.y += DASH_SPEED
+				velocity.y += get_dashspeed()
 				velocity.x = 0
 			elif Input.is_action_pressed("Down"):
-				velocity.y += DASH_SPEED / 1.7
-				velocity.x = DASH_SPEED * direction
+				velocity.y += get_dashspeed() / 1.7
+				velocity.x = get_dashspeed() * direction
 			else:
-				velocity.x = direction * DASH_SPEED
+				velocity.x = direction * get_dashspeed()
 
 	else: # Falling
 		velocity = velocity.move_toward(Vector2(0, 500), get_gravity().y * delta)
 		
 	move_and_slide()
+
+func get_speed():
+	return SPEED + inventory_manager.speedModifier
+
+func get_dashspeed():
+	return DASH_SPEED + inventory_manager.dashSpeedModifier
 
 func calculate_coyote(delta:float):
 	if !is_on_floor():

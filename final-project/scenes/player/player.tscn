@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://iv845wc6hlt1" path="res://scripts/player/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bgls68hna65i2" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://c8ccrgctyxv6n" path="res://scenes/player/inventory_manager.tscn" id="3_gmlin"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -32,6 +33,8 @@ one_shot = true
 [node name="DashSpeedBoost" type="Timer" parent="." unique_id=1881000975]
 wait_time = 0.3
 one_shot = true
+
+[node name="InventoryManager" parent="." unique_id=1684476304 instance=ExtResource("3_gmlin")]
 
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DashSpeedBoost" to="." method="_on_dash_speed_boost_timeout"]

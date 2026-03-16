@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="3_tbgi4"]
 [ext_resource type="Resource" uid="uid://bk3w5efcyk2w" path="res://assets/resources/demo_area.tres" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://8hfa5vatgnvp" path="res://scenes/obstacles/lose_barrier.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://0fa57m1dbovk" path="res://scenes/ui/hud/hud.tscn" id="7_o6xl0"]
 
 [node name="Main" type="Node" unique_id=974304658]
 script = ExtResource("1_jyhfs")
@@ -19,3 +20,5 @@ demo_area = ExtResource("4_tefeu")
 [node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("3_tbgi4")]
 
 [node name="LoseBarrier" parent="." unique_id=205154386 instance=ExtResource("5_tbgi4")]
+
+[node name="HUD" parent="." unique_id=1806229052 instance=ExtResource("7_o6xl0")]

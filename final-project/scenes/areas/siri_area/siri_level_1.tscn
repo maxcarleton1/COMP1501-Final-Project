@@ -68,6 +68,7 @@ tile_map_data = PackedByteArray("AADx/wgAAAACAAYAAADx/wcAAAACAAYAAADx/wYAAAACAAY
 [node name="TileMapLayer" parent="." unique_id=1524709313 instance=ExtResource("4_qeig8")]
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_3b5h7")]
+tile_map_data = PackedByteArray("AADd/xsAAAAAAAAAAQDv/xsAAAAAAAAAAgA=")
 
 [node name="Crusher" parent="." unique_id=1483566248 instance=ExtResource("6_05jwr")]
 position = Vector2(-443, -443)
@@ -75,7 +76,7 @@ travel_distance = 192.0
 wait_top = 3.0
 
 [node name="JumpPad" parent="." unique_id=1623090802 instance=ExtResource("7_qeig8")]
-position = Vector2(-797, -161)
+position = Vector2(-800, -164)
 jump_height = 400.0
 
 [node name="FallingSpike" parent="." unique_id=955191419 instance=ExtResource("8_05jwr")]
@@ -87,7 +88,7 @@ position = Vector2(191, -119)
 scale = Vector2(4, 4)
 swing_period = 3.0
 swing_angle = 80.0
-chain_length = 46.0
+chain_length = 50.0
 
 [node name="PendulumTrap2" parent="." unique_id=36528578 instance=ExtResource("9_3dds1")]
 position = Vector2(137, -507)
@@ -97,4 +98,7 @@ swing_period = 3.0
 [node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("10_i6tpw")]
 
 [node name="Player" parent="." unique_id=1015420686 instance=ExtResource("11_7pya8")]
-position = Vector2(-268, -242)
+position = Vector2(-293, -223)
+
+[connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/Spike_1x2" to="ObsicalLayer/Spike_1x2" method="_on_body_entered"]

@@ -13,5 +13,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func animate() ->void:
 	$AnimatedSprite2D.set_frame(1)
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.8).timeout
 	$AnimatedSprite2D.set_frame(0)

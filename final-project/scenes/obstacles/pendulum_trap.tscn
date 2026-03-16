@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8y8jncun8w00"]
 
-[ext_resource type="Script" uid="uid://ik01hnf0kwr8" path="res://scripts/obst/pendulum.gd" id="1_lq68l"]
-[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obst/damage.gd" id="2_7o1ld"]
+[ext_resource type="Script" uid="uid://ik01hnf0kwr8" path="res://scripts/obstacles/pendulum.gd" id="1_lq68l"]
+[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obstacles/damage.gd" id="2_7o1ld"]
 [ext_resource type="Texture2D" uid="uid://0du7yary25k" path="res://assets/art/SpikeBall.png" id="2_kmn8i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7o1ld"]

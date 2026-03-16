@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cl3x607upvmha"]
 
 [ext_resource type="Script" uid="uid://dhw5j56jpwwhj" path="res://scripts/main.gd" id="1_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player.tscn" id="1_sugp2"]
-[ext_resource type="PackedScene" uid="uid://rdsxafjhxuly" path="res://scenes/level_builder.tscn" id="2_jyhfs"]
-[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/camera.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player/player.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://rdsxafjhxuly" path="res://scenes/areas/level_builder.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="3_tbgi4"]
 [ext_resource type="Resource" uid="uid://bk3w5efcyk2w" path="res://assets/resources/demo_area.tres" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://8hfa5vatgnvp" path="res://scenes/lose_barrier.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://8hfa5vatgnvp" path="res://scenes/obstacles/lose_barrier.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node" unique_id=974304658]
 script = ExtResource("1_jyhfs")

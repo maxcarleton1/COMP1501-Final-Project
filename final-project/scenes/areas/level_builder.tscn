@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://rdsxafjhxuly"]
+
+[ext_resource type="Script" uid="uid://dld8tvdufw1hr" path="res://scripts/areas/level_builder.gd" id="2_6artv"]
+
+[node name="LevelBuilder" type="Node2D" unique_id=769528092]
+script = ExtResource("2_6artv")
+
+[node name="StartPoint" type="Node2D" parent="." unique_id=1060394270]

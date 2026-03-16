@@ -8,6 +8,7 @@ func _ready() -> void:
 	barrier.global_position = barrier_spawn_pos
 	
 	$LevelBuilder.start_barrier.connect(start_barrier)
+	$LevelBuilder.start_barrier.connect(start_barrier)
 		
 func start_barrier():
 	barrier.started = true

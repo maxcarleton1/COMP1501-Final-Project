@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gvh0bp682lt0"]
 
-[ext_resource type="Script" uid="uid://b126xtjnme7ja" path="res://scripts/obst/jump_pad.gd" id="1_ku323"]
+[ext_resource type="Script" uid="uid://b126xtjnme7ja" path="res://scripts/obstacles/jump_pad.gd" id="1_ku323"]
 [ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_6if2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gacdg"]

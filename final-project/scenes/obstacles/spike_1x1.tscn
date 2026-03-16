@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://e3a4qcsxiep6"]
 
-[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obst/damage.gd" id="1_yftr5"]
+[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obstacles/damage.gd" id="1_yftr5"]
 [ext_resource type="Texture2D" uid="uid://eekvadlg7k18" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0068.png" id="2_voyjk"]
 
 [node name="Spike_1x1" type="Area2D" unique_id=2135419065]

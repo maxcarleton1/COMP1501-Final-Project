@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://gvh0bp682lt0" path="res://scenes/obstacles/jump_pad.tscn" id="7_qeig8"]
 [ext_resource type="PackedScene" uid="uid://dckl2cklcq5yf" path="res://scenes/obstacles/falling_spike.tscn" id="8_05jwr"]
 [ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap.tscn" id="9_3dds1"]
+[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="10_i6tpw"]
+[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player/player.tscn" id="11_7pya8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
@@ -91,3 +93,8 @@ chain_length = 46.0
 position = Vector2(137, -507)
 scale = Vector2(4, 4)
 swing_period = 3.0
+
+[node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("10_i6tpw")]
+
+[node name="Player" parent="." unique_id=1015420686 instance=ExtResource("11_7pya8")]
+position = Vector2(-268, -242)

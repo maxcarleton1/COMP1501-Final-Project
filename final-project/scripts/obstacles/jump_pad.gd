@@ -8,4 +8,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var v = body.velocity
 		v.y = jump_velocity
 		body.velocity = v
+		animate()
 		print("Jump pad activated, velocity: ", jump_velocity)
+
+func animate() ->void:
+	$AnimatedSprite2D.set_frame(1)
+	await get_tree().create_timer(1).timeout
+	$AnimatedSprite2D.set_frame(0)

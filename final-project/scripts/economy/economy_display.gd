@@ -47,6 +47,7 @@ func add_item_to_inventory(item: ItemData):
 
 func add_upgrade_to_inventory(item: ItemData):
 	print("Success: Upgrade item: " + item.name)
+	
 
 
 func display_items() -> void:

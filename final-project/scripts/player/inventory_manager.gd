@@ -1,10 +1,14 @@
 extends Node2D
 
-var speedModifyer = 0
-var dashBoost = 0
-var hardHat = false
+var speedModifier := 0
+
+var dashSpeedModifier := 1000
+	
+var hardHat := false
+
 
 var items := []
+
 func addItem(item: ItemData):
 	items.append(item)
 func addUpgrade(item:ItemData):
@@ -13,15 +17,16 @@ func addUpgrade(item:ItemData):
 func clearItems():
 	items.clear()
 func clearUpgrades():
-	speedModifyer = 0
-	dashBoost = 0
+	speedModifier = 0
+	dashSpeedModifier = 0
 	hardHat = false
+	
 func setUpgradeEffect(item:ItemData):
 	match item.name:
 		"Speed Boost":
-			speedModifyer += 100
+			speedModifier += 100
 		"Dash Boost":
-			dashBoost += 100
+			dashSpeedModifier += 100
 		"Hard Hat":
 			hardHat = true
 		_:

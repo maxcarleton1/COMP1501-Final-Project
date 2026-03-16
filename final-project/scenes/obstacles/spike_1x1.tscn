@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://e3a4qcsxiep6"]
 
-[ext_resource type="Script" uid="uid://cgown6dxm4iwe" path="res://scripts/obstacles/damage.gd" id="1_yftr5"]
+[ext_resource type="Script" uid="uid://o1isyagh1oxt" path="res://scripts/obstacles/spike1x1.gd" id="1_voyjk"]
 [ext_resource type="Texture2D" uid="uid://eekvadlg7k18" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0068.png" id="2_voyjk"]
 
 [node name="Spike_1x1" type="Area2D" unique_id=2135419065]
-script = ExtResource("1_yftr5")
+script = ExtResource("1_voyjk")
 
 [node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1709277835]
 position = Vector2(0, 5.25)
@@ -14,3 +14,5 @@ polygon = PackedVector2Array(-5, -4.25, -2, -4.25, 0, -0.25, 2, -4.25, 5, -4.25,
 position = Vector2(0, 1)
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_voyjk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

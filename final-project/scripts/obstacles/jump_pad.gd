@@ -4,12 +4,13 @@ extends Node2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and body is CharacterBody2D:
-		var jump_velocity = -sqrt(2 * 980.0 * jump_height)
-		var v = body.velocity
-		v.y = jump_velocity
-		body.velocity = v
-		animate()
-		print("Jump pad activated, velocity: ", jump_velocity)
+		if body.falling == false:
+			var jump_velocity = -sqrt(2 * 980.0 * jump_height)
+			var v = body.velocity
+			v.y = jump_velocity
+			body.velocity = v
+			animate()
+			print("Jump pad activated, velocity: ", jump_velocity)
 
 func animate() ->void:
 	$AnimatedSprite2D.set_frame(1)

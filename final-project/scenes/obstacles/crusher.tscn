@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1j7p"]
 size = Vector2(128, 128)
 
-[node name="Crusher" type="Node2D" unique_id=1483566248]
+[node name="Crusher" type="Node2D" unique_id=1483566248 groups=["Obstacles"]]
 script = ExtResource("1_j1j7p")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1341972581]

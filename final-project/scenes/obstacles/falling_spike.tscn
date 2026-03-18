@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ssek"]
 size = Vector2(200, 268)
 
-[node name="FallingSpike" type="Node2D" unique_id=955191419]
+[node name="FallingSpike" type="Node2D" unique_id=955191419 groups=["Obstacles"]]
 script = ExtResource("1_3ssek")
 
 [node name="Trigger" type="Area2D" parent="." unique_id=493079681]

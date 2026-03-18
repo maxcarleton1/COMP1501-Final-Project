@@ -14,7 +14,7 @@ script = ExtResource("1_lq68l")
 width = 8.0
 default_color = Color(0.39841208, 0.3984121, 0.39841208, 1)
 
-[node name="Blade" type="Area2D" parent="Pivot" unique_id=1140302130]
+[node name="Blade" type="Area2D" parent="Pivot" unique_id=1140302130 groups=["Obstacles"]]
 position = Vector2(0, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot/Blade" unique_id=1803765396]

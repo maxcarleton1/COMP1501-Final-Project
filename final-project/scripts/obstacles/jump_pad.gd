@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var jump_height: float = 300.0  # pixels
+@export var jump_height: float = 500.0  # pixels
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and body is CharacterBody2D:

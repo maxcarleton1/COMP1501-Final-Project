@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://o1isyagh1oxt" path="res://scripts/obstacles/spike1x1.gd" id="1_voyjk"]
 [ext_resource type="Texture2D" uid="uid://eekvadlg7k18" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0068.png" id="2_voyjk"]
 
-[node name="Spike_1x1" type="Area2D" unique_id=2135419065]
+[node name="Spike_1x1" type="Area2D" unique_id=2135419065 groups=["Obstacles"]]
 script = ExtResource("1_voyjk")
 
 [node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1709277835]

@@ -10,7 +10,7 @@ extends Node2D
 
 var time := 0.0
 
-func _process(delta):
+func _physics_process(delta):
 	time += delta
 	var period = swing_period
 	if period <= 0:
@@ -26,5 +26,4 @@ func update_chain():
 
 func _on_blade_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		body.fall()
-		print("Damage Detected")
+		body.get_hit_by_obstacle()

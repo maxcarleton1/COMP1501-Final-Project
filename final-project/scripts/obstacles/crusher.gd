@@ -20,7 +20,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	match state:
-		DROP :
+		DROP:
 			position.y += drop_speed * delta
 			if position.y >= bottom_y:
 				position.y = bottom_y
@@ -43,5 +43,4 @@ func start_wait(time) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		body.fall()
-		print("Damage Detected")
+		body.get_hit_by_obstacle()

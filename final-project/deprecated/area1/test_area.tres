@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_ielrl"]
 [ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="1_vrdnd"]
-[ext_resource type="Resource" uid="uid://bbokp1gpva2mf" path="res://assets/resources/example_room_1.tres" id="2_uhtpi"]
-[ext_resource type="Resource" uid="uid://cdux4t5bcwcar" path="res://assets/resources/example_room_2.tres" id="3_t8x5m"]
-[ext_resource type="Resource" uid="uid://dyfrmxle88h03" path="res://assets/resources/example_room_3.tres" id="4_4rbcm"]
+[ext_resource type="Resource" uid="uid://bbokp1gpva2mf" path="res://deprecated/area1/example_room_1.tres" id="2_uhtpi"]
+[ext_resource type="Resource" uid="uid://cdux4t5bcwcar" path="res://deprecated/area1/example_room_2.tres" id="3_t8x5m"]
+[ext_resource type="Resource" uid="uid://dyfrmxle88h03" path="res://deprecated/area1/example_room_3.tres" id="4_4rbcm"]
 
 [resource]
 script = ExtResource("1_vrdnd")

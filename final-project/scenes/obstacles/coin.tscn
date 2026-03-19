@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jsemmstk0c3n"]
 
-[ext_resource type="Script" uid="uid://cecsecd5bb812" path="res://scenes/obstacles/coin.gd" id="1_53klv"]
+[ext_resource type="Script" uid="uid://cecsecd5bb812" path="res://scripts/obstacles/coin.gd" id="1_53klv"]
 [ext_resource type="Texture2D" uid="uid://dmcwn7v6li4m5" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0151.png" id="1_d8g7e"]
 [ext_resource type="Texture2D" uid="uid://bxhs6u2i1d3b0" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0152.png" id="2_53klv"]
 

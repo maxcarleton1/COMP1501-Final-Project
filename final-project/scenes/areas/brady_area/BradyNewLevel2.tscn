@@ -5,8 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="3_r5i4i"]
 [ext_resource type="PackedScene" uid="uid://b2fyd67v4u5mh" path="res://scenes/areas/common/tilemaps/BackgroundLayer.tscn" id="4_5pbuq"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="5_2ycry"]
-[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="6_r5i4i"]
-[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player/player.tscn" id="7_5pbuq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
@@ -65,29 +63,3 @@ tile_map_data = PackedByteArray("AAALAAQAAAAGAAIAAAAKAAQAAAAGAAIAAAAJAAQAAAAGAAI
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_2ycry")]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAD7/wYAAAAAAAAAAQD8/wYAAAAAAAAAAQD9/wYAAAAAAAAAAQD+/wYAAAAAAAAAAQD5/wYAAAAAAAAABwD//wYAAAAAAAAAAQAAAAYAAAAAAAAAAQABAAYAAAAAAAAAAQACAAYAAAAAAAAAAQANAAQAAAAAAAAABwAIAP//AAAAAAAABwAFAP//AAAAAAAAAQAEAP//AAAAAAAAAQADAP//AAAAAAAAAQACAP//AAAAAAAAAQABAP//AAAAAAAAAQAAAP//AAAAAAAAAQD/////AAAAAAAAAQD+////AAAAAAAAAQD+/wAAAAAAAAAABAD9////AAAAAAAAAQD8////AAAAAAAAAQD7////AAAAAAAAAQAAAPj/AAAAAAAABAD4////AAAAAAAABwA=")
-
-[node name="Player" parent="." unique_id=1015420686 instance=ExtResource("7_5pbuq")]
-position = Vector2(-534, 269)
-scale = Vector2(3, 3)
-
-[node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("6_r5i4i")]
-
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68119" to="ObsicalLayer/@Area2D@68119" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68120" to="ObsicalLayer/@Area2D@68120" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68121" to="ObsicalLayer/@Area2D@68121" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68122" to="ObsicalLayer/@Area2D@68122" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68124" to="ObsicalLayer/@Area2D@68124" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68125" to="ObsicalLayer/@Area2D@68125" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68126" to="ObsicalLayer/@Area2D@68126" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68127" to="ObsicalLayer/@Area2D@68127" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68130" to="ObsicalLayer/@Area2D@68130" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68131" to="ObsicalLayer/@Area2D@68131" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68132" to="ObsicalLayer/@Area2D@68132" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68133" to="ObsicalLayer/@Area2D@68133" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68134" to="ObsicalLayer/@Area2D@68134" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68135" to="ObsicalLayer/@Area2D@68135" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68136" to="ObsicalLayer/@Area2D@68136" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68137" to="ObsicalLayer/@Area2D@68137" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68139" to="ObsicalLayer/@Area2D@68139" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68140" to="ObsicalLayer/@Area2D@68140" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@68141" to="ObsicalLayer/@Area2D@68141" method="_on_body_entered"]

@@ -16,13 +16,17 @@ func _ready() -> void:
 	
 	# Player (beginning the fall)
 	player.player_start_fall.connect(fall_down)
+	
+	# This is just so the player doesn't drop on game startup
+	$Player.global_position = $LevelBuilder/StartRoom/StopFall/CollisionShape2D.global_position
 
 # Resets rooms, barrier, stats, etc.
 func reset_run():
-	print("DEBUG: Attempting reset...")
 	if player.falling: # Just to be sure 
 		barrier.reset(barrier_spawn_pos)
 		$LevelBuilder.regenerate()
+		
+		$AltitudeTracker.reset() # Needed?
 
 func start_run():
 	# Start barrier

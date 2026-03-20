@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="3_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://8hfa5vatgnvp" path="res://scenes/obstacles/lose_barrier.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://0fa57m1dbovk" path="res://scenes/ui/hud/hud.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://ciwgopc25eddt" path="res://scenes/player/altitude_tracker.tscn" id="7_tipki"]
 
 [node name="Main" type="Node" unique_id=974304658]
 script = ExtResource("1_jyhfs")
@@ -21,3 +22,5 @@ scale = Vector2(3, 3)
 position = Vector2(0, 800)
 
 [node name="HUD" parent="." unique_id=1806229052 instance=ExtResource("7_o6xl0")]
+
+[node name="AltitudeTracker" parent="." unique_id=174459157 instance=ExtResource("7_tipki")]

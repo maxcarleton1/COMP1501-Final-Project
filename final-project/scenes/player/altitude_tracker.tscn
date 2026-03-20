@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://ciwgopc25eddt"]
+
+[ext_resource type="Script" uid="uid://cwdhu0vbt2cdx" path="res://scripts/player/altitude_tracker.gd" id="1_qcdlm"]
+[ext_resource type="Texture2D" uid="uid://ctiwkd4puaepo" path="res://assets/art/altimiter.png" id="2_o5a7h"]
+[ext_resource type="Texture2D" uid="uid://bgm2o0wddp3a2" path="res://assets/art/bestalt.png" id="3_37awt"]
+[ext_resource type="Material" uid="uid://cg1gd1407nlkc" path="res://assets/materials/altimeterscroll.tres" id="3_xrs71"]
+
+[node name="AltitudeTracker" type="Node2D" unique_id=174459157]
+script = ExtResource("1_qcdlm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=463136564]
+modulate = Color(1, 1, 1, 0.3882353)
+position = Vector2(-840, -50)
+scale = Vector2(3, 3)
+texture = ExtResource("2_o5a7h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1890292266]
+texture_repeat = 2
+material = ExtResource("3_xrs71")
+scale = Vector2(5, 5)
+texture = ExtResource("3_37awt")
+region_enabled = true
+region_rect = Rect2(0, 0, 400, 5)
+
+[node name="Label" type="Label" parent="." unique_id=1263157095]
+modulate = Color(1, 1, 1, 0.39215687)
+offset_left = -708.0
+offset_top = -64.0
+offset_right = -616.0
+offset_bottom = -41.0
+text = "Placeholder"

@@ -138,9 +138,7 @@ func add_children(rooms: Array[Node2D]):
 
 # Currently just deletes all rooms besides the start and rebuilds them, might want to change later
 # Called by main upon hitting the bottom
-func regenerate():
-	print("DEBUG: Resetting rooms...")
-	
+func regenerate():	
 	# Reset generation positions
 	start_position = start_room.get_exit_pos()
 	

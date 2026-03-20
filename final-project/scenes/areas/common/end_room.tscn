@@ -64,7 +64,6 @@ texture = ExtResource("3_jby35")
 
 [node name="WinHitbox" type="Area2D" parent="." unique_id=489043299]
 collision_layer = 0
-collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WinHitbox" unique_id=140560876]
 position = Vector2(0, 500)

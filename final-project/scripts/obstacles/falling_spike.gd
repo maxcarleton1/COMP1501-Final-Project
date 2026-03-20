@@ -1,4 +1,3 @@
-#Can modify size in editor
 extends Node2D
 
 @export var trigger_size: Vector2 = Vector2(200, 268)
@@ -20,20 +19,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print("fall triggered")
-		fall()
+		current_speed = speed
 
 func _on_spike_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		print("Damage Detected")
-		body.fall()
+		body.get_hit_by_obstacle()
+		
+		# Might want to call some animation or fade out here and remove on animation end?
 		queue_free()
 	else:
-		print("Hit Ground")
 		current_speed = 0.0
 		await get_tree().create_timer(0.5).timeout
 		queue_free()
-
-func fall():
-	current_speed = speed
-	print("falling")

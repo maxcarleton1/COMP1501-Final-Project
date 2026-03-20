@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player/player.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://rdsxafjhxuly" path="res://scenes/areas/level_builder.tscn" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="3_tbgi4"]
+[ext_resource type="Resource" uid="uid://bk3w5efcyk2w" path="res://assets/resources/demo_area.tres" id="4_tefeu"]
 [ext_resource type="PackedScene" uid="uid://8hfa5vatgnvp" path="res://scenes/obstacles/lose_barrier.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://0fa57m1dbovk" path="res://scenes/ui/hud/hud.tscn" id="7_o6xl0"]
 
@@ -14,10 +15,10 @@ script = ExtResource("1_jyhfs")
 scale = Vector2(3, 3)
 
 [node name="LevelBuilder" parent="." unique_id=769528092 instance=ExtResource("2_jyhfs")]
+demo_area = ExtResource("4_tefeu")
 
 [node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("3_tbgi4")]
 
 [node name="LoseBarrier" parent="." unique_id=205154386 instance=ExtResource("5_tbgi4")]
-position = Vector2(0, 800)
 
 [node name="HUD" parent="." unique_id=1806229052 instance=ExtResource("7_o6xl0")]

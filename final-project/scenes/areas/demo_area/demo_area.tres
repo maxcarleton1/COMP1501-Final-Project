@@ -9,4 +9,5 @@
 [resource]
 script = ExtResource("2_8ftlm")
 rooms = Array[ExtResource("1_8ftlm")]([ExtResource("2_j7oo0"), ExtResource("3_xuru6"), ExtResource("4_mvfad")])
+random_order = true
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

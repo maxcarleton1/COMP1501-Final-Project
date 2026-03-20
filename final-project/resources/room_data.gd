@@ -1,8 +1,9 @@
 extends Resource
 class_name RoomData
 
-# Resource which keeps track of any data each room will store
+# The room scene itself, which gets loaded by level_builder
 @export var room_scene: PackedScene
-#@export var room_size: Vector2i # Important or not?
+# Might be useful, might not
 @export var room_name: String
-@export var weight: int = 1 # In case we want rarer rooms (weighted probabilities)
+# Weighted probabilities, only if use_weighted is true in level builder's generate_area()
+@export var weight: float = 1.0 # Higher weight = more likely to be picked, and sooner

@@ -1,24 +1,36 @@
 extends Node
 
-var barrier_spawn_pos: Vector2 = Vector2(0, 750)
+var barrier_spawn_pos: Vector2 = Vector2(0, 800)
 @onready var barrier := $LoseBarrier
+@onready var start_room := $LevelBuilder/StartRoom
+@onready var end_room := $LevelBuilder/EndRoom
+@onready var player := $Player
 
 func _ready() -> void:
-	barrier.player_contact.connect(fall_down)
-	barrier.global_position = barrier_spawn_pos
+	# Start room (starting the run, resetting levels upon hitting the bottom/loss)
+	start_room.start_run.connect(start_run)
+	start_room.hit_bottom.connect(reset_run)
 	
-	$LevelBuilder.start_barrier.connect(start_barrier)
-	$LevelBuilder.win_hitbox.connect(win)
+	# End room (winning the game by reaching the top)
+	end_room.win_hitbox.connect(win)
+	
+	# Player (beginning the fall)
+	player.player_start_fall.connect(fall_down)
 
-func start_barrier():
-	barrier.started = true
+# Resets rooms, barrier, stats, etc.
+func reset_run():
+	print("DEBUG: Attempting reset...")
+	if player.falling: # Just to be sure 
+		barrier.reset(barrier_spawn_pos)
+		$LevelBuilder.regenerate()
 
-# Called upon hitting the lose barrier etc.
-# Makes player fall back down to the start, ignoring anything in the way
+func start_run():
+	# Start barrier
+	barrier.start_moving()
+
 func fall_down():
-	barrier.started = false
-	barrier.global_position = barrier_spawn_pos
-	$Player.fall()
-
+	# Reset barrier
+	barrier.reset(barrier_spawn_pos)
+	
 func win():
 	print("You win!")

@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://8hfa5vatgnvp"]
 
-[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="1_iwavh"]
 [ext_resource type="Script" uid="uid://c48bkdoc3gbr3" path="res://scripts/obstacles/lose_barrier.gd" id="1_m6d4c"]
+[ext_resource type="Material" uid="uid://b7ws0600n7g7" path="res://assets/materials/lavascroll.tres" id="2_vxch5"]
+[ext_resource type="Texture2D" uid="uid://drdldivtsejee" path="res://assets/art/lava.png" id="3_jortg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6d4c"]
 size = Vector2(2000, 200)
@@ -16,9 +17,43 @@ z_index = -1
 shape = SubResource("RectangleShape2D_m6d4c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=162724384]
-z_index = -1
-position = Vector2(2.9999995, -1.5000019)
-scale = Vector2(15.6640625, 1.6328125)
-texture = ExtResource("1_iwavh")
+z_index = 2
+texture_repeat = 2
+material = ExtResource("2_vxch5")
+position = Vector2(0, -50)
+scale = Vector2(5, 9)
+texture = ExtResource("3_jortg")
+region_enabled = true
+region_rect = Rect2(0, 0, 400, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1177002157]
+z_index = 2
+texture_repeat = 2
+material = ExtResource("2_vxch5")
+position = Vector2(0, 100)
+scale = Vector2(5, 9)
+texture = ExtResource("3_jortg")
+region_enabled = true
+region_rect = Rect2(0, 18, 400, 14)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=555007432]
+z_index = 2
+texture_repeat = 2
+material = ExtResource("2_vxch5")
+position = Vector2(0, 200)
+scale = Vector2(5, 9)
+texture = ExtResource("3_jortg")
+region_enabled = true
+region_rect = Rect2(0, 18, 400, 14)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1404060849]
+z_index = 2
+texture_repeat = 2
+material = ExtResource("2_vxch5")
+position = Vector2(0, 300)
+scale = Vector2(5, 9)
+texture = ExtResource("3_jortg")
+region_enabled = true
+region_rect = Rect2(0, 18, 400, 14)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

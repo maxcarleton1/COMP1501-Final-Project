@@ -5,3 +5,4 @@
 [resource]
 shader = ExtResource("1_5k8kx")
 shader_parameter/speed = 1.0
+shader_parameter/alpha = 0.3

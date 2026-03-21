@@ -1,8 +1,17 @@
 [gd_scene format=3 uid="uid://24wkpeflfhnv"]
 
 [ext_resource type="Script" uid="uid://cmx1jnvrrdp5m" path="res://scripts/ui/main_menu/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://du06k368lhkru" path="res://deprecated/bradys_test_map.tscn" id="2_ekxnf"]
 [ext_resource type="PackedScene" uid="uid://ovlbwt6l4s0w" path="res://scenes/ui/main_menu/Button.tscn" id="3_bqqt6"]
+[ext_resource type="Theme" uid="uid://caveoltmg38v4" path="res://assets/themes/title_text.tres" id="3_r70wa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ouhi"]
+bg_color = Color(0.26009998, 0.41420496, 0.51, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mqxt"]
+bg_color = Color(0.2688, 0.30408004, 0.42, 0.4509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tk7lu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Main Menu" type="Control" unique_id=175561861]
 layout_mode = 3
@@ -12,29 +21,65 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-mainGame = ExtResource("2_ekxnf")
 
-[node name="Title" type="Label" parent="." unique_id=826226148]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1955607626]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -335.5
-offset_right = 335.5
-offset_bottom = 42.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 0, 1, 1)
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8ouhi")
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer" unique_id=1682296435]
+custom_minimum_size = Vector2(1500, 850)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_5mqxt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/PanelContainer" unique_id=1088264798]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Title" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=826226148]
+custom_minimum_size = Vector2(1000, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
-text = "SuperMegaJumpingAndRunningSimulator2027"
+theme_override_font_sizes/font_size = 60
+text = "Climb up the big ass thing game!!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="StartGame" parent="." unique_id=1274237129 instance=ExtResource("3_bqqt6")]
-layout_mode = 1
-offset_left = -71.0
-offset_right = 67.0
-theme_override_font_sizes/font_size = 32
-text = "Start Game"
-flat = true
+[node name="Label" type="Label" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1396904015]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_r70wa")
+text = " (AKA SuperMegaJumpingAndRunningSimulator2027)
+By Max Sobota, Brady Kearley, Ryan Herzog, and Siri Strassner"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="StartGame" to="." method="_on_start_game_pressed"]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=540024221]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tk7lu")
+
+[node name="StartGame" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1274237129 instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+text = "New Game"
+
+[node name="Difficulty" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=2074634438 instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+text = "Difficulty: Normal"
+
+[node name="Quit" parent="PanelContainer/PanelContainer/VBoxContainer" unique_id=1219747504 instance=ExtResource("3_bqqt6")]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="PanelContainer/PanelContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="PanelContainer/PanelContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="pressed" from="PanelContainer/PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

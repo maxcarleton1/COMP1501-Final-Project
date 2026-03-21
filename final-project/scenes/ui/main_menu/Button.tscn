@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ovlbwt6l4s0w"]
 
 [ext_resource type="Script" uid="uid://c3yfwjhgbim18" path="res://scripts/ui/main_menu/button.gd" id="1_c75kr"]
+[ext_resource type="Theme" uid="uid://2887ktuaefdj" path="res://assets/themes/title_buttons.tres" id="1_xv5iq"]
 
 [node name="Button" type="Button" unique_id=1274237129]
+custom_minimum_size = Vector2(300, 75)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -14,8 +16,9 @@ offset_right = 185.5
 offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.8745098, 0, 0.8745098, 1)
-theme_override_font_sizes/font_size = 24
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_xv5iq")
 text = "BE A GOOD BOY AND CLICK ME"
 script = ExtResource("1_c75kr")
 

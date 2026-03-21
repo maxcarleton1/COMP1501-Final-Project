@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DifficultyConfig" format=3 uid="uid://c7p42iu7w08g"]
+
+[ext_resource type="Script" uid="uid://blr81y3y31dvu" path="res://resources/difficulty.gd" id="1_eo8qd"]
+
+[resource]
+script = ExtResource("1_eo8qd")
+barrier_speed = 175
+metadata/_custom_type_script = "uid://blr81y3y31dvu"

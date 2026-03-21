@@ -23,7 +23,7 @@ func _ready() -> void:
 # Resets rooms, barrier, stats, etc.
 func reset_run():
 	if player.falling: # Just to be sure 
-		barrier.reset(barrier_spawn_pos)
+		barrier.reset(barrier_spawn_pos, true)
 		$LevelBuilder.regenerate()
 		
 		$AltitudeTracker.reset() # Needed?
@@ -34,7 +34,7 @@ func start_run():
 
 func fall_down():
 	# Reset barrier
-	barrier.reset(barrier_spawn_pos)
+	barrier.reset(barrier_spawn_pos, true)
 	
 func win():
 	print("You win!")

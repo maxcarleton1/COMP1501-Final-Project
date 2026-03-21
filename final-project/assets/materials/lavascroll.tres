@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b7ws0600n7g7"]
+
+[ext_resource type="Shader" uid="uid://st6ipblrq8iv" path="res://assets/materials/lavascroll.gdshader" id="1_pyivc"]
+
+[resource]
+shader = ExtResource("1_pyivc")
+shader_parameter/speed = 1.0
+shader_parameter/alpha = 0.3

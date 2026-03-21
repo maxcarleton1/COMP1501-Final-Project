@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dl7brauocvnjq"]
+
+[ext_resource type="Script" uid="uid://8tkggpj0dnfh" path="res://scripts/obstacles/rope_swing.gd" id="1_4lksj"]
+[ext_resource type="Texture2D" uid="uid://0du7yary25k" path="res://assets/art/SpikeBall.png" id="2_j4ij6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7o1ld"]
+radius = 4.1231055
+
+[node name="rope_swing" type="Node2D" unique_id=83954939]
+script = ExtResource("1_4lksj")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1118029352]
+
+[node name="Rope" type="Line2D" parent="Pivot" unique_id=1527485276]
+width = 8.0
+default_color = Color(0.39841208, 0.3984121, 0.39841208, 1)
+
+[node name="Handle" type="Area2D" parent="Pivot" unique_id=1140302130 groups=["Obstacles"]]
+position = Vector2(0, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot/Handle" unique_id=1803765396]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_j4ij6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/Handle" unique_id=1257877864]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_7o1ld")
+
+[node name="Marker2D" type="Marker2D" parent="Pivot/Handle" unique_id=740611752]
+position = Vector2(0, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=68861307]
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_j4ij6")
+
+[connection signal="body_entered" from="Pivot/Handle" to="." method="_on_blade_body_entered"]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://jsemmstk0c3n" path="res://scenes/obstacles/coin.tscn" id="5_gkn2c"]
 [ext_resource type="PackedScene" uid="uid://cf8yymnhfc2qd" path="res://scenes/obstacles/crusher.tscn" id="6_kbnnr"]
 [ext_resource type="PackedScene" uid="uid://gvh0bp682lt0" path="res://scenes/obstacles/jump_pad.tscn" id="7_g4bqq"]
+[ext_resource type="PackedScene" uid="uid://2dfija7nlfj3" path="res://scenes/obstacles/spiderweb.tscn" id="8_g4bqq"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_iecb2"]
 scenes/1/scene = ExtResource("1_lx1a1")
@@ -16,6 +17,7 @@ scenes/4/scene = ExtResource("4_qfdth")
 scenes/5/scene = ExtResource("5_gkn2c")
 scenes/6/scene = ExtResource("6_kbnnr")
 scenes/7/scene = ExtResource("7_g4bqq")
+scenes/8/scene = ExtResource("8_g4bqq")
 
 [sub_resource type="TileSet" id="TileSet_ok8ha"]
 sources/0 = SubResource("TileSetScenesCollectionSource_iecb2")

@@ -68,7 +68,7 @@ tile_map_data = PackedByteArray("AADx/wgAAAACAAYAAADx/wcAAAACAAYAAADx/wYAAAACAAY
 [node name="TileMapLayer" parent="." unique_id=1524709313 instance=ExtResource("4_r1c0q")]
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_rede4")]
-tile_map_data = PackedByteArray("AADd/xsAAAAAAAAAAQDv/xsAAAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AADd/xsAAAAAAAAAAQDv/xsAAAAAAAAAAgDY/+z/AAAAAAAACAA=")
 
 [node name="Crusher" parent="." unique_id=1483566248 instance=ExtResource("6_f1pe1")]
 position = Vector2(-443, -443)
@@ -103,3 +103,5 @@ position = Vector2(-293, -223)
 
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x2" to="ObsicalLayer/Spike_1x2" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@38527" to="ObsicalLayer/@Area2D@38527" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/@Area2D@38527" to="ObsicalLayer/@Area2D@38527" method="_on_body_exited"]

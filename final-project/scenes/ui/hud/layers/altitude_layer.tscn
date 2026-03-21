@@ -2,18 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://b7uv0tyb3h4xc" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0002.png" id="1_7rsm7"]
 
-[node name="AltitudeLayer" type="Node2D" unique_id=534568543]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1556457759]
+[node name="HBoxContainer" type="HBoxContainer" unique_id=1908266141]
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_vertical = 3
 
-[node name="CurrencyImage" type="TextureRect" parent="HBoxContainer" unique_id=209640826]
+[node name="CurrencyImage" type="TextureRect" parent="." unique_id=922816984]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("1_7rsm7")
 
-[node name="CurrencyAmount" type="Label" parent="HBoxContainer" unique_id=2106547464]
+[node name="CurrencyAmount" type="Label" parent="." unique_id=1681261537]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 text = "0"

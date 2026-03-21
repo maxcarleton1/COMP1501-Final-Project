@@ -11,22 +11,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=567803169]
-custom_minimum_size = Vector2(100, 200)
+custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
+theme_override_constants/separation = 40
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1066775351]
+[node name="AltitudeLayer" parent="MarginContainer/VBoxContainer" unique_id=534568543 instance=ExtResource("2_cgeww")]
 layout_mode = 2
-size_flags_vertical = 3
-
-[node name="AltitudeLayer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=534568543 instance=ExtResource("2_cgeww")]
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1370069036]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="ItemLayer" parent="MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1046165136 instance=ExtResource("2_c45xl")]
-position = Vector2(0, -8)
 
 [node name="CurrencyLayer" parent="MarginContainer/VBoxContainer" unique_id=306195438 instance=ExtResource("1_48c2t")]
 layout_mode = 2
 script = null
+
+[node name="ItemLayer" parent="MarginContainer/VBoxContainer" unique_id=1046165136 instance=ExtResource("2_c45xl")]
+layout_mode = 2

@@ -1,11 +1,8 @@
 extends Node2D
 
 var speedModifier := 0
-
-var dashSpeedModifier := 1000
-	
+var dashSpeedModifier := 0	
 var hardHat := false
-
 
 var items := []
 
@@ -16,6 +13,7 @@ func addUpgrade(item:ItemData):
 
 func clearItems():
 	items.clear()
+	
 func clearUpgrades():
 	speedModifier = 0
 	dashSpeedModifier = 0

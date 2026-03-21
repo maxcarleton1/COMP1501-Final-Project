@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://vxkbukagdda8"]
 
-[node name="ItemLayer" type="Node2D" unique_id=1046165136]
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=552969254]
+[node name="HBoxContainer" type="HBoxContainer" unique_id=2106208528]
 offset_right = 40.0
 offset_bottom = 40.0
+size_flags_vertical = 3
 
-[node name="Items" type="Label" parent="HBoxContainer" unique_id=581950846]
+[node name="Items" type="Label" parent="." unique_id=579126817]
 layout_mode = 2
 text = "Items: "

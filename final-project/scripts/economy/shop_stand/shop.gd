@@ -1,6 +1,7 @@
 extends Node2D
 
 signal economy_display_requested
+signal economy_display_close_requested
 
 var shop_in_player_range := false
 
@@ -21,6 +22,10 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_body_exited(body: Node2D) -> void:
 	if(body.is_in_group("Player")):
 		shop_in_player_range = false
+		close_shop()
 
 func open_shop():
 	economy_display_requested.emit()
+	
+func close_shop():
+	economy_display_close_requested.emit()

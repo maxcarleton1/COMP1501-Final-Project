@@ -1,6 +1,10 @@
 [gd_scene format=4 uid="uid://dx7n31lprjj3"]
 
 [ext_resource type="TileSet" uid="uid://dvgigf04nat18" path="res://assets/art/tilesets/start_room_tileset.tres" id="1_n6edp"]
+[ext_resource type="Script" uid="uid://co6efiubus0kt" path="res://scripts/economy/shop_stand/shop.gd" id="1_x1b5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6edp"]
+size = Vector2(503, 390)
 
 [node name="Shop" type="Node2D" unique_id=902585992]
 
@@ -9,7 +13,7 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAAAAAAAwAKAAcAAAAAAP//AwAKAAYAAAAAAP7/AwAIAAEAAAAAAP3/AwAHAAEAAAD//wAAAwAGAAEAAAD/////AwASAAYAAAABAP//AwAGAAEAAAD///7/AwAGAAEAAAABAP7/AwAGAAEAAAABAAAAAwAGAAEAAAD+//7/AwASAAQAAAACAP7/AwATAAQAAAD///3/AwAFAAUAAAABAP3/AwAIAAYAAAA=")
 tile_set = ExtResource("1_n6edp")
 
-[node name="Label" type="Label" parent="." unique_id=1533861988]
+[node name="ShopLabel" type="Label" parent="." unique_id=1533861988]
 offset_left = 136.0
 offset_top = -170.0
 offset_right = 223.0
@@ -18,3 +22,13 @@ theme_override_colors/font_color = Color(0.3529412, 1, 0.19607843, 1)
 theme_override_font_sizes/font_size = 32
 text = "Shop"
 uppercase = true
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1245270022]
+script = ExtResource("1_x1b5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=385475277]
+position = Vector2(45, -77)
+shape = SubResource("RectangleShape2D_n6edp")
+
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

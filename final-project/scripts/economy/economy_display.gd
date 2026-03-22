@@ -69,15 +69,15 @@ func _on_items_pressed() -> void:
 func _on_upgrades_pressed() -> void:
 	display_upgrades()
 	
-func open_display_economy():
+func open_economy_display():
 	show()
 
-func close_display_economy():
+func close_economy_display():
 	hide()
 	
 func toggle_economy_display():
 	if (visible):
-		close_display_economy()
+		close_economy_display()
 	else:
-		open_display_economy()
+		open_economy_display()
 	

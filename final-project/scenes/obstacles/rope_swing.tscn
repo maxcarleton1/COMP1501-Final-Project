@@ -33,4 +33,5 @@ position = Vector2(0, 2)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_j4ij6")
 
-[connection signal="body_entered" from="Pivot/Handle" to="." method="_on_blade_body_entered"]
+[connection signal="body_entered" from="Pivot/Handle" to="." method="_on_handle_body_entered"]
+[connection signal="body_exited" from="Pivot/Handle" to="." method="_on_handle_body_exited"]

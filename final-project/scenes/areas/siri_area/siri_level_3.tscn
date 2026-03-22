@@ -68,7 +68,7 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AADx/wgAAAACAAcAAADx/wcAAAADAAYAAADx/wYAAAADAAYAAADx/wUAAAADAAYAAADx/wQAAAADAAYAAADx////AAADAAYAAADx//7/AAADAAYAAADx//3/AAADAAYAAADx//z/AAADAAYAAADx//v/AAADAAYAAADx//r/AAADAAYAAADx//n/AAAEAAEAAADx//j/AAADAAYAAADx//f/AAADAAAAAAAOAAgAAAACAAcAAAAOAAcAAAABAAYAAAAOAAYAAAABAAYAAAAOAAUAAAABAAYAAAAOAAQAAAABAAYAAAAOAAAAAAABAAYAAAAOAP//AAABAAYAAAAOAP7/AAABAAYAAAAOAP3/AAABAAYAAAAOAPz/AAABAAYAAAAOAPv/AAABAAYAAAAOAPr/AAABAAYAAAAOAPn/AAABAAYAAAAOAPj/AAABAAYAAAAOAPf/AAABAAEAAAANAAgAAAABAAAAAAAIAAgAAAADAAAAAADy/wgAAAADAAAAAAD3/wgAAAABAAAAAAD4/wgAAAACAAAAAAD5/wgAAAACAAAAAAD6/wgAAAACAAAAAAD7/wgAAAACAAAAAAD8/wgAAAACAAAAAAD9/wgAAAACAAAAAAD+/wgAAAACAAAAAAD//wgAAAACAAAAAAAAAAgAAAACAAAAAAABAAgAAAACAAAAAAACAAgAAAACAAAAAAADAAgAAAACAAAAAAAEAAgAAAACAAAAAAAFAAgAAAACAAAAAAAGAAgAAAACAAAAAAAHAAgAAAACAAAAAAD7//n/AAACAAAAAAD6//n/AAACAAAAAAD5//n/AAACAAAAAAD4//n/AAACAAAAAAD3//n/AAACAAAAAAD2//n/AAACAAAAAAD1//n/AAACAAAAAAD0//n/AAACAAAAAADz//n/AAACAAAAAADy//n/AAACAAAAAAD8//n/AAACAAAAAAD9//n/AAACAAAAAAD+//n/AAACAAAAAAD///n/AAACAAAAAAAAAPn/AAACAAAAAAABAPn/AAACAAAAAAACAPn/AAACAAAAAAADAPn/AAACAAAAAAAEAPn/AAACAAAAAAAFAPn/AAACAAAAAAAGAPn/AAACAAAAAAAHAPn/AAACAAAAAAAIAPn/AAACAAAAAAAJAPn/AAADAAEAAAD4/wMAAAADAAcAAAD3/wMAAAACAAcAAAD2/wMAAAACAAcAAAD1/wMAAAACAAcAAAD0/wMAAAACAAcAAADz/wMAAAACAAcAAADy/wMAAAACAAcAAAD7/wMAAAABAAcAAAD8/wMAAAACAAcAAAD9/wMAAAACAAAAAAD+/wMAAAADAAAAAAABAAMAAAABAAcAAAACAAMAAAACAAcAAAADAAMAAAACAAcAAAAHAAMAAAABAAcAAAAIAAMAAAACAAcAAAAJAAMAAAACAAcAAAAKAAMAAAACAAcAAAALAAMAAAACAAcAAAAMAAMAAAACAAcAAAANAAMAAAACAAcAAAAEAAMAAAADAAcAAAD5/wEAAAACAAAAAAD6/wEAAAACAAAAAAD4/wEAAAACAAEAAAD3/wEAAAACAAEAAAD2/wEAAAACAAEAAAD1/wEAAAACAAEAAAD0/wEAAAACAAEAAADz/wEAAAACAAEAAADy/wEAAAACAAEAAAAHAAEAAAACAAEAAAAIAAEAAAACAAEAAAAJAAEAAAACAAEAAAAKAAEAAAACAAEAAAALAAEAAAACAAEAAAAMAAEAAAACAAEAAAANAAEAAAACAAEAAAAFAAEAAAACAAAAAAAGAAEAAAACAAAAAAD7/wEAAAADAAEAAAD7/wIAAAABAAYAAAAHAAIAAAABAAYAAAAOAAEAAAAFAAEAAAAIAAIAAAACAAYAAAAJAAIAAAACAAYAAAAKAAIAAAACAAYAAAALAAIAAAACAAYAAAAMAAIAAAACAAYAAAANAAIAAAACAAYAAAAOAAIAAAACAAYAAAAOAAMAAAACAAYAAAD3/wIAAAACAAYAAAD2/wIAAAACAAYAAAD1/wIAAAACAAYAAAD0/wIAAAACAAYAAADz/wIAAAACAAYAAADy/wIAAAACAAYAAADx/wIAAAACAAYAAADx/wMAAAACAAYAAADx/wEAAAAEAAEAAAAEAAIAAAADAAYAAAD4/wIAAAADAAYAAAADAAIAAAACAAYAAAD8/wIAAAADAAEAAAD///3/AAACAAEAAAAAAP3/AAACAAEAAAABAP3/AAACAAEAAAACAP3/AAACAAEAAAABAAIAAAABAAYAAAABAAEAAAABAAYAAAABAAAAAAABAAYAAAABAP//AAABAAYAAAABAP7/AAACAAYAAAACAP7/AAACAAYAAAACAP//AAACAAYAAAACAAAAAAACAAYAAAACAAEAAAACAAYAAAACAAIAAAACAAYAAAADAP3/AAADAAEAAAADAP7/AAADAAYAAAADAP//AAADAAYAAAADAAAAAAADAAYAAAAAAP7/AAACAAcAAAD///7/AAACAAcAAAD7//z/AAACAAAAAAD8//z/AAACAAEAAAD9//z/AAACAAEAAAD+//z/AAADAAEAAAD8//3/AAABAAcAAAD9//3/AAACAAYAAAD+//3/AAACAAYAAAD9//7/AAABAAcAAAD+//7/AAACAAcAAAD6//z/AAACAAAAAAD5//z/AAACAAAAAAD4//z/AAACAAAAAAD3//z/AAACAAAAAAD2//z/AAABAAAAAADx/wAAAAADAAYAAAADAAEAAAACAAYAAAAEAAEAAAACAAEAAAAJAPr/AAAAAAcAAAD5/wcAAAAIAAQAAAAGAAcAAAAHAAQAAAD+/wIAAAAHAAQAAAD1//z/AAAIAAQAAGD6//v/AAAIAAQAAAAGAAAAAAAIAAQAAAANAP3/AAAIAAQAAGAEAPj/AAAGAAYAAAAIAAAAAAAGAAYAAAD3/wAAAAAGAAYAAAABAPz/AAAEAAYAAAD8//j/AAAEAAYAAAAKAAAAAAAEAAYAAAD1//j/AAAHAAYAAAD6/wcAAAAHAAYAAAD+/wcAAAAGAAYAAAADAAcAAAAFAAYAAAANAAcAAAAGAAYAAADy/wcAAAAGAAYAAAA=")
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_vrdba")]
-tile_map_data = PackedByteArray("AAADAPz/AAAAAAAAATACAPz/AAAAAAAAATABAPz/AAAAAAAAATAAAPz/AAAAAAAAATD///z/AAAAAAAAATD+//z/AAAAAAAAATD9//z/AAAAAAAAATD4//z/AAAAAAAAATD5//z/AAAAAAAAATD6//z/AAAAAAAAATD7//z/AAAAAAAAATD8//z/AAAAAAAAATA=")
+tile_map_data = PackedByteArray("AAADAPz/AAAAAAAAATACAPz/AAAAAAAAATABAPz/AAAAAAAAATAAAPz/AAAAAAAAATD///z/AAAAAAAAATD+//z/AAAAAAAAATD9//z/AAAAAAAAATD4//z/AAAAAAAAATD5//z/AAAAAAAAATD6//z/AAAAAAAAATD7//z/AAAAAAAAATD8//z/AAAAAAAAATD+/woAAAAAAAAABQAeAB0AAAAAAAAABQDg/x0AAAAAAAAABQAyAO//AAAAAAAABQDK/+z/AAAAAAAABQATAOv/AAAAAAAABQA=")
 
 [node name="Crusher" parent="." unique_id=1483566248 instance=ExtResource("6_xgqv0")]
 position = Vector2(-385, 196)
@@ -103,15 +103,27 @@ swing_period = 6.0
 swing_angle = 75.0
 chain_length = 250.0
 
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72838" to="ObsicalLayer/@Area2D@72838" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72839" to="ObsicalLayer/@Area2D@72839" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72840" to="ObsicalLayer/@Area2D@72840" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72841" to="ObsicalLayer/@Area2D@72841" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72842" to="ObsicalLayer/@Area2D@72842" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72843" to="ObsicalLayer/@Area2D@72843" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72844" to="ObsicalLayer/@Area2D@72844" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72845" to="ObsicalLayer/@Area2D@72845" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72846" to="ObsicalLayer/@Area2D@72846" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72847" to="ObsicalLayer/@Area2D@72847" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72848" to="ObsicalLayer/@Area2D@72848" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@72849" to="ObsicalLayer/@Area2D@72849" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206069" to="ObsicalLayer/@Area2D@206069" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206070" to="ObsicalLayer/@Area2D@206070" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206071" to="ObsicalLayer/@Area2D@206071" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206072" to="ObsicalLayer/@Area2D@206072" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206073" to="ObsicalLayer/@Area2D@206073" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206074" to="ObsicalLayer/@Area2D@206074" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206075" to="ObsicalLayer/@Area2D@206075" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206076" to="ObsicalLayer/@Area2D@206076" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206077" to="ObsicalLayer/@Area2D@206077" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206078" to="ObsicalLayer/@Area2D@206078" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206079" to="ObsicalLayer/@Area2D@206079" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/Coin" to="ObsicalLayer/Coin" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/Coin" to="ObsicalLayer/Coin" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@206089" to="ObsicalLayer/@Area2D@206089" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206089" to="ObsicalLayer/@Area2D@206089" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@206090" to="ObsicalLayer/@Area2D@206090" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206090" to="ObsicalLayer/@Area2D@206090" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@206091" to="ObsicalLayer/@Area2D@206091" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206091" to="ObsicalLayer/@Area2D@206091" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@206092" to="ObsicalLayer/@Area2D@206092" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206092" to="ObsicalLayer/@Area2D@206092" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@206093" to="ObsicalLayer/@Area2D@206093" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@206093" to="ObsicalLayer/@Area2D@206093" method="_on_body_entered"]

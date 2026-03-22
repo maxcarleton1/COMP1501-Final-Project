@@ -27,6 +27,13 @@ func update_chain():
 	rope.add_point(Vector2.ZERO)
 	rope.add_point(Vector2(0, rope_length))
 
-func _on_blade_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-	
+
+func _on_handle_body_entered(body: Node2D) -> void:
+	pass
+
+
+func _on_handle_body_exited(body: Node2D) -> void:
+	return
+	$Pivot/Handle.monitoring = false
+	await get_tree().create_timer(0.2).timeout
+	$Pivot/Handle.monitoring = true

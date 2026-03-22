@@ -27,3 +27,7 @@ position = Vector2(0, 800)
 [node name="AltitudeTracker" parent="." unique_id=174459157 instance=ExtResource("7_tipki")]
 
 [node name="EconomyDisplay" parent="." unique_id=1476314222 instance=ExtResource("8_tipki")]
+offset_left = -206.0
+offset_top = -107.0
+offset_right = -1715.0
+offset_bottom = -689.0

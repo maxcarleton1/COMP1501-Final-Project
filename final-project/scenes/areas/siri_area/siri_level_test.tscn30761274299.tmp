@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap.tscn" id="9_3v2ri"]
 [ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="10_rnrpi"]
 [ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player/player.tscn" id="11_bqdth"]
-[ext_resource type="PackedScene" uid="uid://2dfija7nlfj3" path="res://scenes/obstacles/spiderweb.tscn" id="12_y7v4m"]
+[ext_resource type="PackedScene" uid="uid://dxt3c6e72twel" path="res://scenes/obstacles/elevator.tscn" id="12_y7v4m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)
@@ -69,7 +69,7 @@ tile_map_data = PackedByteArray("AADx/wgAAAACAAYAAADx/wcAAAACAAYAAADx/wYAAAACAAY
 [node name="TileMapLayer" parent="." unique_id=1524709313 instance=ExtResource("4_r1c0q")]
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_rede4")]
-tile_map_data = PackedByteArray("AADd/xsAAAAAAAAAAQDv/xsAAAAAAAAAAgA=")
+tile_map_data = PackedByteArray("AADd/xsAAAAAAAAAAQDv/xsAAAAAAAAAAgDY/+z/AAAAAAAACAA=")
 
 [node name="Crusher" parent="." unique_id=1483566248 instance=ExtResource("6_f1pe1")]
 position = Vector2(-443, -443)
@@ -102,8 +102,10 @@ chain_length = 68.0
 [node name="Player" parent="." unique_id=1015420686 instance=ExtResource("11_bqdth")]
 position = Vector2(582, -243)
 
-[node name="Spiderweb" parent="." unique_id=236451701 instance=ExtResource("12_y7v4m")]
-position = Vector2(-342, -355)
+[node name="Elevator" parent="." unique_id=1456587134 instance=ExtResource("12_y7v4m")]
+position = Vector2(737, -172)
 
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x2" to="ObsicalLayer/Spike_1x2" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/Spiderweb" to="ObsicalLayer/Spiderweb" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/Spiderweb" to="ObsicalLayer/Spiderweb" method="_on_body_exited"]

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dn2gec4rsom5l"]
+
+[ext_resource type="Script" uid="uid://doqsg2yufyfeo" path="res://scripts/obstacles/Lift.gd" id="1_05sun"]
+[ext_resource type="Texture2D" uid="uid://mertrkxptrs7" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0048.png" id="2_4rs3t"]
+[ext_resource type="Texture2D" uid="uid://dn3mjqwk3f3i3" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0050.png" id="3_gjs7o"]
+
+[sub_resource type="Curve2D" id="Curve2D_05sun"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -72)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sumtg"]
+size = Vector2(144, 72)
+
+[node name="Lift" type="Node2D" unique_id=53379737]
+script = ExtResource("1_05sun")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=288509215]
+curve = SubResource("Curve2D_05sun")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1894740498]
+rotation = -1.5707964
+rotates = false
+loop = false
+
+[node name="Platform" type="AnimatableBody2D" parent="Path2D/PathFollow2D" unique_id=56313352 groups=["Obstacles"]]
+rotation = 1.5707964
+
+[node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Platform" unique_id=1063898980]
+position = Vector2(28, 28)
+scale = Vector2(4, 4)
+texture = ExtResource("2_4rs3t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Path2D/PathFollow2D/Platform" unique_id=877812717]
+position = Vector2(100, 28)
+scale = Vector2(4, 4)
+texture = ExtResource("3_gjs7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Platform" unique_id=1431623550]
+position = Vector2(64, 28)
+shape = SubResource("RectangleShape2D_sumtg")

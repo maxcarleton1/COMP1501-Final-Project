@@ -81,3 +81,5 @@ func toggle_economy_display():
 	else:
 		open_economy_display()
 	
+func _on_exit_pressed() -> void:
+	close_economy_display()

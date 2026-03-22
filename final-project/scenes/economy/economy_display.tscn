@@ -62,3 +62,4 @@ text = "Exit"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Upgrades" to="." method="_on_upgrades_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Exit" to="." method="_on_exit_pressed"]

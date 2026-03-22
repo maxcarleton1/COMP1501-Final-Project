@@ -3,6 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://biqsn4tug1nmc" path="res://assets/audio/dash.wav" id="1_2cqaq"]
 [ext_resource type="AudioStream" uid="uid://bh6unyejwimpm" path="res://assets/audio/jump.wav" id="1_5uy2b"]
 [ext_resource type="AudioStream" uid="uid://cs0vais2fj7j0" path="res://assets/audio/footstep_carpet_000.ogg" id="3_104id"]
+[ext_resource type="AudioStream" uid="uid://8vuh1dluluna" path="res://assets/audio/pickupCoin.wav" id="4_ycmhg"]
 
 [node name="PlayerSFXManager" type="Node2D" unique_id=1009318212]
 
@@ -24,3 +25,7 @@ pitch_scale = 0.5
 stream = ExtResource("3_104id")
 volume_db = 10.0
 pitch_scale = 0.8
+
+[node name="PickupCoin" type="AudioStreamPlayer2D" parent="." unique_id=1243272831]
+stream = ExtResource("4_ycmhg")
+volume_db = -5.0

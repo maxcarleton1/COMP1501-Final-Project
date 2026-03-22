@@ -136,3 +136,6 @@ func spawn_dash_ghost() -> void:
 	var tween := create_tween()
 	tween.tween_property(ghost, "modulate:a", 0.0, DASH_TRAIL_FADE_TIME)
 	tween.finished.connect(ghost.queue_free)
+func pickup_coin():
+	$PlayerSFXManager/PickupCoin.play()
+	

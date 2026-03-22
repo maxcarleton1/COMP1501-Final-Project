@@ -2,7 +2,6 @@ extends Node
 
 # Should only put important stuff here!
 
-
 enum difficulty {NORMAL, HARD, HELL_MODE}
 var current_difficulty := difficulty.NORMAL
 
@@ -37,8 +36,6 @@ func dif_to_str(dif: difficulty):
 		return "Hard!"
 	if dif == difficulty.HELL_MODE:
 		return "HELL MODE!!!"
-
-
 
 # Keeps track of the highest point reached per run, gets updated by the AltitudeTracker scene
 var best_altitude: float 

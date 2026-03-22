@@ -11,9 +11,10 @@ var upgrade_list: Array[ItemData] = [
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#print(shop_window)
+	#print(shop_window)	
 	shop_window.shop_item_selected.connect(item_selected)
 	display_items()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -67,3 +68,16 @@ func _on_items_pressed() -> void:
 
 func _on_upgrades_pressed() -> void:
 	display_upgrades()
+	
+func open_display_economy():
+	show()
+
+func close_display_economy():
+	hide()
+	
+func toggle_economy_display():
+	if (visible):
+		close_display_economy()
+	else:
+		open_display_economy()
+	

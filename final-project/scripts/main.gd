@@ -6,7 +6,15 @@ var barrier_spawn_pos: Vector2 = Vector2(0, 800)
 @onready var end_room := $LevelBuilder/EndRoom
 @onready var player := $Player
 
+#Physical shop item on the map's interaction area 
+@onready var shop_stand := $LevelBuilder/StartRoom/Shop/InteractionArea
+#Main window for the economy being displayed
+@onready var economy_display = $EconomyDisplay
+
 func _ready() -> void:
+	
+	economy_display.hide()
+	shop_stand.economy_display_requested.connect(economy_display.toggle_economy_display)
 	# Start room (starting the run, resetting levels upon hitting the bottom/loss)
 	start_room.start_run.connect(start_run)
 	start_room.hit_bottom.connect(reset_run)

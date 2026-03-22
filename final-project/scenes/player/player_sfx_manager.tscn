@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bfmollv5nuq8d"]
+
+[ext_resource type="AudioStream" uid="uid://biqsn4tug1nmc" path="res://assets/audio/dash.wav" id="1_2cqaq"]
+[ext_resource type="AudioStream" uid="uid://bh6unyejwimpm" path="res://assets/audio/jump.wav" id="1_5uy2b"]
+[ext_resource type="AudioStream" uid="uid://cs0vais2fj7j0" path="res://assets/audio/footstep_carpet_000.ogg" id="3_104id"]
+
+[node name="PlayerSFXManager" type="Node2D" unique_id=1009318212]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=2124846406]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="." unique_id=366349503]
+stream = ExtResource("1_5uy2b")
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="." unique_id=1816563818]
+stream = ExtResource("1_2cqaq")
+volume_db = -10.0
+
+[node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=616237628]
+stream = ExtResource("3_104id")
+volume_db = 10.0
+pitch_scale = 0.5
+
+[node name="Landing" type="AudioStreamPlayer2D" parent="." unique_id=834747212]
+stream = ExtResource("3_104id")
+volume_db = 10.0
+pitch_scale = 0.8

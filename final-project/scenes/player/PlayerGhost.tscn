@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dq6lwqvx0bbki"]
+
+[ext_resource type="Texture2D" uid="uid://bgls68hna65i2" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0001.png" id="1_qniqw"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1078185520]
+texture = ExtResource("1_qniqw")

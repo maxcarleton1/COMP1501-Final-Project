@@ -45,6 +45,7 @@ func upgrade_item(item: ItemData):
 		
 func add_item_to_inventory(item: ItemData):
 	print("Success: Item inventory logic goes here: " + item.name)
+	InventoryManager.addItem(item)
 
 func add_upgrade_to_inventory(item: ItemData):
 	print("Success: Upgrade item: " + item.name)

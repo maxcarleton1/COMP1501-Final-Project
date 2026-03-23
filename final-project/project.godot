@@ -19,6 +19,7 @@ config/icon="res://assets/art/icon.svg"
 
 GlobalStats="*uid://cj5k0j1r1w6br"
 CurrencyManager="*uid://dmgmuif0ns4qg"
+InventoryManager="*uid://bdqr75u4xkqy4"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="RoomData" format=3 uid="uid://c64cpcrr0iwbo"]
 
-[ext_resource type="PackedScene" uid="uid://dq12dy0s2m8vl" path="res://scenes/areas/brady_area/brady_new_level_2.tscn" id="1_egoyr"]
+[ext_resource type="PackedScene" uid="uid://dq12dy0s2m8vl" path="res://scenes/areas/BradyLeftLeft/brady_new_level_2.tscn" id="1_egoyr"]
 [ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_iu3bs"]
 
 [resource]

@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="1_3j8vd"]
 [ext_resource type="Script" uid="uid://dop3f51mb3gtn" path="res://resources/area_set.gd" id="2_ai6lg"]
 [ext_resource type="Resource" uid="uid://bw1ead31m6m0o" path="res://scenes/areas/max_area/max_area_start.tres" id="2_e0k7x"]
-[ext_resource type="Resource" uid="uid://5xhoxspt5mhn" path="res://scenes/areas/brady_area/brady_new_area.tres" id="2_qoc7k"]
+[ext_resource type="Resource" uid="uid://blpaoq5qpgurc" path="res://scenes/areas/BradyRightRight/RightRight.tres" id="2_fbkl2"]
+[ext_resource type="Resource" uid="uid://w5rjs2i71vv6" path="res://scenes/areas/BradyLeftRight/LeftRight.tres" id="2_y0ba0"]
+[ext_resource type="Resource" uid="uid://ckhy0s2q71rml" path="res://scenes/areas/BradyRightMiddle/RightMiddle.tres" id="3_0us53"]
 [ext_resource type="Resource" uid="uid://cvk61m41ule6r" path="res://scenes/areas/siri_area/siri_area.tres" id="3_fbkl2"]
+[ext_resource type="Resource" uid="uid://5xhoxspt5mhn" path="res://scenes/areas/BradyMidMid/brady_new_area.tres" id="3_y0ba0"]
+[ext_resource type="Resource" uid="uid://du1qil2jta1xf" path="res://scenes/areas/BradyLeftLeft/LeftLeft.tres" id="7_xifyu"]
 
 [resource]
 script = ExtResource("2_ai6lg")
-areas = Array[ExtResource("1_3j8vd")]([ExtResource("2_e0k7x"), ExtResource("3_fbkl2"), ExtResource("2_qoc7k")])
+areas = Array[ExtResource("1_3j8vd")]([ExtResource("7_xifyu"), ExtResource("2_y0ba0"), ExtResource("2_fbkl2"), ExtResource("3_0us53"), ExtResource("3_y0ba0"), ExtResource("2_e0k7x"), ExtResource("3_fbkl2")])
 metadata/_custom_type_script = "uid://dop3f51mb3gtn"

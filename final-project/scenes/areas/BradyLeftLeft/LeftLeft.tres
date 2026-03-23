@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Area" format=3 uid="uid://du1qil2jta1xf"]
+
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_2gk8e"]
+[ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="2_fc1wp"]
+[ext_resource type="Resource" uid="uid://cvl2eo6t8s4rs" path="res://scenes/areas/BradyLeftLeft/brady_level_1.tres" id="2_mcll7"]
+[ext_resource type="Resource" uid="uid://c64cpcrr0iwbo" path="res://scenes/areas/BradyLeftLeft/brady_new_level_2.tres" id="3_o4rqr"]
+
+[resource]
+script = ExtResource("2_fc1wp")
+rooms = Array[ExtResource("1_2gk8e")]([ExtResource("2_mcll7"), ExtResource("3_o4rqr")])
+random_order = true
+metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

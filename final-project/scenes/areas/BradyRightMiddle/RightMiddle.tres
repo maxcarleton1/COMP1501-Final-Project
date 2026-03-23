@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Area" format=3 uid="uid://ckhy0s2q71rml"]
+
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_lkf7t"]
+[ext_resource type="Resource" uid="uid://vubeqd4j57d8" path="res://scenes/areas/BradyRightMiddle/new_resource.tres" id="2_mxpa0"]
+[ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="2_uypji"]
+
+[resource]
+script = ExtResource("2_uypji")
+rooms = Array[ExtResource("1_lkf7t")]([ExtResource("2_mxpa0")])
+metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

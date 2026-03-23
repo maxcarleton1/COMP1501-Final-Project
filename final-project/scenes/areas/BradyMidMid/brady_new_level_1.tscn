@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://dmnko4h1j0eev"]
+
+[ext_resource type="Script" uid="uid://ifqdif1rk3u" path="res://scripts/areas/level_template.gd" id="1_1yomx"]
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_ec54e"]
+[ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="3_uufcl"]
+[ext_resource type="PackedScene" uid="uid://gvh0bp682lt0" path="res://scenes/obstacles/jump_pad.tscn" id="5_1yomx"]
+[ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="5_uvlti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
+size = Vector2(50, 1100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lum8"]
+size = Vector2(50, 1100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngxw1"]
+size = Vector2(2000, 1100)
+
+[node name="BradyLevel2" type="Node2D" unique_id=668189479]
+script = ExtResource("1_1yomx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023353773]
+position = Vector2(-975, 1.5)
+scale = Vector2(0.39062455, 8.6328125)
+texture = ExtResource("2_ec54e")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2112515524]
+position = Vector2(975, -0.5)
+scale = Vector2(0.39062455, 8.585938)
+texture = ExtResource("2_ec54e")
+
+[node name="SideHitboxes" type="StaticBody2D" parent="." unique_id=95022218]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SideHitboxes" unique_id=1739399963]
+position = Vector2(-975, 0)
+shape = SubResource("RectangleShape2D_mm7tu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="SideHitboxes" unique_id=969075803]
+position = Vector2(975, 0)
+shape = SubResource("RectangleShape2D_6lum8")
+
+[node name="RoomLimits" type="CollisionShape2D" parent="." unique_id=203734016]
+shape = SubResource("RectangleShape2D_ngxw1")
+disabled = true
+
+[node name="Entries" type="Node2D" parent="." unique_id=1962119952]
+
+[node name="Marker2D" type="Marker2D" parent="Entries" unique_id=1651751332]
+position = Vector2(0, 550)
+
+[node name="Exits" type="Node2D" parent="." unique_id=964654294]
+
+[node name="Marker2D" type="Marker2D" parent="Exits" unique_id=220438535]
+position = Vector2(0, -550)
+
+[node name="ForegroundLayer" parent="." unique_id=557791485 instance=ExtResource("3_uufcl")]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAD3/wcAAAAFAAEAAAD4/wcAAAACAAYAAAD5/wcAAAAEAAEAAAD6/wcAAAACAAEAAAACAAcAAAABAAEAAAADAAcAAAACAAEAAAAEAAcAAAACAAEAAAAFAAcAAAAFAAEAAAAGAAcAAAACAAYAAAAHAAcAAAAEAAEAAAAIAAcAAAACAAEAAAAJAAcAAAACAAEAAAAKAAcAAAACAAEAAAALAAcAAAACAAEAAAAMAAcAAAACAAEAAAANAAcAAAACAAEAAAAOAAcAAAACAAEAAAD2/wcAAAACAAEAAAD1/wcAAAACAAEAAAD0/wcAAAACAAEAAADz/wcAAAACAAEAAADy/wcAAAACAAEAAADx/wcAAAACAAEAAAD7/wcAAAACAAEAAAD8/wcAAAADAAAAAAAMAAIAAAABAAAAAAANAAIAAAACAAAAAAAOAAIAAAADAAAAAAAFAAUAAAABAAAAAAAGAAUAAAACAAAAAAAHAAUAAAADAAAAAAD3/wUAAAABAAEAAAD4/wUAAAACAAEAAAD5/wUAAAADAAEAAADx/wIAAAABAAAAAADy/wIAAAACAAAAAADz/wIAAAADAAAAAAD8/wgAAAADAAcAAAACAAgAAAABAAcAAAADAAgAAAACAAcAAAAEAAgAAAACAAcAAAAFAAgAAAACAAcAAAAGAAgAAAACAAcAAAAHAAgAAAACAAcAAAAIAAgAAAACAAcAAAAJAAgAAAACAAcAAAAKAAgAAAACAAcAAAALAAgAAAACAAcAAAAMAAgAAAACAAcAAAANAAgAAAACAAcAAAAOAAgAAAACAAcAAAD6/wgAAAACAAcAAAD7/wgAAAACAAcAAAD5/wgAAAACAAcAAAD4/wgAAAACAAcAAAD3/wgAAAACAAcAAAD2/wgAAAACAAcAAAD1/wgAAAACAAcAAAD0/wgAAAACAAcAAADz/wgAAAACAAcAAADy/wgAAAACAAcAAADx/wgAAAACAAcAAAD5/wYAAAADAAYAAAD4/wYAAAACAAYAAAD3/wYAAAABAAYAAAAFAAYAAAABAAYAAAAHAAYAAAADAAYAAAAGAAYAAAACAAYAAAD9/wAAAAACAAAAAAD+/wAAAAACAAcAAAD//wAAAAACAAcAAAAAAAAAAAACAAcAAAABAAAAAAACAAcAAAD/////AAACAAAAAAAAAP//AAADAAEAAAD+////AAABAAEAAADz/wEAAAAIAAQAAAAMAAEAAAAHAAQAAAACAAAAAAADAAAAAAD8/wAAAAABAAAAAAD7/wYAAAAFAAYAAAD5/wQAAAAFAAYAAAD6/wYAAAAFAAYAAAD8/wYAAAAEAAYAAAADAAYAAAAEAAYAAAAEAAYAAAAEAAYAAAAHAAQAAAAEAAYAAAANAAEAAAAIAAYAAADz/wYAAAAIAAYAAAD4/wQAAAAIAAYAAADy/wEAAAAGAAYAAAADAAAAAAADAAAAAAD7/wAAAAAIAAQAAGABAP//AAADAAAAAAAEAAAAAAAHAAQAAFA=")
+
+[node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_uvlti")]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAANAAMAAAAAAAAAATAOAAMAAAAAAAAAATDy/wMAAAAAAAAAATDx/wMAAAAAAAAAATD1/wYAAAAAAAAABwAJAAYAAAAAAAAABwDz/wUAAAAAAAAABQAMAAUAAAAAAAAABQA=")
+
+[node name="JumpPad" parent="." unique_id=1623090802 instance=ExtResource("5_1yomx")]
+position = Vector2(0, -93)
+scale = Vector2(1.5, 1.5)
+jump_height = 1000.0
+
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@69468" to="ObsicalLayer/@Area2D@69468" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@69469" to="ObsicalLayer/@Area2D@69469" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@69470" to="ObsicalLayer/@Area2D@69470" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@69471" to="ObsicalLayer/@Area2D@69471" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@69474" to="ObsicalLayer/@Area2D@69474" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@69474" to="ObsicalLayer/@Area2D@69474" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@69475" to="ObsicalLayer/@Area2D@69475" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@69475" to="ObsicalLayer/@Area2D@69475" method="_on_body_entered"]

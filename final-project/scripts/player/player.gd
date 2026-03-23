@@ -14,7 +14,7 @@ const PLAYER_GHOST_SCENE := preload("res://scenes/player/PlayerGhost.tscn")
 
 var MAX_FALL_SPEED := 750
 
-@onready var inventory_manager = $InventoryManager
+#@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var coyote_time := 0.1
@@ -101,10 +101,10 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 func get_speed():
-	return SPEED + inventory_manager.speedModifier
+	return SPEED + InventoryManager.speedModifier
 
 func get_dashspeed():
-	return DASH_SPEED + inventory_manager.dashSpeedModifier
+	return DASH_SPEED + InventoryManager.dashSpeedModifier
 
 func calculate_coyote(delta: float):
 	if !is_on_floor():

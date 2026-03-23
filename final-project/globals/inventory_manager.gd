@@ -72,6 +72,7 @@ func setUpgradeEffect(item:ItemData):
 	match item.name:
 		"Speed Boost":
 			speedModifier += 100
+			print(speedModifier)
 		"Dash Boost":
 			dashSpeedModifier += 100
 		"Hard Hat":

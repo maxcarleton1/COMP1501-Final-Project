@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://c5exrtvhnpj7e"]
+
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="1_7y453"]
+[ext_resource type="Script" uid="uid://chlog57n1vam5" path="res://resources/item_data.gd" id="2_jjpf4"]
+
+[resource]
+script = ExtResource("2_jjpf4")
+name = "Speed Boost"
+icon = ExtResource("1_7y453")
+item_type = 1
+metadata/_custom_type_script = "uid://chlog57n1vam5"

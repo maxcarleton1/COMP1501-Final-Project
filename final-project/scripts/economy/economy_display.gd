@@ -6,7 +6,7 @@ var item_list: Array[ItemData] = [
 	preload("res://assets/resources/economy/item/jump_boost.tres"),
 ]
 var upgrade_list: Array[ItemData] = [
-	preload("res://assets/resources/economy/upgrade/sprint_speed.tres")
+	preload("res://assets/resources/economy/upgrade/speed_boost.tres")
 ]
 
 # Called when the node enters the scene tree for the first time.
@@ -39,7 +39,7 @@ func purchase_item(item: ItemData):
 func upgrade_item(item: ItemData):
 	print("Upgrade item: " + item.name)
 	if(CurrencyManager.remove_coins(item.price)):
-		add_item_to_inventory(item)
+		add_upgrade_to_inventory(item)
 	else: 
 		print("Not enough coins")
 		
@@ -49,6 +49,7 @@ func add_item_to_inventory(item: ItemData):
 
 func add_upgrade_to_inventory(item: ItemData):
 	print("Success: Upgrade item: " + item.name)
+	InventoryManager.addUpgrade(item)
 	
 
 

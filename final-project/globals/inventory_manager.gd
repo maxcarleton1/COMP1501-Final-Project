@@ -1,6 +1,6 @@
 extends Node2D
 
-signal inventory_updated
+signal inventory_updated 
 
 var speedModifier := 0
 var dashSpeedModifier := 0	

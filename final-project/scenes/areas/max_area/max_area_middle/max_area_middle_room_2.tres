@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomData" format=3 uid="uid://p0m0tadpkxjn"]
+
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_csnp8"]
+[ext_resource type="PackedScene" uid="uid://u8dy8ymqgkfu" path="res://scenes/areas/max_area/max_area_middle/max_area_middle_room_2.tscn" id="1_eijka"]
+
+[resource]
+script = ExtResource("1_csnp8")
+room_scene = ExtResource("1_eijka")
+room_name = "Max room 2"
+metadata/_custom_type_script = "uid://0u6dlawkgsme"

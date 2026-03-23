@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bgig2rbaslj5l"]
+
+[ext_resource type="Script" uid="uid://dgwsokxeiulj2" path="res://scripts/player/bomb_entity.gd" id="1_y7f2k"]
+[ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="2_p1qbp"]
+[ext_resource type="Texture2D" uid="uid://b2yhwk4yn35ih" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0170.png" id="3_p1qbp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y7f2k"]
+radius = 10.666667
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p1qbp"]
+radius = 163.0276
+
+[node name="BombEntity" type="RigidBody2D" unique_id=1348483446]
+collision_layer = 4
+collision_mask = 4
+gravity_scale = 2.0
+script = ExtResource("1_y7f2k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398734095]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_y7f2k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=498930459]
+position = Vector2(0, -12)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_p1qbp")
+
+[node name="Explosion" type="Area2D" parent="." unique_id=2130149763]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion" unique_id=1147689988]
+shape = SubResource("CircleShape2D_p1qbp")
+
+[node name="ExplosionSprite" type="Sprite2D" parent="." unique_id=2035161160]
+scale = Vector2(22.333332, 20)
+texture = ExtResource("3_p1qbp")
+
+[connection signal="body_entered" from="Explosion" to="." method="_on_explosion_body_entered"]

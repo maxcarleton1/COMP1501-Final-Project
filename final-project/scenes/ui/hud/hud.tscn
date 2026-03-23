@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bxvpj78ne47el" path="res://scripts/ui/hud/hud.gd" id="1_ax4tw"]
 [ext_resource type="PackedScene" uid="uid://vxkbukagdda8" path="res://scenes/ui/hud/layers/item_layer.tscn" id="2_c45xl"]
 [ext_resource type="PackedScene" uid="uid://cytjlq3acos5a" path="res://scenes/ui/hud/layers/altitude_layer.tscn" id="2_cgeww"]
+[ext_resource type="PackedScene" uid="uid://bl3plpi3cgru4" path="res://scenes/ui/hud/layers/hotbar_layer.tscn" id="5_2wu1p"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1806229052]
 script = ExtResource("1_ax4tw")
@@ -26,3 +27,7 @@ script = null
 
 [node name="ItemLayer" parent="MarginContainer/VBoxContainer" unique_id=1046165136 instance=ExtResource("2_c45xl")]
 layout_mode = 2
+
+[node name="HotbarLayer" parent="MarginContainer/VBoxContainer" unique_id=1862772098 instance=ExtResource("5_2wu1p")]
+layout_mode = 2
+script = null

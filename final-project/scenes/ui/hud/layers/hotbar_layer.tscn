@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bl3plpi3cgru4"]
+
+[ext_resource type="PackedScene" uid="uid://d2m1tgl6hy0km" path="res://scenes/ui/hud/hotbar/hotbar_slot.tscn" id="1_5wafi"]
+
+[node name="HotbarLayer" type="HBoxContainer" unique_id=1862772098]
+
+[node name="HotbarContainer" type="VBoxContainer" parent="." unique_id=800392002]
+layout_mode = 2
+
+[node name="HotbarSlot" parent="HotbarContainer" unique_id=1371411699 instance=ExtResource("1_5wafi")]
+layout_mode = 2
+
+[node name="HotbarSlot2" parent="HotbarContainer" unique_id=701785575 instance=ExtResource("1_5wafi")]
+layout_mode = 2
+
+[node name="HotbarSlot3" parent="HotbarContainer" unique_id=75914377 instance=ExtResource("1_5wafi")]
+layout_mode = 2
+
+[node name="HotbarSlot4" parent="HotbarContainer" unique_id=1906654513 instance=ExtResource("1_5wafi")]
+layout_mode = 2
+
+[node name="HotbarSlot5" parent="HotbarContainer" unique_id=620203127 instance=ExtResource("1_5wafi")]
+layout_mode = 2

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://blmttbq1b6ioi"]
+
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="1_octqq"]
+[ext_resource type="Script" uid="uid://chlog57n1vam5" path="res://resources/item_data.gd" id="2_2npny"]
+
+[resource]
+script = ExtResource("2_2npny")
+name = "Jump boost 2"
+description = "Increase your jump height"
+icon = ExtResource("1_octqq")
+metadata/_custom_type_script = "uid://chlog57n1vam5"

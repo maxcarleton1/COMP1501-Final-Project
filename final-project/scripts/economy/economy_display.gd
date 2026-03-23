@@ -4,6 +4,7 @@ extends Control
 
 var item_list: Array[ItemData] = [
 	preload("res://assets/resources/economy/item/jump_boost.tres"),
+	preload("res://assets/resources/economy/item/jump_boost2.tres"),
 ]
 var upgrade_list: Array[ItemData] = [
 	preload("res://assets/resources/economy/upgrade/speed_boost.tres")
@@ -44,11 +45,11 @@ func upgrade_item(item: ItemData):
 		print("Not enough coins")
 		
 func add_item_to_inventory(item: ItemData):
-	print("Success: Item inventory logic goes here: " + item.name)
+	#print("Success: Item inventory logic goes here: " + item.name)
 	InventoryManager.addItem(item)
 
 func add_upgrade_to_inventory(item: ItemData):
-	print("Success: Upgrade item: " + item.name)
+	#print("Success: Upgrade item: " + item.name)
 	InventoryManager.addUpgrade(item)
 	
 

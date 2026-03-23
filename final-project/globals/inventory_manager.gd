@@ -1,56 +1,62 @@
 extends Node2D
 
+class InventorySlot:
+	var item: ItemData = null
+	var quantity: int = 0
+
+
 signal inventory_updated 
 
 var speedModifier := 0
 var dashSpeedModifier := 0	
 var hardHat := false
 
-var HOTBAR_SIZE = 5;
+var HOTBAR_SIZE : int = 5;
 
-#Inventory items and the hotbar slots
-var items := []
-var itemCount := 0
+#Inventory item hotbar slots
+var items : Array[InventorySlot]= []
 
 func _ready() -> void:
-	print("Inventory manager ready ran")
 	create_hotbar()
 
-func print_items():
-	for i in range(itemCount):
-		print("Item ", i, ":", items[i])
-
 func create_hotbar():
-	#Size and fill null originally
-	items.resize(HOTBAR_SIZE)
-	fillNull()
+	items.clear()
+	for i in range(HOTBAR_SIZE):
+		items.append(InventorySlot.new())
 	inventory_updated.emit()
 	
-func fillNull():
-	items.fill(null)
-	
-func set_hotbar_slot(item: ItemData, index: int) -> bool:
-	
+func set_hotbar_slot(item: ItemData, index: int, quantity: int = 1) -> bool:
 	#Check index positions 
-	if(index < -1 || index >= items.size()):
+	if(index < 0 || index >= items.size()):
 		return false
-	
-	##Check size before setting
-	#if(itemCount + 1 > HOTBAR_SIZE):
-		#return false
-	items[index] = item
-	itemCount = itemCount + 1 #Using a count since setting null elements in array to empty slot initialization
+	items[index].item = item
+	items[index].quantity = quantity
 	inventory_updated.emit()
-	print("Inventory updated signal emitted in add hotbar slot end")
 	return true
 	
 func get_hotbar_slot(index: int):
-	if(index < 0 || index > HOTBAR_SIZE):
+	if(index < 0 || index >= HOTBAR_SIZE):
 		return -1
 	return items.get(index)
 
 func add_hotbar_slot_end(item: ItemData):
-	set_hotbar_slot(item, itemCount)
+	
+	#If existing slot, add to it
+	for i in range(items.size()):
+		if items[i].item != null and items[i].item == item:
+			items[i].quantity += 1
+			inventory_updated.emit()
+			return true
+			
+	#No existing slot, make new one 
+	for i in range(items.size()):
+		if items[i].item == null:
+			#Emits in function here here
+			set_hotbar_slot(item, i)
+			return true
+			
+	print("Hotbar full, cannot add to end")
+	return false
 
 func addItem(item: ItemData):
 	add_hotbar_slot_end(item)
@@ -59,9 +65,8 @@ func addUpgrade(item:ItemData):
 	setUpgradeEffect(item)
 
 func clearItems():
-	items.clear()
-	create_hotbar() #Needed or just fillNull()?
-	itemCount = 0
+	#Clears before creating new hotbar
+	create_hotbar()
 	
 func clearUpgrades():
 	speedModifier = 0

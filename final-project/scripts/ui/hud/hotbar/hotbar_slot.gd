@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var icon_texture = $Image
+@onready var icon_texture = $Icon
 @onready var quantity_label = $Quantity
 
 var default_icon_not_found = preload("res://assets/art/icon.svg")
@@ -32,10 +32,10 @@ func set_item_slot(item: ItemData):
 	print("testing")
 	
 func set_item_quantity(quantity: int):
-	quantity_label = quantity
+	quantity_label.text = str(quantity)
 
 func set_item_texture(texture: Texture2D):
-	icon_texture = texture
+	icon_texture.texture = texture
 
 func set_selected_slot():
 	#Change colour of selected for scroll / use?

@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://ball4glk7xoxp"]
+[gd_scene format=4 uid="uid://bpji5560h13w7"]
 
 [ext_resource type="Script" uid="uid://ifqdif1rk3u" path="res://scripts/areas/level_template.gd" id="1_ocech"]
 [ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_y7v4m"]

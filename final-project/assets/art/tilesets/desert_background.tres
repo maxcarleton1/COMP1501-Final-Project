@@ -1,0 +1,18 @@
+[gd_resource type="TileSet" format=3 uid="uid://bvd2drad64nxm"]
+
+[ext_resource type="Texture2D" uid="uid://n2c8numyqrgy" path="res://assets/art/kenney_pixel-platformer/Tilemap/tilemap-backgrounds_packed.png" id="1_lu8mm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nk724"]
+texture = ExtResource("1_lu8mm")
+margins = Vector2i(96, 0)
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[resource]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_nk724")

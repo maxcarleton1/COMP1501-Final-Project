@@ -26,7 +26,7 @@ func _ready() -> void:
 	end_room.win_hitbox.connect(win)
 	
 	# Player (beginning the fall)
-	player.player_start_fall.connect(fall_down)
+	player.player_start_fall.connect(reset_barrier)
 	
 	# This is just so the player doesn't drop on game startup
 	$Player.global_position = $LevelBuilder/StartRoom/StopFall/CollisionShape2D.global_position
@@ -43,7 +43,7 @@ func start_run():
 	# Start barrier
 	barrier.start_moving()
 
-func fall_down():
+func reset_barrier():
 	# Reset barrier
 	barrier.reset(barrier_spawn_pos, true)
 	

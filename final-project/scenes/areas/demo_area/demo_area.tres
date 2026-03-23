@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_8ftlm"]
 [ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="2_8ftlm"]
-[ext_resource type="Resource" uid="uid://cvl2eo6t8s4rs" path="res://scenes/areas/demo_area/brady_level_1.tres" id="2_j7oo0"]
-[ext_resource type="Resource" uid="uid://kh7dckf0d68f" path="res://scenes/areas/demo_area/brady_level_2.tres" id="3_xuru6"]
-[ext_resource type="Resource" uid="uid://c1jvepwd5rcf1" path="res://scenes/areas/demo_area/brady_level_3.tres" id="4_mvfad"]
+[ext_resource type="Resource" uid="uid://cvl2eo6t8s4rs" path="res://scenes/areas/demo_area/brady_level_1.tres" id="2_q7qkj"]
+[ext_resource type="Resource" uid="uid://kh7dckf0d68f" path="res://scenes/areas/demo_area/brady_level_2.tres" id="3_quusb"]
+[ext_resource type="Resource" uid="uid://c1jvepwd5rcf1" path="res://scenes/areas/demo_area/brady_level_3.tres" id="4_4cap8"]
 
 [resource]
 script = ExtResource("2_8ftlm")
-rooms = Array[ExtResource("1_8ftlm")]([ExtResource("2_j7oo0"), ExtResource("3_xuru6"), ExtResource("4_mvfad")])
+rooms = Array[ExtResource("1_8ftlm")]([ExtResource("2_q7qkj"), ExtResource("3_quusb"), ExtResource("4_4cap8")])
 random_order = true
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

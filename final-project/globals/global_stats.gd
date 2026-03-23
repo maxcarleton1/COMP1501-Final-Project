@@ -26,7 +26,7 @@ func _update_difficulty_data():
 
 # Helpers for buttons
 func cycle_difficulty():
-	current_difficulty = (current_difficulty + 1) % difficulty.size()
+	current_difficulty = ((current_difficulty + 1) % difficulty.size()) as difficulty
 	_update_difficulty_data()
 
 func dif_to_str(dif: difficulty):

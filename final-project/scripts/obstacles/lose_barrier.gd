@@ -21,8 +21,9 @@ func start_moving():
 func reset(pos: Vector2, smooth: bool):
 	# Smoothly descend to the start point
 	if not smooth:
-		lerp(global_position, pos, 0.5)
-	else:
 		global_position = pos
+	else:
+		var tween = create_tween()
+		tween.tween_property(self, "position:y", pos.y, 2.0).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 		
 	started = false

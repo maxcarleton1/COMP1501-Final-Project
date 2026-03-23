@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://0fa57m1dbovk" path="res://scenes/ui/hud/hud.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://ciwgopc25eddt" path="res://scenes/player/altitude_tracker.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://jrfeun3riaij" path="res://scenes/economy/economy_display.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://dvo6rbxbs8ttq" path="res://scenes/player/parallax_background.tscn" id="9_85g3d"]
 
 [node name="Main" type="Node" unique_id=974304658]
 script = ExtResource("1_jyhfs")
@@ -31,3 +32,5 @@ offset_left = -206.0
 offset_top = -107.0
 offset_right = -1715.0
 offset_bottom = -689.0
+
+[node name="ParallaxBackground" parent="." unique_id=681032578 instance=ExtResource("9_85g3d")]

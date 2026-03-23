@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RoomData" format=3 uid="uid://dupo571fnx8xo"]
+
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_7yw5n"]
+[ext_resource type="PackedScene" uid="uid://dmnko4h1j0eev" path="res://scenes/areas/brady_area/brady_new_level_1.tscn" id="1_ks01v"]
+
+[resource]
+script = ExtResource("1_7yw5n")
+room_scene = ExtResource("1_ks01v")
+room_name = "Brady New Level 1"
+metadata/_custom_type_script = "uid://0u6dlawkgsme"

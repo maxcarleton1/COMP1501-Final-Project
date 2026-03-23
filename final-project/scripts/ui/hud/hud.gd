@@ -24,7 +24,10 @@ func altitude_update(value: float):
 	altitude_label.text = "%.2fm" % (value)
 
 func update_hotbar_slots_UI():
+	print("Hotbar slots update ui", hotbar_slots)
 	for i in range(hotbar_slots.size()):
 		var curItem = InventoryManager.get_hotbar_slot(i)
+		print("curItem in loop: ", curItem)
 		hotbar_slots[i].set_item_slot(curItem)
-	InventoryManager.print_items()
+		
+	#InventoryManager.print_items()

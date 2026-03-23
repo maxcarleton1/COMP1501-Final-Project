@@ -15,16 +15,21 @@ func _process(delta: float) -> void:
 
 #func set_item_slot(image: TextureRect, quantity: int):
 func set_item_slot(item: ItemData):
-	#Change image, and quantity
+	
 	if(item == null):
-		icon_texture = null
-		quantity_label = null
-	#Valid, set
-	#if(item.icon != null): 
-		#set_item_texture(item.icon)
-	#else: #If image not set use placeholder
 		set_item_texture(default_icon_not_found)
-	set_item_quantity(0) #Start at 0
+		set_item_quantity(0)
+		return
+	#Change image, and quantity
+	#Valid, set
+	print("item icon testing testing testing", item.icon)
+	
+	if(item.icon != null): 
+		set_item_texture(item.icon)
+	else: #If image not set use placeholder
+		set_item_texture(default_icon_not_found)
+	set_item_quantity(1)
+	print("testing")
 	
 func set_item_quantity(quantity: int):
 	quantity_label = quantity

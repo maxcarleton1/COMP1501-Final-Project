@@ -11,7 +11,7 @@ _data = {
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sumtg"]
-size = Vector2(144, 72)
+size = Vector2(128, 64)
 
 [node name="Lift" type="Node2D" unique_id=53379737]
 script = ExtResource("1_05sun")
@@ -20,7 +20,9 @@ script = ExtResource("1_05sun")
 curve = SubResource("Curve2D_05sun")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1894740498]
+position = Vector2(0, -41.405052)
 rotation = -1.5707964
+progress = 41.399998
 rotates = false
 loop = false
 
@@ -28,15 +30,15 @@ loop = false
 rotation = 1.5707964
 
 [node name="Sprite2D" type="Sprite2D" parent="Path2D/PathFollow2D/Platform" unique_id=1063898980]
-position = Vector2(28, 28)
-scale = Vector2(4, 4)
+position = Vector2(32, 32)
+scale = Vector2(3.556, 3.556)
 texture = ExtResource("2_4rs3t")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Path2D/PathFollow2D/Platform" unique_id=877812717]
-position = Vector2(100, 28)
-scale = Vector2(4, 4)
+position = Vector2(95, 32)
+scale = Vector2(3.555, 3.555)
 texture = ExtResource("3_gjs7o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Platform" unique_id=1431623550]
-position = Vector2(64, 28)
+position = Vector2(64, 32)
 shape = SubResource("RectangleShape2D_sumtg")

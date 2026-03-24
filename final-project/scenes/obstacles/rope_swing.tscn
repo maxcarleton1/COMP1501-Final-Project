@@ -26,9 +26,6 @@ texture = ExtResource("2_j4ij6")
 scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_7o1ld")
 
-[node name="Marker2D" type="Marker2D" parent="Pivot/Handle" unique_id=740611752]
-position = Vector2(0, 2)
-
 [node name="Sprite2D" type="Sprite2D" parent="Pivot" unique_id=68861307]
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("2_j4ij6")

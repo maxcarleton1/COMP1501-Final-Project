@@ -22,7 +22,11 @@ func generate_area_set(area_set: AreaSet):
 	generate_start_room()
 	
 	for area in area_set.areas: # Generate each area individually
-		var temp := generate_area(area, start_position) # num_rooms is optional
+		var temp: Array[Node2D]
+		if area.num_to_generate == -1:
+			temp = generate_area(area, start_position) # num_rooms is optional
+		else:
+			temp = generate_area(area, start_position, area.num_to_generate) # num_rooms is optional
 		call_deferred("add_children", temp)
 	
 	generate_end_room()

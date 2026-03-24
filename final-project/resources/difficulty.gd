@@ -1,7 +1,13 @@
 extends Resource
 class_name DifficultyConfig
 
-@export var barrier_speed: int
+# Area 1
+@export var barrier_speed: int = 100
+
+# Area 2
+@export var dust_devil_cooldown: float = 7 # Time between warning signals, in seconds
+@export var dust_devil_timer: float = 1 # How long the vortex lasts, in seconds
+@export var dust_devil_width_scale: float = 1 # For collision hitbox and sprite
 
 # Number of rooms to generate per area, -1 means all
 # Could cause issues, might be better to leave it for now

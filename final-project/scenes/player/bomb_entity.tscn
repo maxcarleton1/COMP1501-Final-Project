@@ -2,13 +2,70 @@
 
 [ext_resource type="Script" uid="uid://dgwsokxeiulj2" path="res://scripts/player/bomb_entity.gd" id="1_y7f2k"]
 [ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="2_p1qbp"]
-[ext_resource type="Texture2D" uid="uid://b2yhwk4yn35ih" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0170.png" id="3_p1qbp"]
+[ext_resource type="Texture2D" uid="uid://fdpiuh1abg2j" path="res://assets/art/bomb/explosion.png" id="3_p1qbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7f2k"]
 radius = 10.666667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p1qbp"]
 radius = 163.0276
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t08xy"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxgys"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xllnt"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hykc"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb5ch"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuxy6"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjsca"]
+atlas = ExtResource("3_p1qbp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atsdy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t08xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxgys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xllnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hykc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb5ch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuxy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjsca")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BombEntity" type="RigidBody2D" unique_id=1348483446]
 collision_layer = 4
@@ -30,8 +87,15 @@ texture = ExtResource("2_p1qbp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion" unique_id=1147689988]
 shape = SubResource("CircleShape2D_p1qbp")
 
-[node name="ExplosionSprite" type="Sprite2D" parent="." unique_id=2035161160]
-scale = Vector2(22.333332, 20)
-texture = ExtResource("3_p1qbp")
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." unique_id=1552318971]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_atsdy")
+speed_scale = 6.0
+
+[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1467167981]
+
+[node name="ExplosionDuration" type="Timer" parent="." unique_id=1093871024]
+wait_time = 0.1
+one_shot = true
 
 [connection signal="body_entered" from="Explosion" to="." method="_on_explosion_body_entered"]

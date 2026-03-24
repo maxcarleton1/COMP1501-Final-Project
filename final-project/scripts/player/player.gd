@@ -31,6 +31,9 @@ var can_bomb := false
 
 signal player_start_fall
 
+func _ready():
+	$BombCooldownBar.hide()
+
 func fall():
 	# Turn off most collision and fall at a constant rate
 	falling = true

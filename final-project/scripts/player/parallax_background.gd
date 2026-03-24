@@ -9,7 +9,7 @@ var current_background := possible_background.FOREST
 @onready var camera := $"../Camera2D"
 
 var x_scroll_amount := 0.05
-var y_scroll_amount := 0.1
+var y_scroll_amount := 0.05
 
 func _ready() -> void:
 	switch_background(possible_background.FOREST)

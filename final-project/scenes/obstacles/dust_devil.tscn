@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b57q745n5mgey"]
+
+[ext_resource type="Script" uid="uid://5nmwoknduwc2" path="res://scripts/obstacles/dust_devil.gd" id="1_8g5u7"]
+[ext_resource type="Texture2D" uid="uid://c5s7gw0u7fgdp" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0011.png" id="2_wd151"]
+[ext_resource type="Texture2D" uid="uid://d2akl5kes5f4n" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0012.png" id="3_yamb2"]
+[ext_resource type="Texture2D" uid="uid://87ay88blbia0" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0010.png" id="4_4ystx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ei5cl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wd151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yamb2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1nwv"]
+size = Vector2(200, 1200)
+
+[node name="DustDevil" type="Node2D" unique_id=1734531148]
+script = ExtResource("1_8g5u7")
+
+[node name="VortexSprite" type="AnimatedSprite2D" parent="." unique_id=1600423131]
+sprite_frames = SubResource("SpriteFrames_ei5cl")
+
+[node name="WarningSprite" type="Sprite2D" parent="." unique_id=2119182895]
+texture = ExtResource("4_4ystx")
+
+[node name="VortexArea" type="Area2D" parent="." unique_id=1178781848]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VortexArea" unique_id=1098476726]
+shape = SubResource("RectangleShape2D_c1nwv")
+
+[node name="DustDevilTimer" type="Timer" parent="." unique_id=867592391]
+one_shot = true
+
+[node name="DustDevilCooldown" type="Timer" parent="." unique_id=1921834522]
+wait_time = 7.0
+one_shot = true
+
+[node name="WarnTimer" type="Timer" parent="." unique_id=201651306]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="DustDevilTimer" to="." method="_on_dust_devil_timer_timeout"]
+[connection signal="timeout" from="DustDevilCooldown" to="." method="_on_dust_devil_cooldown_timeout"]
+[connection signal="timeout" from="WarnTimer" to="." method="_on_warn_timer_timeout"]

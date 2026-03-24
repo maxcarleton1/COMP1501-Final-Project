@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="4_4k4xq"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="5_ovg1f"]
 [ext_resource type="PackedScene" uid="uid://gvh0bp682lt0" path="res://scenes/obstacles/jump_pad.tscn" id="7_4h4xf"]
-[ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap.tscn" id="8_jley1"]
+[ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap-f.tscn" id="8_jley1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)

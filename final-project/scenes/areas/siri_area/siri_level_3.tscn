@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="5_vrdba"]
 [ext_resource type="PackedScene" uid="uid://cf8yymnhfc2qd" path="res://scenes/obstacles/crusher.tscn" id="6_xgqv0"]
 [ext_resource type="PackedScene" uid="uid://gvh0bp682lt0" path="res://scenes/obstacles/jump_pad.tscn" id="9_rgu2k"]
-[ext_resource type="PackedScene" uid="uid://dckl2cklcq5yf" path="res://scenes/obstacles/falling_spike.tscn" id="10_vrdba"]
-[ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap.tscn" id="11_vrdba"]
+[ext_resource type="PackedScene" uid="uid://dckl2cklcq5yf" path="res://scenes/obstacles/falling_spike_f.tscn" id="10_vrdba"]
+[ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap-f.tscn" id="11_vrdba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mm7tu"]
 size = Vector2(50, 1100)

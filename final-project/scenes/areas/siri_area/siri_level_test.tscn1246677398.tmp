@@ -103,7 +103,7 @@ chain_length = 68.0
 position = Vector2(582, -243)
 
 [node name="Spiderweb" parent="." unique_id=236451701 instance=ExtResource("12_y7v4m")]
-position = Vector2(-247, -315)
+position = Vector2(-342, -355)
 
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x2" to="ObsicalLayer/Spike_1x2" method="_on_body_entered"]

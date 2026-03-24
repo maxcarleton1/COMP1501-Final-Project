@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d2m1tgl6hy0km"]
+
+[ext_resource type="Script" uid="uid://i3a0wvyro4am" path="res://scripts/ui/hud/hotbar/hotbar_slot.gd" id="1_ly3vw"]
+
+[node name="HotbarSlot" type="Panel" unique_id=1371411699]
+custom_minimum_size = Vector2(100, 100)
+script = ExtResource("1_ly3vw")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1478537750]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Quantity" type="Label" parent="." unique_id=1174692955]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 35.0
+offset_right = 41.0
+offset_bottom = 58.0

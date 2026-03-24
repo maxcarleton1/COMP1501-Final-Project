@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://brb23qai2grtt"]
-
-[ext_resource type="TileSet" uid="uid://bvd2drad64nxm" path="res://assets/art/tilesets/desert_background.tres" id="1_udx4i"]
-
-[node name="MaxAreaBackground" type="TileMapLayer" unique_id=979604749]
-z_index = -1
-scale = Vector2(4, 4)
-tile_set = ExtResource("1_udx4i")
-navigation_enabled = false

@@ -14,7 +14,7 @@ const PLAYER_GHOST_SCENE := preload("res://scenes/player/PlayerGhost.tscn")
 
 var MAX_FALL_SPEED := 750
 
-@onready var inventory_manager = $InventoryManager
+#@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var coyote_time := 0.1
@@ -23,12 +23,20 @@ var can_dash := true
 var dash_speed_boost := false
 var falling := false # When the player loses, they fall down
 
+# Bomb logic
+var bomb: RigidBody2D
+const BOMB_ENTITY := preload("res://scenes/player/bomb_entity.tscn")
+var unlocked_bomb := false
+var can_bomb := false
+
 signal player_start_fall
 
 func fall():
 	# Turn off most collision and fall at a constant rate
 	falling = true
 	velocity = Vector2.ZERO
+	
+	unlocked_bomb = false
 	
 	set_collision_mask_value(1, false) # Layer 1 = most ground/interactable objects, not including walls (Layer 2 also)
 	set_collision_layer_value(5, true) # Layer 5 = stop lose barrier (in start_room)
@@ -94,6 +102,17 @@ func _physics_process(delta: float):
 				velocity.x = get_dashspeed() * direction
 			else:
 				velocity.x = direction * get_dashspeed()
+				
+		if unlocked_bomb:
+			if Input.is_action_just_pressed("Interact") and can_bomb and not bomb and not falling:
+				# bomb logic here
+				spawn_bomb()
+				
+				$BombCooldown.start()
+				$BombCooldownBar.show()
+				can_bomb = false
+			var percentage_time: float = (1.0 - $BombCooldown.time_left / $BombCooldown.wait_time) * 100.0
+			$BombCooldownBar.value = 100.0 - percentage_time
 
 	else: # Falling
 		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta)
@@ -101,10 +120,10 @@ func _physics_process(delta: float):
 	move_and_slide()
 
 func get_speed():
-	return SPEED + inventory_manager.speedModifier
+	return SPEED + InventoryManager.speedModifier
 
 func get_dashspeed():
-	return DASH_SPEED + inventory_manager.dashSpeedModifier
+	return DASH_SPEED + InventoryManager.dashSpeedModifier
 
 func calculate_coyote(delta: float):
 	if !is_on_floor():
@@ -139,3 +158,20 @@ func spawn_dash_ghost() -> void:
 func pickup_coin():
 	$PlayerSFXManager/PickupCoin.play()
 	
+# Bomb logic
+func unlock_bomb():
+	unlocked_bomb = true
+	$BombCooldown.start()
+	
+	$BombCooldownBar.show()
+
+func spawn_bomb():
+	if not bomb: # Just to prevent spawning one right when you explode one
+		bomb = BOMB_ENTITY.instantiate()
+		get_parent().add_child(bomb)
+		bomb.global_position = global_position
+		bomb.linear_velocity = velocity * 0.8 # Just a bit slower so it lags behind you slightly
+	
+func _on_bomb_cooldown_timeout():
+	can_bomb = true
+	$BombCooldownBar.hide()

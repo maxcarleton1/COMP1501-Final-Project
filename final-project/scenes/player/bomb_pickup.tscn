@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brvjuo5lunom2"]
+
+[ext_resource type="Script" uid="uid://c0mf3b7bnlsc5" path="res://scripts/player/bomb_pickup.gd" id="1_ttayj"]
+[ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="2_ttayj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttayj"]
+size = Vector2(70, 90)
+
+[node name="BombPickup" type="Area2D" unique_id=417895954]
+script = ExtResource("1_ttayj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=925411493]
+shape = SubResource("RectangleShape2D_ttayj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1383825103]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ttayj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

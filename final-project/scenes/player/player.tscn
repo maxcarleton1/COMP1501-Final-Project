@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d3mcs8l2bb0mb" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0000.png" id="2_p47bc"]
 [ext_resource type="PackedScene" uid="uid://c8ccrgctyxv6n" path="res://scenes/player/inventory_manager.tscn" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://bfmollv5nuq8d" path="res://scenes/player/player_sfx_manager.tscn" id="4_lvxji"]
+[ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="7_5gtgg"]
+[ext_resource type="Texture2D" uid="uid://fdov2q23kknk" path="res://assets/art/bomb/cooldowntop.png" id="8_h17s1"]
+[ext_resource type="Texture2D" uid="uid://5w50e34xqjd2" path="res://assets/art/bomb/cooldownbackground.png" id="9_je7p5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -43,15 +46,6 @@ animations = [{
 z_index = 3
 collision_mask = 3
 script = ExtResource("1_3vyb7")
-SPEED = null
-DASH_SPEED = null
-ACCELERATION = null
-FRICTION = null
-AIR_FRICTION = null
-JUMP_VELOCITY = null
-JUMP_HOLD_MULTIPLIER = null
-DASH_TRAIL_FADE_TIME = null
-DASH_TRAIL_ALPHA = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1423705133]
 sprite_frames = SubResource("SpriteFrames_qhqgy")
@@ -75,5 +69,26 @@ one_shot = true
 
 [node name="PlayerSFXManager" parent="." unique_id=1009318212 instance=ExtResource("4_lvxji")]
 
+[node name="BombCooldown" type="Timer" parent="." unique_id=853147022]
+wait_time = 1.5
+one_shot = true
+
+[node name="BombCooldownBar" type="TextureProgressBar" parent="." unique_id=2051336703]
+visible = false
+offset_left = -6.0
+offset_top = -27.000002
+offset_right = 34.0
+offset_bottom = 20.999998
+scale = Vector2(0.3, 0.3)
+rounded = true
+fill_mode = 4
+texture_under = ExtResource("7_5gtgg")
+texture_over = ExtResource("8_h17s1")
+texture_progress = ExtResource("9_je7p5")
+tint_under = Color(1, 1, 1, 0.39215687)
+tint_over = Color(1, 1, 1, 0.39215687)
+tint_progress = Color(1, 1, 1, 0.39215687)
+
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DashSpeedBoost" to="." method="_on_dash_speed_boost_timeout"]
+[connection signal="timeout" from="BombCooldown" to="." method="_on_bomb_cooldown_timeout"]

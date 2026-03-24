@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dgjbspkurlj6p"]
 
 [ext_resource type="PackedScene" uid="uid://e3a4qcsxiep6" path="res://scenes/obstacles/spike_1x1.tscn" id="1_lx1a1"]
+[ext_resource type="PackedScene" uid="uid://clbfm2ntybskt" path="res://scenes/obstacles/FallingPlatform.tscn" id="2_6oly2"]
 [ext_resource type="PackedScene" uid="uid://cngmtxuidwop2" path="res://scenes/obstacles/spike_1x2.tscn" id="2_wial1"]
 [ext_resource type="PackedScene" uid="uid://dckl2cklcq5yf" path="res://scenes/obstacles/falling_spike_f.tscn" id="3_gvol7"]
 [ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap-f.tscn" id="4_qfdth"]
@@ -18,6 +19,7 @@ scenes/5/scene = ExtResource("5_gkn2c")
 scenes/6/scene = ExtResource("6_kbnnr")
 scenes/7/scene = ExtResource("7_g4bqq")
 scenes/8/scene = ExtResource("8_g4bqq")
+scenes/10/scene = ExtResource("2_6oly2")
 
 [sub_resource type="TileSet" id="TileSet_ok8ha"]
 sources/0 = SubResource("TileSetScenesCollectionSource_iecb2")

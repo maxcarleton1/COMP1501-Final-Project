@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://clbfm2ntybskt"]
+
+[ext_resource type="Script" uid="uid://bk0beepxlsr73" path="res://scripts/obstacles/falling_platform.gd" id="1_2jo60"]
+[ext_resource type="Texture2D" uid="uid://bmpfuxqom1hb1" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0156.png" id="1_mgmy5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgmy5"]
+size = Vector2(18, 3)
+
+[node name="Falling Platform" type="AnimatableBody2D" unique_id=2116920517]
+script = ExtResource("1_2jo60")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=697861569]
+texture = ExtResource("1_mgmy5")
+
+[node name="CollisionShape" type="CollisionPolygon2D" parent="." unique_id=780682745]
+polygon = PackedVector2Array(-9, -9, -9, -3, -5, 0, 5, 0, 9, -3, 9, -9)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=157290744]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1795236773]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_mgmy5")
+
+[node name="Timer" type="Timer" parent="." unique_id=1992961796]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

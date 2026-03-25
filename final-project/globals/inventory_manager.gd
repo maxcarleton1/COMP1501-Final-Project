@@ -7,6 +7,13 @@ class InventorySlot:
 
 signal inventory_updated 
 
+signal selected_hotbar_index_updated(index: int)
+
+#Set default selection at beginning
+var selected_hotbar_index: int = 0
+
+signal item_used(item: ItemData, index: int)
+
 var speedModifier := 0
 var dashSpeedModifier := 0	
 var hardHat := false
@@ -84,3 +91,37 @@ func setUpgradeEffect(item:ItemData):
 			hardHat = true
 		_:
 			print("Error")
+			
+func select_hotbar_slot(index: int):
+	
+	if(index < 0 || index > HOTBAR_SIZE):
+		return
+	
+	selected_hotbar_index = index
+	selected_hotbar_index_updated.emit(index)
+	
+func use_selected_item():
+	if(selected_hotbar_index < 0 || selected_hotbar_index >= items.size()):
+		return
+	
+	var item_slot = items[selected_hotbar_index]
+	
+	if(	item_slot == null ||
+	 	item_slot.item == null ||
+	 	item_slot.quantity <= 0):
+		return
+	
+	var used_item = item_slot.item
+	use_item_logic(used_item)
+	item_slot.quantity -= 1
+	
+	if(item_slot.quantity <= 0):
+		item_slot.item = null
+		item_slot.quantity = 0
+		
+	inventory_updated.emit()
+	item_used.emit(item_slot.item, selected_hotbar_index)
+	
+func use_item_logic(item: ItemData):
+	print("Used item logic: ", item.name)
+	

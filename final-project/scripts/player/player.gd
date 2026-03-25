@@ -178,3 +178,12 @@ func spawn_bomb():
 func _on_bomb_cooldown_timeout():
 	can_bomb = true
 	$BombCooldownBar.hide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	for i in range(5): #5 Inventory slots
+		if (event.is_action_pressed("Hotbar_" + str(i + 1))):
+			InventoryManager.select_hotbar_slot(i)
+			break
+	
+	if(event.is_action_pressed("Use_item")):
+		InventoryManager.use_selected_item()

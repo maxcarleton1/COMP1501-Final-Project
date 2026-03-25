@@ -15,15 +15,6 @@ script = ExtResource("1_jyhfs")
 
 [node name="Player" parent="." unique_id=1015420686 instance=ExtResource("1_sugp2")]
 scale = Vector2(3, 3)
-SPEED = 600
-DASH_SPEED = 1200
-ACCELERATION = 8000
-FRICTION = 10000
-AIR_FRICTION = 1000
-JUMP_VELOCITY = -650.0
-JUMP_HOLD_MULTIPLIER = 0.7
-DASH_TRAIL_FADE_TIME = 0.12
-DASH_TRAIL_ALPHA = 0.55
 
 [node name="LevelBuilder" parent="." unique_id=769528092 instance=ExtResource("2_jyhfs")]
 

@@ -13,6 +13,9 @@ func _ready() -> void:
 	
 	InventoryManager.inventory_updated.connect(update_hotbar_slots_UI)
 	update_hotbar_slots_UI()
+	
+	InventoryManager.selected_hotbar_index_updated.connect(update_hotbar_slot_selected)
+	update_hotbar_slot_selected(InventoryManager.selected_hotbar_index)
 
 func _process(delta) -> void:
 	altitude_update(player.global_position.y * -0.01)
@@ -27,3 +30,7 @@ func update_hotbar_slots_UI():
 	for i in range(hotbar_slots.size()):
 		var hotbar_slot = InventoryManager.get_hotbar_slot(i)
 		hotbar_slots[i].set_item_slot(hotbar_slot.item, hotbar_slot.quantity)
+
+func update_hotbar_slot_selected(index: int):
+	for i in range(hotbar_slots.size()):
+		hotbar_slots[i].set_selected_slot(index == i)

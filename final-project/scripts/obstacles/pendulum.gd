@@ -15,14 +15,14 @@ func _physics_process(delta):
 	var period = swing_period
 	if period <= 0:
 		period = 1.0
-	rotation_degrees = sin(time * 2 * PI / period) * swing_angle
+	pivot.rotation_degrees = sin(time * 2 * PI / period) * swing_angle
 	blade.position = Vector2(0, chain_length)
 	update_chain()
 
 func update_chain():
 	chain.clear_points()
-	chain.add_point(Vector2.ZERO)
-	chain.add_point(Vector2(0, chain_length))
+	chain.add_point(Vector2(0, 0))
+	chain.add_point(Vector2(0, chain_length - 5))
 
 func _on_blade_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b7mfdfctg3gdk"]
+
+[ext_resource type="Script" uid="uid://cfenhbvpeuu5f" path="res://scripts/obstacles/falling_spike.gd" id="1_wcjkk"]
+[ext_resource type="Texture2D" uid="uid://b8gelgrdobalf" path="res://assets/art/custom_art/icicle.png" id="2_wcjkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ssek"]
+size = Vector2(200, 268)
+
+[node name="FallingSpike" type="Node2D" unique_id=955191419 groups=["Obstacles"]]
+script = ExtResource("1_wcjkk")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=493079681]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1178420721]
+position = Vector2(1, 40)
+scale = Vector2(0.2, 0.5)
+shape = SubResource("RectangleShape2D_3ssek")
+
+[node name="Spike" type="Area2D" parent="." unique_id=2073489085]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Spike" unique_id=46240151]
+position = Vector2(2.0775121e-06, -13.758741)
+rotation = -3.1415925
+scale = Vector2(1, 0.49968213)
+polygon = PackedVector2Array(-1.660954e-06, -49.54898, -7.999995, 26.499365, 8.000004, 26.499357)
+
+[node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=318150723]
+position = Vector2(0, -8.0827675)
+scale = Vector2(1, 1.5266212)
+texture = ExtResource("2_wcjkk")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
+[connection signal="body_entered" from="Spike" to="." method="_on_spike_body_entered"]

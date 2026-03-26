@@ -1,20 +1,70 @@
 [gd_scene format=3 uid="uid://cf8yymnhfc2qd"]
 
-[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="1_78aus"]
 [ext_resource type="Script" uid="uid://bxf4fqrfcsh63" path="res://scripts/obstacles/crusher.gd" id="1_j1j7p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1j7p"]
-size = Vector2(128, 128)
+[ext_resource type="Texture2D" uid="uid://1kibdwcxwqna" path="res://assets/art/custom_art/bar.png" id="2_j1j7p"]
+[ext_resource type="Texture2D" uid="uid://dsq01mee0cw78" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0069.png" id="2_wfiqe"]
+[ext_resource type="Texture2D" uid="uid://bnyfha4vf647w" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0109.png" id="3_pdewk"]
+[ext_resource type="PackedScene" uid="uid://e3a4qcsxiep6" path="res://scenes/obstacles/spike_1x1.tscn" id="3_qy74v"]
+[ext_resource type="Texture2D" uid="uid://hv6d6g1pd4fa" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0091.png" id="6_wfiqe"]
 
 [node name="Crusher" type="Node2D" unique_id=1483566248 groups=["Obstacles"]]
 script = ExtResource("1_j1j7p")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1341972581]
+[node name="Anchor" type="Node2D" parent="." unique_id=1429745108]
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=158460524]
-texture = ExtResource("1_78aus")
+[node name="Sprite2D" type="Sprite2D" parent="Anchor" unique_id=1333527253]
+position = Vector2(0, 6)
+texture = ExtResource("2_wfiqe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=791482259]
-shape = SubResource("RectangleShape2D_j1j7p")
+[node name="Marker2D" type="Marker2D" parent="Anchor" unique_id=1269911734]
+position = Vector2(0, 15)
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="Dynamic" type="Node2D" parent="." unique_id=963538883]
+position = Vector2(0, 24)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Dynamic" unique_id=1524068863]
+texture = ExtResource("3_pdewk")
+
+[node name="Spike_1x1" parent="Dynamic" unique_id=2135419065 instance=ExtResource("3_qy74v")]
+position = Vector2(-7, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x2" parent="Dynamic" unique_id=991379877 instance=ExtResource("3_qy74v")]
+position = Vector2(-22, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x3" parent="Dynamic" unique_id=1302301468 instance=ExtResource("3_qy74v")]
+position = Vector2(-36, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x4" parent="Dynamic" unique_id=198762477 instance=ExtResource("3_qy74v")]
+position = Vector2(-51, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x5" parent="Dynamic" unique_id=566909417 instance=ExtResource("3_qy74v")]
+position = Vector2(7, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x6" parent="Dynamic" unique_id=2089128996 instance=ExtResource("3_qy74v")]
+position = Vector2(22, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x7" parent="Dynamic" unique_id=1844387559 instance=ExtResource("3_qy74v")]
+position = Vector2(37, 36)
+rotation = -3.1415925
+
+[node name="Spike_1x8" parent="Dynamic" unique_id=166974625 instance=ExtResource("3_qy74v")]
+position = Vector2(51, 36)
+rotation = -3.1415925
+
+[node name="Sprite2D" type="Sprite2D" parent="Dynamic" unique_id=158460524]
+position = Vector2(0, 32)
+texture = ExtResource("2_j1j7p")
+
+[node name="Marker2D" type="Marker2D" parent="Dynamic" unique_id=1171456571]
+position = Vector2(0, -9)
+
+[node name="Rope" type="Line2D" parent="." unique_id=576383648]
+width = 16.0
+texture = ExtResource("6_wfiqe")
+texture_mode = 1

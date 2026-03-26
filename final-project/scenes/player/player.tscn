@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="7_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://fdov2q23kknk" path="res://assets/art/bomb/cooldowntop.png" id="8_h17s1"]
 [ext_resource type="Texture2D" uid="uid://5w50e34xqjd2" path="res://assets/art/bomb/cooldownbackground.png" id="9_je7p5"]
+[ext_resource type="PackedScene" uid="uid://d1qolbbuxrgu2" path="res://scenes/player/grapple_hook.tscn" id="10_h17s1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -87,6 +88,9 @@ texture_progress = ExtResource("9_je7p5")
 tint_under = Color(1, 1, 1, 0.39215687)
 tint_over = Color(1, 1, 1, 0.39215687)
 tint_progress = Color(1, 1, 1, 0.39215687)
+
+[node name="GrappleHook" parent="." unique_id=1616871952 instance=ExtResource("10_h17s1")]
+position = Vector2(0, -16)
 
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DashSpeedBoost" to="." method="_on_dash_speed_boost_timeout"]

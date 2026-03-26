@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://2dfija7nlfj3"]
 
 [ext_resource type="Script" uid="uid://c0bs8okik5gfm" path="res://scripts/obstacles/spiderweb.gd" id="1_afea6"]
-[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="1_tswyg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_afea6"]
-size = Vector2(128, 128)
+[ext_resource type="Texture2D" uid="uid://b0naprdsymax7" path="res://assets/art/custom_art/128x128 resize.png" id="2_afea6"]
 
 [node name="Spiderweb" type="Area2D" unique_id=236451701 groups=["Obstacles"]]
 script = ExtResource("1_afea6")
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1503888335]
+polygon = PackedVector2Array(109, 4, 109, 89, 113, 106, 4, 107, 14, 70, 2, 5, 43, 12, 65, 12)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=476462576]
 position = Vector2(56, 56)
-texture = ExtResource("1_tswyg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1802790948]
-position = Vector2(56, 56)
-shape = SubResource("RectangleShape2D_afea6")
+texture = ExtResource("2_afea6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

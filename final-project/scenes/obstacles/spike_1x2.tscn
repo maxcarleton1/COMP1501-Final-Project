@@ -6,12 +6,12 @@
 [node name="Spike_1x2" type="Area2D" unique_id=2092700260 groups=["Obstacles"]]
 script = ExtResource("1_hu07w")
 
+[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1164537009]
+polygon = PackedVector2Array(-9, 16, -9, 9, -6, 0, -2, 0, 0, 5, 2, 0, 6, 0, 9, 9, 9, 16)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1935169261]
 position = Vector2(0, -4.7683716e-07)
 scale = Vector2(1, 1.7777778)
 texture = ExtResource("2_hu07w")
-
-[node name="Collision" type="CollisionPolygon2D" parent="." unique_id=1164537009]
-polygon = PackedVector2Array(-9, 16, -9, 9, -6, 0, -2, 0, 0, 5, 2, 0, 6, 0, 9, 9, 9, 16)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

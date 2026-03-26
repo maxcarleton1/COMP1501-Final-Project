@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7mfdfctg3gdk"]
 
 [ext_resource type="Script" uid="uid://cfenhbvpeuu5f" path="res://scripts/obstacles/falling_spike.gd" id="1_wcjkk"]
-[ext_resource type="Texture2D" uid="uid://eekvadlg7k18" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0068.png" id="2_77dyy"]
+[ext_resource type="Texture2D" uid="uid://b8gelgrdobalf" path="res://assets/art/custom_art/icicle.png" id="2_wcjkk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ssek"]
 size = Vector2(200, 268)
@@ -22,13 +22,12 @@ shape = SubResource("RectangleShape2D_3ssek")
 position = Vector2(2.0775121e-06, -13.758741)
 rotation = -3.1415925
 scale = Vector2(1, 0.49968213)
-polygon = PackedVector2Array(5.9999995, -27.534988, -5.9999995, -27.534985, -10, 27.5, 10, 27.5)
+polygon = PackedVector2Array(-1.660954e-06, -49.54898, -7.999995, 26.499365, 8.000004, 26.499357)
 
-[node name="Tile0068" type="Sprite2D" parent="Spike" unique_id=318150723]
-position = Vector2(1.6863707e-07, 0.07101762)
-rotation = -3.1415925
-scale = Vector2(1, 3.0532427)
-texture = ExtResource("2_77dyy")
+[node name="Sprite2D" type="Sprite2D" parent="Spike" unique_id=318150723]
+position = Vector2(0, -8.0827675)
+scale = Vector2(1, 1.5266212)
+texture = ExtResource("2_wcjkk")
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_trigger_body_entered"]
 [connection signal="body_entered" from="Spike" to="." method="_on_spike_body_entered"]

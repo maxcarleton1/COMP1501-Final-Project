@@ -6,7 +6,7 @@ func _on_timer_timeout() -> void:
 	falling = true
 	var tween = create_tween()
 	tween.set_parallel(true)
-	tween.tween_property(self, "position:y", position.y + 300, 1.0)
+	tween.tween_property(self, "position:y", position.y + 100, 2.5)
 	tween.tween_property(self, "modulate:a", 0.0, 1.0)
 	await tween.finished
 	respawnPlatform()
@@ -26,7 +26,7 @@ func respawnPlatform():
 	await get_tree().create_timer(3.0).timeout
 
 	$CollisionShape.disabled = false
-	position.y -= 200
+	position.y -= 100
 	await get_tree().create_timer(.1).timeout
 	var tween = create_tween()
 	tween.tween_property(self, "modulate:a", 1.0, 0.5)

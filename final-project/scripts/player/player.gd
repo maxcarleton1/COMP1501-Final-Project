@@ -28,7 +28,8 @@ var bomb: RigidBody2D
 const BOMB_ENTITY := preload("res://scenes/player/bomb_entity.tscn")
 var unlocked_bomb := false
 var can_bomb := false
-
+#Grapple
+const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
 signal player_start_fall
 
 func _ready():
@@ -187,3 +188,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if(event.is_action_pressed("Use_item")):
 		InventoryManager.use_selected_item()
+func unlock_grapple():
+	var grappler = Grappler.instantiate()
+	call_deferred("add_child",grappler)

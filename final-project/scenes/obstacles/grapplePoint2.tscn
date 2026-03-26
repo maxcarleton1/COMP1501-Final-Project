@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://jmdoixr4ekgf"]
+
+[ext_resource type="Texture2D" uid="uid://c4ahe5lwbdu6u" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0070.png" id="1_ycx4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycx4e"]
+size = Vector2(14, 15)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=68774456 groups=["GrapplePoint"]]
+light_mask = 5
+visibility_layer = 5
+texture = ExtResource("1_ycx4e")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=834375622]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=560460648]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_ycx4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2043324437 groups=["GrapplePoint"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(0, -17)
+rotation = 3.1415927
+texture = ExtResource("1_ycx4e")

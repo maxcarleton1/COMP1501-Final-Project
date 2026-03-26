@@ -3,17 +3,20 @@ extends Sprite2D
 var Points: Array[Sprite2D]
 var closestPoint: Vector2
 var active = false
+var can_grapple = true
 const TARGET_HIT_TOLERANCE := 50.0
+const AIM_ROTATION_OFFSET := PI / 2
+var default_rotation := 0.0
 @onready var raycast: RayCast2D = $RayCast2D
-
 func _ready() -> void:
-	closestPoint = Vector2(INF,INF)
+	closestPoint = Vector2(INF, INF)
+	default_rotation = rotation
 	var player := get_parent()
 	if player is CollisionObject2D:
 		raycast.add_exception(player)
 
 func _input(event: InputEvent):
-	if event.is_action_pressed("Grapple"):
+	if event.is_action_pressed("Grapple") and can_grapple:
 		if findClosestPoint():
 			grappleToPoint()
 
@@ -22,12 +25,21 @@ func _on_grapple_range_area_entered(area: Area2D) -> void:
 		Points.append(area.get_parent())
 
 func _process(delta):
+	if active or findClosestPoint():
+		show()
+		look_at(closestPoint)
+		rotation += AIM_ROTATION_OFFSET
+	else:
+		hide()
+		rotation = default_rotation
+
 	if active:
 		$Line2D.set_point_position(0, Vector2.ZERO)
 		$Line2D.set_point_position(1, to_local(closestPoint))
 	else:
 		$Line2D.set_point_position(0, Vector2.ZERO)
 		$Line2D.set_point_position(1, Vector2.ZERO)
+	
 func _on_grapple_range_area_exited(area: Area2D) -> void:
 	if area.get_parent().is_in_group("GrapplePoint"):
 		var point_index := Points.find(area.get_parent())
@@ -56,13 +68,22 @@ func _has_line_of_sight(target_position: Vector2) -> bool:
 
 func grappleToPoint():
 	if closestPoint != Vector2(INF, INF):
+		can_grapple = false
+		$Timer.start()
 		active = true
 		var tween = create_tween()
 		var player = get_parent()
-		$Line2D.set_point_position(1,to_local(closestPoint))
+		$Line2D.set_point_position(1, to_local(closestPoint))
 		tween.tween_property(player, "position", closestPoint, 0.5)
 		player.velocity = Vector2.ZERO
 		tween.finished.connect(func(): doneGrapple())
 
 func doneGrapple():
 	active = false
+
+	get_parent().coyote_time = .3
+	get_parent().velocity.y = -30
+
+
+func _on_timer_timeout() -> void:
+	can_grapple = true

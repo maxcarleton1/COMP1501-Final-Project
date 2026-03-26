@@ -7,6 +7,8 @@ extends Node2D
 
 var platform_extended := true
 
+signal start_devil
+
 func _ready():
 	if not has_node("Entries"):
 		push_error("Missing required child node: Entries")
@@ -14,6 +16,11 @@ func _ready():
 		push_error("Missing required child node: Exits")
 		
 	retract_platform()
+	
+	# Ts janky ahh hell but who gaf
+	var main = get_parent().get_parent()
+	if main.has_method("start_dust_devil"):
+		start_devil.connect(main.start_dust_devil)
 
 func get_entrances() -> Array:
 	return $Entries.get_children()
@@ -45,3 +52,9 @@ func _on_fall_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		if body.falling:
 			$"../../ParallaxBackground".switch_background($"../../ParallaxBackground".possible_background.FOREST)
+
+# Start dust devil logic
+func _on_start_dust_devil_body_entered(body: Node2D):
+	if body.is_in_group("Player"):
+		if not body.falling:
+			start_devil.emit()

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://vxkbukagdda8" path="res://scenes/ui/hud/layers/item_layer.tscn" id="2_c45xl"]
 [ext_resource type="PackedScene" uid="uid://cytjlq3acos5a" path="res://scenes/ui/hud/layers/altitude_layer.tscn" id="2_cgeww"]
 [ext_resource type="PackedScene" uid="uid://bl3plpi3cgru4" path="res://scenes/ui/hud/layers/hotbar_layer.tscn" id="5_2wu1p"]
+[ext_resource type="PackedScene" uid="uid://cm10cejm3hmob" path="res://scenes/ui/hud/layers/timer_layer.tscn" id="6_4m4yb"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1806229052]
 script = ExtResource("1_ax4tw")
@@ -30,4 +31,8 @@ layout_mode = 2
 
 [node name="HotbarLayer" parent="MarginContainer/VBoxContainer" unique_id=1862772098 instance=ExtResource("5_2wu1p")]
 layout_mode = 2
-script = null
+
+[node name="TimerLayer" parent="." unique_id=1417390817 instance=ExtResource("6_4m4yb")]
+offset_left = -200.0
+size_flags_horizontal = 8
+size_flags_vertical = 8

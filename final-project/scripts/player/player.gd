@@ -12,7 +12,7 @@ extends CharacterBody2D
 @export var DASH_TRAIL_ALPHA := 0.55
 const PLAYER_GHOST_SCENE := preload("res://scenes/player/PlayerGhost.tscn")
 
-var MAX_FALL_SPEED := 750
+var MAX_FALL_SPEED := 2000
 
 #@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -34,9 +34,10 @@ signal player_start_fall
 
 func _ready():
 	$BombCooldownBar.hide()
+	$MeteorEffect.emitting = false
 
 func fall():
-	# Turn off most collision and fall at a constant rate
+	# Turn off most collision and fall, speeding up slowly
 	falling = true
 	velocity = Vector2.ZERO
 	
@@ -45,6 +46,8 @@ func fall():
 	set_collision_mask_value(1, false) # Layer 1 = most ground/interactable objects, not including walls (Layer 2 also)
 	set_collision_layer_value(5, true) # Layer 5 = stop lose barrier (in start_room)
 	
+	$MeteorEffect.emitting = true
+	
 func stop_fall():
 	# Turn on collision and restore movement
 	falling = false
@@ -52,6 +55,8 @@ func stop_fall():
 	
 	set_collision_mask_value(1, true) # Layer 1 = most ground/interactable objects
 	set_collision_layer_value(5, false) # Layer 5 = stop lose barrier (in start_room)
+	
+	$MeteorEffect.emitting = false
 
 # Called when an obstacle wants the player to lose on hit
 func get_hit_by_obstacle():
@@ -74,7 +79,7 @@ func _physics_process(delta: float):
 		if dash_speed_boost:
 			spawn_dash_ghost()
 		
-		if not is_on_floor(): # Gravity
+		if not is_on_floor() and not dash_speed_boost: # Gravity
 			velocity += get_gravity() * 1.5 * delta
 			
 		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote):
@@ -99,13 +104,14 @@ func _physics_process(delta: float):
 			$DashSpeedBoost.start()
 			$PlayerSFXManager/Dash.play()
 			if Input.is_action_pressed("Down") and direction == 0:
-				velocity.y += get_dashspeed()
+				velocity.y = get_dashspeed()
 				velocity.x = 0
 			elif Input.is_action_pressed("Down"):
-				velocity.y += get_dashspeed() / 1.7
+				velocity.y = get_dashspeed() / 1.7
 				velocity.x = get_dashspeed() * direction
 			else:
 				velocity.x = direction * get_dashspeed()
+				velocity.y = 0
 				
 		if unlocked_bomb:
 			if Input.is_action_just_pressed("Interact") and can_bomb and not bomb and not falling:
@@ -119,7 +125,7 @@ func _physics_process(delta: float):
 			$BombCooldownBar.value = 100.0 - percentage_time
 
 	else: # Falling
-		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta)
+		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta * 0.5)
 	
 	move_and_slide()
 

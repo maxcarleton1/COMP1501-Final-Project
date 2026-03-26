@@ -5,7 +5,9 @@ func _on_body_entered(body: Node2D):
 		# Allow player to do bombs
 		body.unlock_bomb()
 		
-		# Play some animation/particle effect?
+		$GPUParticles2D.emitting = true
+		$Sprite2D.hide()
 
-		# Finally, disappear
+		# Finally, disappear after particle effect
+		await $GPUParticles2D.finished
 		queue_free()

@@ -39,3 +39,6 @@ func dif_to_str(dif: difficulty):
 
 # Keeps track of the highest point reached per run, gets updated by the AltitudeTracker scene
 var best_altitude: float 
+
+# Keeps track of the shortest time you've taken to win, gets updated by TimerLayer hud scene
+var best_time: float = INF

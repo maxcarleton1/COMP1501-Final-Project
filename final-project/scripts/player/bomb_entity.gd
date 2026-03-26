@@ -6,11 +6,12 @@ extends RigidBody2D
 # Should be heavy and hard to move (?)
 # Gets more affected by gravity (gravity scale)
 
-var blast_force := 1500
+var blast_force := 1250
 
 func _ready() -> void:
 	$Explosion/CollisionShape2D.set_deferred("disabled", true)
 	$ExplosionSprite.hide()
+	$GPUParticles2D.emitting = false
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("Interact"):
@@ -20,6 +21,7 @@ func _input(event: InputEvent):
 func explode():
 	$ExplosionSprite.show()
 	$ExplosionSprite.play("default")
+	$GPUParticles2D.emitting = true
 	# Blast logic
 	# 1. Show/create area2D with larger circular collision hitbox
 	# 2. Get all applicable bodies inside the radius (player, whatever mobs)
@@ -43,4 +45,4 @@ func _on_explosion_body_entered(body: Node2D):
 		var direction_to_body = body.global_position - global_position
 		direction_to_body = direction_to_body.normalized()
 		
-		body.velocity += direction_to_body * blast_force
+		body.velocity = direction_to_body * blast_force

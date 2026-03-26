@@ -62,3 +62,4 @@ shape = SubResource("RectangleShape2D_oedtr")
 
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
 [connection signal="body_entered" from="FallArea" to="." method="_on_fall_area_body_entered"]
+[connection signal="body_entered" from="StartDustDevil" to="." method="_on_start_dust_devil_body_entered"]

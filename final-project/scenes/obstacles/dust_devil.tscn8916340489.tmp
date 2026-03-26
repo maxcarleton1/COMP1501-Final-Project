@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://5nmwoknduwc2" path="res://scripts/obstacles/dust_devil.gd" id="1_8g5u7"]
 [ext_resource type="Texture2D" uid="uid://bl6iwgc30exxh" path="res://assets/art/dust_devil/dust_devil.png" id="2_8g5u7"]
 [ext_resource type="Texture2D" uid="uid://0ag737n1tau7" path="res://assets/art/dust_devil/caution.png" id="3_8g5u7"]
-[ext_resource type="Texture2D" uid="uid://ck84ssf8vohqq" path="res://assets/art/dust_devil/vignette.png" id="3_wd151"]
 [ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="5_wd151"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wd151"]
@@ -149,16 +148,10 @@ scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ei5cl")
 frame_progress = 0.5927677
 
-[node name="Vignette" type="Sprite2D" parent="VortexSprite" unique_id=1999893715]
-modulate = Color(1, 1, 1, 0.21568628)
-show_behind_parent = true
-z_index = 1
-texture = ExtResource("3_wd151")
-
 [node name="WarningSprite" type="Sprite2D" parent="." unique_id=2119182895]
 z_index = 2
 texture_repeat = 2
-position = Vector2(0, 400)
+position = Vector2(0, 500)
 scale = Vector2(4, 4)
 texture = ExtResource("3_8g5u7")
 region_enabled = true

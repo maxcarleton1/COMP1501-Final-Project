@@ -28,8 +28,12 @@ var bomb: RigidBody2D
 const BOMB_ENTITY := preload("res://scenes/player/bomb_entity.tscn")
 var unlocked_bomb := false
 var can_bomb := false
-
+#Grapple
+const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
 signal player_start_fall
+
+func _ready():
+	$BombCooldownBar.hide()
 
 func fall():
 	# Turn off most collision and fall at a constant rate
@@ -175,3 +179,15 @@ func spawn_bomb():
 func _on_bomb_cooldown_timeout():
 	can_bomb = true
 	$BombCooldownBar.hide()
+	
+func _unhandled_input(event: InputEvent) -> void:
+	for i in range(5): #5 Inventory slots
+		if (event.is_action_pressed("Hotbar_" + str(i + 1))):
+			InventoryManager.select_hotbar_slot(i)
+			break
+	
+	if(event.is_action_pressed("Use_item")):
+		InventoryManager.use_selected_item()
+func unlock_grapple():
+	var grappler = Grappler.instantiate()
+	call_deferred("add_child",grappler)

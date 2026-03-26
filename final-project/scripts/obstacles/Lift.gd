@@ -12,7 +12,7 @@ extends Node2D
 
 var t: float = 0.0
 var direction: int = 1
-var waiting: bool
+var waiting: bool = false
 
 func _ready() -> void:
 	var path: Path2D = $Path2D
@@ -23,14 +23,10 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		platform.global_position = path_follow.global_position
 	
-	path_follow.progress_ratio = t
-	platform.global_position = path_follow.global_position
-	waiting = true
-	wait_and_switch(offset_time, 1)
-	#sprite scale
-	var ratio = 64.0/18.0
-	$Path2D/PathFollow2D/Platform/Sprite2D.scale = Vector2(ratio, ratio)
-	$Path2D/PathFollow2D/Platform/Sprite2D2.scale = Vector2(ratio, ratio)
+	if offset_time != 0.0:
+		waiting = true
+		await get_tree().create_timer(offset_time).timeout
+		waiting = false
 
 func _process(delta: float) -> void:
 	if Engine.is_editor_hint():
@@ -46,8 +42,7 @@ func _physics_process(delta: float) -> void:
 	platform.global_position = path_follow.global_position
 	
 	if t <= 0.0 or t >= 1.0:
-		waiting = true
-		wait_and_switch(wait_time, -1)
+		wait_and_switch()
 
 func _draw():
 	if Engine.is_editor_hint():
@@ -70,7 +65,8 @@ func _update_platform_editor() -> void:
 	path_follow.progress_ratio = t
 	platform.global_position = path_follow.global_position
 
-func wait_and_switch(time: float, change: int) -> void:
-	await get_tree().create_timer(time).timeout
-	direction *= change
+func wait_and_switch() -> void:
+	waiting = true
+	await get_tree().create_timer(wait_time).timeout
+	direction *= -1
 	waiting = false

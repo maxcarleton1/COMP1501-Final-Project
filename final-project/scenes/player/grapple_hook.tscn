@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d1qolbbuxrgu2"]
+
+[ext_resource type="Texture2D" uid="uid://dsq01mee0cw78" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0069.png" id="1_v1q0v"]
+[ext_resource type="Script" uid="uid://c6dn4feasgq0f" path="res://scripts/player/grapple_hook.gd" id="2_wh6im"]
+[ext_resource type="Texture2D" uid="uid://hv6d6g1pd4fa" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0091.png" id="3_lf410"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v1q0v"]
+radius = 232.00862
+
+[node name="GrappleHook" type="Sprite2D" unique_id=1616871952]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_v1q0v")
+script = ExtResource("2_wh6im")
+
+[node name="GrappleRange" type="Area2D" parent="." unique_id=101786550]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleRange" unique_id=1826113870]
+shape = SubResource("CircleShape2D_v1q0v")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1321509561]
+points = PackedVector2Array(0, 0, 10, 0)
+width = 25.0
+texture = ExtResource("3_lf410")
+texture_mode = 1
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1969754107]
+target_position = Vector2(10, 0)
+collision_mask = 22
+
+[node name="Timer" type="Timer" parent="." unique_id=1100467441]
+wait_time = 0.8
+
+[connection signal="area_entered" from="GrappleRange" to="." method="_on_grapple_range_area_entered"]
+[connection signal="area_exited" from="GrappleRange" to="." method="_on_grapple_range_area_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

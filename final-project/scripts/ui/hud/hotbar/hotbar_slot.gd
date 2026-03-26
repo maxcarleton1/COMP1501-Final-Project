@@ -25,6 +25,9 @@ func set_item_quantity(quantity: int):
 func set_item_texture(texture: Texture2D):
 	icon_texture.texture = texture
 
-func set_selected_slot():
-	#Change colour of selected for scroll / use?
-	pass
+func set_selected_slot(isSelected: bool):
+	#Change colour of selected
+	if (isSelected):
+		modulate = Color(1,1,1)
+	else:
+		modulate = Color(0.6,0.6,0.6)

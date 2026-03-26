@@ -30,7 +30,6 @@ func update_chain():
 
 func _on_handle_body_entered(body: Node2D) -> void:
 	pass
-	
 
 
 func _on_handle_body_exited(body: Node2D) -> void:

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dsrxilr4lhymd"]
+
+[ext_resource type="Texture2D" uid="uid://c4ahe5lwbdu6u" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0070.png" id="1_rkhtf"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=68774456 groups=["GrapplePoint"]]
+light_mask = 5
+visibility_layer = 5
+position = Vector2(0, 1)
+texture = ExtResource("1_rkhtf")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=834375622]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1602096549]
+polygon = PackedVector2Array(-7, -9, -7, -3, -5, -1, 5, -1, 7, -3, 7, -9)

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bo8me3ip4sqb"]
+
+[ext_resource type="Script" uid="uid://cf5l8jkmfc45a" path="res://scripts/ui/interactive/sign.gd" id="1_1f3wi"]
+[ext_resource type="Texture2D" uid="uid://jqj7ohhpmor5" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0086.png" id="2_8aao4"]
+[ext_resource type="StyleBox" uid="uid://cfixwtmw58ocg" path="res://assets/themes/signs_etc.tres" id="3_8aao4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohfwg"]
+size = Vector2(100, 50)
+
+[node name="Sign" type="Area2D" unique_id=786602650]
+script = ExtResource("1_1f3wi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1297705677]
+scale = Vector2(4, 4)
+texture = ExtResource("2_8aao4")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=35996670]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -139.0
+offset_right = 164.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = ExtResource("3_8aao4")
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=890669213]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "This is some text which looks really cool"
+horizontal_alignment = 1
+vertical_alignment = 3
+autowrap_mode = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1548743265]
+position = Vector2(0, -7)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_ohfwg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

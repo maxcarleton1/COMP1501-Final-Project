@@ -32,6 +32,7 @@ window/stretch/mode="viewport"
 Player="The player character"
 Obstacles=""
 GrapplePoint=""
+InteractiveObstacle="Any obstacle that needs rigidbody physics simulation"
 
 [input]
 

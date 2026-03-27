@@ -1,10 +1,5 @@
 extends Node2D
 
-# When player enters start barrier, make sure they don't fall back down
-# Extend platform so the bottom is closed
-# Change parallax background and re-center it
-# Disable lava rising (send signal to main?)
-
 var platform_extended := true
 
 signal start_devil
@@ -40,7 +35,8 @@ func _on_enter_area_body_entered(body: Node2D):
 	
 func extend_platform():
 	if not platform_extended:
-		$Platform.global_position.x = 0
+		var tween = create_tween()
+		tween.tween_property($Platform, "global_position:x", $Platform.global_position.x + 400, 0.25)
 		platform_extended = true
 
 func retract_platform():

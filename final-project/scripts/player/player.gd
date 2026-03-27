@@ -12,7 +12,11 @@ extends CharacterBody2D
 @export var DASH_TRAIL_ALPHA := 0.55
 const PLAYER_GHOST_SCENE := preload("res://scenes/player/PlayerGhost.tscn")
 
+# For losing
 var MAX_FALL_SPEED := 2000
+
+# For not losing!
+var MAX_DROP_SPEED := 1000
 
 #@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -28,6 +32,9 @@ var bomb: RigidBody2D
 const BOMB_ENTITY := preload("res://scenes/player/bomb_entity.tscn")
 var unlocked_bomb := false
 var can_bomb := false
+# Fix???
+var is_jump_velocity := false
+
 #Grapple
 const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
 signal player_start_fall
@@ -82,12 +89,16 @@ func _physics_process(delta: float):
 		if not is_on_floor() and not dash_speed_boost: # Gravity
 			velocity += get_gravity() * 1.5 * delta
 			
+		if is_on_floor():
+			is_jump_velocity = false
+
 		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote):
 			velocity.y = JUMP_VELOCITY
 			$PlayerSFXManager/Jump.play()
-		if Input.is_action_just_released("Jump") and velocity.y < 0:
+			is_jump_velocity = true
+		if Input.is_action_just_released("Jump") and velocity.y < 0 and is_jump_velocity:
 			velocity.y *= JUMP_HOLD_MULTIPLIER
-
+		
 		direction = Input.get_axis("MoveLeft", "MoveRight")
 		if direction != 0 and !dash_speed_boost:
 			velocity.x = move_toward(velocity.x, get_speed() * direction, ACCELERATION * delta)
@@ -112,6 +123,9 @@ func _physics_process(delta: float):
 			else:
 				velocity.x = direction * get_dashspeed()
 				velocity.y = 0
+				
+		# Clamp drop (NOT FALL) speed (lol)
+		velocity.y = clamp(velocity.y, -INF, MAX_DROP_SPEED)
 				
 		if unlocked_bomb:
 			if Input.is_action_just_pressed("Interact") and can_bomb and not bomb and not falling:

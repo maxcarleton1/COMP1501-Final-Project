@@ -11,7 +11,7 @@ var blast_force := 1250
 func _ready() -> void:
 	$Explosion/CollisionShape2D.set_deferred("disabled", true)
 	$ExplosionSprite.hide()
-	$GPUParticles2D.emitting = false
+	$ExplosionParticles.emitting = false
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("Interact"):
@@ -21,7 +21,7 @@ func _input(event: InputEvent):
 func explode():
 	$ExplosionSprite.show()
 	$ExplosionSprite.play("default")
-	$GPUParticles2D.emitting = true
+	$ExplosionParticles.emitting = true
 	# Blast logic
 	# 1. Show/create area2D with larger circular collision hitbox
 	# 2. Get all applicable bodies inside the radius (player, whatever mobs)
@@ -41,8 +41,19 @@ func explode():
 	queue_free()
 	
 func _on_explosion_body_entered(body: Node2D):
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") or body.is_in_group("InteractiveObstacle"):
 		var direction_to_body = body.global_position - global_position
 		direction_to_body = direction_to_body.normalized()
 		
 		body.velocity = direction_to_body * blast_force
+		if body.is_in_group("Player"):
+			body.is_jump_velocity = false
+		
+		# Call unique behaviour
+		if body.is_in_group("InteractiveObstacle"):
+			body.blast_behaviour()
+
+# Mostly just for the exploder obstacle
+func _on_explosion_area_entered(area: Area2D):
+	if area.is_in_group("InteractiveObstacle"):
+		area.blast_behaviour()

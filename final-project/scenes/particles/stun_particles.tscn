@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bwfxv1mifvbtv"]
+
+[ext_resource type="Texture2D" uid="uid://vhres78srdb" path="res://assets/art/stun.png" id="1_ct2lu"]
+
+[sub_resource type="Curve" id="Curve_l826e"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.793617, 0.6761638), -1.0305413, -1.0305413, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_mwged"]
+curve = SubResource("Curve_l826e")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8o45e"]
+lifetime_randomness = 0.3
+particle_flag_align_y = true
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 96.71
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_mwged")
+color = Color(0.9019608, 0.9019608, 0, 0.3882353)
+
+[node name="StunParticles" type="GPUParticles2D" unique_id=1204181159]
+z_index = -1
+emitting = false
+amount = 10
+texture = ExtResource("1_ct2lu")
+lifetime = 0.5
+explosiveness = 0.9
+process_material = SubResource("ParticleProcessMaterial_8o45e")

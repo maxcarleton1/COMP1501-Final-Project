@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b82au3bgbuosf"]
+
+[ext_resource type="Script" uid="uid://d1qvypmfbmyqt" path="res://scripts/obstacles/sand_blast.gd" id="1_s8h44"]
+[ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="2_6gcx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_503sf"]
+size = Vector2(75, 20)
+
+[sub_resource type="Gradient" id="Gradient_j5mnf"]
+offsets = PackedFloat32Array(0, 0.4610984, 0.78375286)
+colors = PackedColorArray(0.57862115, 0.3679578, 0.016104935, 1, 0.9607843, 0.69803923, 0.105882354, 1, 0.9979133, 0.81255424, 0.48957306, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mwged"]
+gradient = SubResource("Gradient_j5mnf")
+
+[sub_resource type="Curve" id="Curve_gdvg1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.79999995, 0.78545856), -0.83660126, -0.83660126, 0, 0, Vector2(1, 0.3239919), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_4o6f5"]
+curve = SubResource("Curve_gdvg1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bctkg"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+spread = 20.0
+initial_velocity_min = 75.0
+initial_velocity_max = 200.0
+gravity = Vector3(0, 49, 0)
+scale_min = 2.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_4o6f5")
+color_ramp = SubResource("GradientTexture1D_mwged")
+hue_variation_min = -0.020000022
+hue_variation_max = 0.019999977
+
+[node name="SandBlast" type="Area2D" unique_id=1832330651]
+script = ExtResource("1_s8h44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001830105]
+position = Vector2(38, 0)
+shape = SubResource("RectangleShape2D_503sf")
+
+[node name="SandParticles" type="GPUParticles2D" parent="." unique_id=1260067543]
+emitting = false
+amount = 50
+texture = ExtResource("2_6gcx8")
+lifetime = 0.7
+one_shot = true
+speed_scale = 2.0
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_bctkg")
+
+[node name="Timer" type="Timer" parent="." unique_id=2014341833]
+wait_time = 0.7
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

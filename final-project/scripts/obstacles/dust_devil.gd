@@ -113,3 +113,5 @@ func _on_dust_devil_timer_timeout():
 func _on_vortex_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		body.get_hit_by_obstacle()
+	if body.is_in_group("InteractiveObstacle"):
+		body.blast_behaviour()

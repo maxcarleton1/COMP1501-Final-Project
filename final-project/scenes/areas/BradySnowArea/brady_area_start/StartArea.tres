@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_iaevp"]
 [ext_resource type="Resource" uid="uid://djghdphesxjmt" path="res://scenes/areas/BradySnowArea/brady_area_start/StartRoom.tres" id="2_ubje8"]
 [ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="2_yco5j"]
+[ext_resource type="Resource" uid="uid://bqo76p2bjt0ph" path="res://scenes/areas/BradySnowArea/BradyMiddleRoom1.tres" id="3_ubje8"]
 
 [resource]
 script = ExtResource("2_yco5j")
-rooms = Array[ExtResource("1_iaevp")]([ExtResource("2_ubje8")])
+rooms = Array[ExtResource("1_iaevp")]([ExtResource("2_ubje8"), ExtResource("3_ubje8")])
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

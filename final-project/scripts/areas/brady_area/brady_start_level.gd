@@ -25,12 +25,13 @@ func _on_enter_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		extend_platform()
 		body.cold_manager.temp = -10
+		body.cold_manager.snow.emitting = true
 		# Switch parallax background, janky but whatever
 		$"../../ParallaxBackground".switch_background($"../../ParallaxBackground".possible_background.SNOW)
 		
 		# Ts janky ahh hell but who gaf
 		$"../../../Main".reset_barrier()
-	
+		
 func extend_platform():
 	if not platform_extended:
 		$Platform.global_position.x = 0
@@ -45,5 +46,6 @@ func _on_fall_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		if body.falling:
 			$"../../ParallaxBackground".switch_background($"../../ParallaxBackground".possible_background.DESERT)
+			body.cold_manager.snow.emitting = false
 			body.cold_manager.temp = 0
 			body.cold_manager.coldness = 0

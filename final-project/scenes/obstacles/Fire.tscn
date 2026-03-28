@@ -1,10 +1,35 @@
-[gd_scene format=3 uid="uid://dr3n4amkm73gu"]
+[gd_scene format=3 uid="uid://dq2erd48638ko"]
 
 [ext_resource type="Texture2D" uid="uid://drdldivtsejee" path="res://assets/art/lava.png" id="1_qphwj"]
-[ext_resource type="Script" uid="uid://mo2obncdssf1" path="res://scenes/obstacles/fire.gd" id="2_0ggvn"]
+[ext_resource type="Script" path="res://scenes/obstacles/fire.gd" id="2_0ggvn"]
+[ext_resource type="Texture2D" uid="uid://5w50e34xqjd2" path="res://assets/art/bomb/cooldownbackground.png" id="3_cxrvr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qphwj"]
 radius = 76.29548
+
+[sub_resource type="Gradient" id="Gradient_5iiix"]
+offsets = PackedFloat32Array(0, 0.8013245, 1)
+colors = PackedColorArray(0.9764706, 0, 0, 1, 0.55318993, 0.2135436, 0.1618225, 1, 0.34407577, 0.34407574, 0.34407574, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e364g"]
+gradient = SubResource("Gradient_5iiix")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fq8kq"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 30.0
+initial_velocity_min = -100.0
+initial_velocity_max = -100.0
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 9.49949e-08
+scale_min = 0.099999994
+scale_max = 0.099999994
+color_ramp = SubResource("GradientTexture1D_e364g")
+turbulence_enabled = true
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.0
+turbulence_initial_displacement_min = -77.5
+turbulence_initial_displacement_max = 88.5
 
 [node name="Fire" type="Sprite2D" unique_id=778069480]
 scale = Vector2(0.5, 0.5)
@@ -15,6 +40,14 @@ script = ExtResource("2_0ggvn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1111585682]
 shape = SubResource("CircleShape2D_qphwj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=152160415]
+sub_emitter = NodePath(".")
+texture = ExtResource("3_cxrvr")
+lifetime = 0.3
+speed_scale = 0.75
+explosiveness = 0.29
+process_material = SubResource("ParticleProcessMaterial_fq8kq")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

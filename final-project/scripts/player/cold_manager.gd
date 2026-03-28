@@ -2,10 +2,14 @@ extends Node2D
 
 var coldness := 0
 var temp := 0
-
+@onready var snow = $Snow
 func _on_timer_timeout() -> void:
-	if coldness <=50:
+	if coldness <0:
 		coldness += temp
+	elif temp <0:
+		coldness += temp
+	$TextureProgressBar.value = coldness*-1
+	print($TextureProgressBar.value)
 func _process(delta: float) -> void:
 	if temp <= 0:
 		if $Hotboy.playing:

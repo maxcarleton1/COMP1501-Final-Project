@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="RoomData" format=3 uid="uid://bqo76p2bjt0ph"]
+
+[ext_resource type="PackedScene" uid="uid://vhho4gcb7wka" path="res://scenes/areas/BradySnowArea/bradya_middle_room_1.tscn" id="1_42o7u"]
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_tkn16"]
+
+[resource]
+script = ExtResource("1_tkn16")
+room_scene = ExtResource("1_42o7u")
+metadata/_custom_type_script = "uid://0u6dlawkgsme"

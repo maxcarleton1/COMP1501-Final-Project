@@ -33,6 +33,9 @@ var can_bomb := false
 const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
 signal player_start_fall
 
+#Feather falling
+var feather_falling_active: bool = false
+
 func _ready():
 	$BombCooldownBar.hide()
 
@@ -119,6 +122,9 @@ func _physics_process(delta: float):
 			var percentage_time: float = (1.0 - $BombCooldown.time_left / $BombCooldown.wait_time) * 100.0
 			$BombCooldownBar.value = 100.0 - percentage_time
 
+		if(feather_falling_active and velocity.y > 0):
+			velocity.y *= 0.9
+			
 	else: # Falling
 		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta)
 	
@@ -188,7 +194,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			break
 	
 	if(event.is_action_pressed("Use_item")):
-		InventoryManager.use_selected_item()
+		InventoryManager.use_selected_item(self)
 func unlock_grapple():
 	var grappler = Grappler.instantiate()
 	call_deferred("add_child",grappler)
+	
+func activate_feather_falling(seconds: int) -> void:
+	print("Feather falling activated")
+	
+	feather_falling_active = true
+	
+	await get_tree().create_timer(seconds).timeout
+	
+	feather_falling_active = false

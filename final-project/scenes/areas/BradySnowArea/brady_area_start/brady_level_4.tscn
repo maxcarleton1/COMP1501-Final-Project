@@ -46,7 +46,7 @@ shape = SubResource("RectangleShape2D_ugtsc")
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_erfyd")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAADAAEAAAAAAAAAC1AAAPv/AAAAAAAACQD6//r/AAAAAAAACQDy//T/AAAAAAAAC2D3//L/AAAAAAAACQD+//D/AAAAAAAACQAFAO3/AAAAAAAAC1ABAOn/AAAAAAAACQD5/+j/AAAAAAAACQD0/+T/AAAAAAAACQA=")
+tile_map_data = PackedByteArray("AAADAAEAAAAAAAAAC1AAAPv/AAAAAAAACQD6//r/AAAAAAAACQDy//T/AAAAAAAAC2D3//L/AAAAAAAACQD+//D/AAAAAAAACQAFAO3/AAAAAAAAC1ABAOn/AAAAAAAACQD5/+j/AAAAAAAACQD0/+T/AAAAAAAACQAEAAAAAAAAAAAADAD2//7/AAAAAAAADAAIAAQAAAAAAAAADAA=")
 
 [node name="Grapple Pickup" parent="." unique_id=417895954 instance=ExtResource("4_sff2a")]
 position = Vector2(754, 234)

@@ -24,7 +24,7 @@ func get_exits() -> Array:
 func _on_enter_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		extend_platform()
-		
+		body.cold_manager.temp = -10
 		# Switch parallax background, janky but whatever
 		$"../../ParallaxBackground".switch_background($"../../ParallaxBackground".possible_background.SNOW)
 		
@@ -45,3 +45,5 @@ func _on_fall_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		if body.falling:
 			$"../../ParallaxBackground".switch_background($"../../ParallaxBackground".possible_background.DESERT)
+			body.cold_manager.temp = 0
+			body.cold_manager.coldness = 0

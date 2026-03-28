@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://drafljej2cfkx"]
+
+[ext_resource type="Script" uid="uid://byo1fby2t6gkt" path="res://scripts/player/cold_manager.gd" id="1_wg7fm"]
+[ext_resource type="AudioStream" uid="uid://cadd4tytkpnqd" path="res://assets/audio/shivermetimbers 2.mp3" id="2_n3gss"]
+[ext_resource type="AudioStream" uid="uid://db3rggmqftq42" path="res://assets/audio/PGnot13ng 1.mp3" id="3_84wkc"]
+[ext_resource type="AudioStream" uid="uid://dcjw806qc7utp" path="res://assets/audio/Warm.mp3" id="4_v2esp"]
+
+[node name="ColdManager" type="Node2D" unique_id=1008056164]
+script = ExtResource("1_wg7fm")
+
+[node name="Timer" type="Timer" parent="." unique_id=1214874005]
+autostart = true
+
+[node name="Shiver" type="AudioStreamPlayer" parent="." unique_id=773662272]
+stream = ExtResource("2_n3gss")
+
+[node name="PGnot13" type="AudioStreamPlayer" parent="." unique_id=1944570584]
+stream = ExtResource("3_84wkc")
+
+[node name="Hotboy" type="AudioStreamPlayer" parent="." unique_id=1534121836]
+stream = ExtResource("4_v2esp")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

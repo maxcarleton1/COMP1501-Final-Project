@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dr3n4amkm73gu"]
+
+[ext_resource type="Texture2D" uid="uid://drdldivtsejee" path="res://assets/art/lava.png" id="1_qphwj"]
+[ext_resource type="Script" uid="uid://mo2obncdssf1" path="res://scenes/obstacles/fire.gd" id="2_0ggvn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qphwj"]
+radius = 76.29548
+
+[node name="Fire" type="Sprite2D" unique_id=778069480]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_qphwj")
+script = ExtResource("2_0ggvn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=748467665]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1111585682]
+shape = SubResource("CircleShape2D_qphwj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

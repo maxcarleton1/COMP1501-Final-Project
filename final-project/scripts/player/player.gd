@@ -14,6 +14,7 @@ const PLAYER_GHOST_SCENE := preload("res://scenes/player/PlayerGhost.tscn")
 
 var MAX_FALL_SPEED := 750
 
+@onready var cold_manager = $ColdManager
 #@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 

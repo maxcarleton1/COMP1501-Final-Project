@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cgi0216qk3pal"]
+
+[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="1_cg3ha"]
+[ext_resource type="Script" uid="uid://chlog57n1vam5" path="res://resources/item_data.gd" id="2_7r1al"]
+
+[resource]
+script = ExtResource("2_7r1al")
+name = "Feather Falling"
+description = "Fall slowly"
+icon = ExtResource("1_cg3ha")
+seconds = 5
+item_effect = 0
+metadata/_custom_type_script = "uid://chlog57n1vam5"

@@ -5,8 +5,9 @@
 [ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="2_itpf0"]
 [ext_resource type="Resource" uid="uid://de8farjbo2qp7" path="res://scenes/areas/siri_area/siri_level_2.tres" id="3_e3e67"]
 [ext_resource type="Resource" uid="uid://cl5s1nq4idqg2" path="res://scenes/areas/siri_area/siri_level_3.tres" id="4_e3e67"]
+[ext_resource type="Resource" uid="uid://ci62dvtyerjv8" path="res://scenes/areas/siri_area/siri_level_4.tres" id="5_2mhar"]
 
 [resource]
 script = ExtResource("2_itpf0")
-rooms = Array[ExtResource("1_rdra6")]([ExtResource("2_1hbim"), ExtResource("4_e3e67"), ExtResource("3_e3e67")])
+rooms = Array[ExtResource("1_rdra6")]([ExtResource("2_1hbim"), ExtResource("3_e3e67"), ExtResource("4_e3e67"), ExtResource("5_2mhar")])
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

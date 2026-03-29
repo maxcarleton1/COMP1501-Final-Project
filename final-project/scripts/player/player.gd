@@ -33,8 +33,9 @@ var can_bomb := false
 const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
 signal player_start_fall
 
-#Feather falling
+#Item Effects
 var feather_falling_active: bool = false
+var balloon_active: bool = false
 
 func _ready():
 	$BombCooldownBar.hide()
@@ -80,7 +81,7 @@ func _physics_process(delta: float):
 		
 		if not is_on_floor(): # Gravity
 			velocity += get_gravity() * 1.5 * delta
-			
+		
 		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote):
 			velocity.y = JUMP_VELOCITY
 			$PlayerSFXManager/Jump.play()
@@ -124,6 +125,9 @@ func _physics_process(delta: float):
 
 		if(feather_falling_active and velocity.y > 0):
 			velocity.y *= 0.9
+			
+		if(balloon_active):
+			velocity.y = -200
 			
 	else: # Falling
 		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta)
@@ -200,10 +204,19 @@ func unlock_grapple():
 	call_deferred("add_child",grappler)
 	
 func activate_feather_falling(seconds: int) -> void:
+	seconds_invalid_check(seconds)
 	print("Feather falling activated")
-	
 	feather_falling_active = true
-	
 	await get_tree().create_timer(seconds).timeout
-	
 	feather_falling_active = false
+	
+func activate_balloon(seconds: int) -> void:
+	seconds_invalid_check(seconds)
+	print("Balloon activated")
+	balloon_active = true
+	await get_tree().create_timer(seconds).timeout
+	balloon_active = false
+	
+func seconds_invalid_check(seconds: int):
+	if seconds <= 0:
+		print("Seconds should be > 0 for item effects")

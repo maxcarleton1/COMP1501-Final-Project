@@ -127,5 +127,7 @@ func use_item_logic(item: ItemData, player: Node):
 	match item.item_effect:
 		ItemData.ItemEffect.FEATHER_FALLING:
 			player.activate_feather_falling(item.seconds)
+		ItemData.ItemEffect.BALLOON:
+			player.activate_balloon(item.seconds)
 		_:
 			print("Item not found when attempting item logic: ", item.name)

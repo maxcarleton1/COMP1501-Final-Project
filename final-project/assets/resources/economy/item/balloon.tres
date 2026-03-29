@@ -5,7 +5,9 @@
 
 [resource]
 script = ExtResource("2_2npny")
-name = "Jump boost 2"
-description = "Increase your jump height"
+name = "Balloon"
+description = "Slowly move upwards"
 icon = ExtResource("1_octqq")
+seconds = 5
+item_effect = 1
 metadata/_custom_type_script = "uid://chlog57n1vam5"

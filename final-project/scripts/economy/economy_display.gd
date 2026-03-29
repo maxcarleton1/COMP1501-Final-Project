@@ -4,7 +4,7 @@ extends Control
 
 var item_list: Array[ItemData] = [
 	#preload("res://assets/resources/economy/item/jump_boost.tres"),
-	#preload("res://assets/resources/economy/item/jump_boost2.tres"),
+	preload("res://assets/resources/economy/item/balloon.tres"),
 	preload("res://assets/resources/economy/item/feather_falling.tres"),
 ]
 var upgrade_list: Array[ItemData] = [

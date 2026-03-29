@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 func _process(delta: float) -> void:
 	rope.clear_points()
 	rope.add_point(Vector2(0,0))
-	rope.add_point(Vector2(0, obstacle.position.y))
+	rope.add_point(Vector2(0, obstacle.position.y - 9))
 
 func start_wait(time) -> void:
 	await get_tree().create_timer(time).timeout

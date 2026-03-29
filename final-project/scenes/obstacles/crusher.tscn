@@ -20,51 +20,41 @@ texture = ExtResource("2_wfiqe")
 position = Vector2(0, 15)
 
 [node name="Dynamic" type="Node2D" parent="." unique_id=963538883]
-position = Vector2(0, 24)
+position = Vector2(0, 52)
 
 [node name="Sprite2D2" type="Sprite2D" parent="Dynamic" unique_id=1524068863]
 texture = ExtResource("3_pdewk")
 
 [node name="Spike_1x1" parent="Dynamic" unique_id=2135419065 instance=ExtResource("3_qy74v")]
-position = Vector2(-7, 36)
+position = Vector2(0, 32)
 rotation = -3.1415925
 
 [node name="Spike_1x2" parent="Dynamic" unique_id=991379877 instance=ExtResource("3_qy74v")]
-position = Vector2(-22, 36)
+position = Vector2(-15, 32)
 rotation = -3.1415925
 
-[node name="Spike_1x3" parent="Dynamic" unique_id=1302301468 instance=ExtResource("3_qy74v")]
-position = Vector2(-36, 36)
+[node name="Spike_1x3" parent="Dynamic" unique_id=1098143704 instance=ExtResource("3_qy74v")]
+position = Vector2(-30, 32)
 rotation = -3.1415925
 
-[node name="Spike_1x4" parent="Dynamic" unique_id=198762477 instance=ExtResource("3_qy74v")]
-position = Vector2(-51, 36)
+[node name="Spike_1x4" parent="Dynamic" unique_id=513272009 instance=ExtResource("3_qy74v")]
+position = Vector2(15, 32)
 rotation = -3.1415925
 
-[node name="Spike_1x5" parent="Dynamic" unique_id=566909417 instance=ExtResource("3_qy74v")]
-position = Vector2(7, 36)
-rotation = -3.1415925
-
-[node name="Spike_1x6" parent="Dynamic" unique_id=2089128996 instance=ExtResource("3_qy74v")]
-position = Vector2(22, 36)
-rotation = -3.1415925
-
-[node name="Spike_1x7" parent="Dynamic" unique_id=1844387559 instance=ExtResource("3_qy74v")]
-position = Vector2(37, 36)
-rotation = -3.1415925
-
-[node name="Spike_1x8" parent="Dynamic" unique_id=166974625 instance=ExtResource("3_qy74v")]
-position = Vector2(51, 36)
+[node name="Spike_1x5" parent="Dynamic" unique_id=1724066525 instance=ExtResource("3_qy74v")]
+position = Vector2(30, 32)
 rotation = -3.1415925
 
 [node name="Sprite2D" type="Sprite2D" parent="Dynamic" unique_id=158460524]
-position = Vector2(0, 32)
+position = Vector2(0, 25)
+scale = Vector2(0.667, 0.667)
 texture = ExtResource("2_j1j7p")
 
 [node name="Marker2D" type="Marker2D" parent="Dynamic" unique_id=1171456571]
 position = Vector2(0, -9)
 
 [node name="Rope" type="Line2D" parent="." unique_id=576383648]
-width = 16.0
+points = PackedVector2Array(0, 15, 0, 43)
+width = 18.0
 texture = ExtResource("6_wfiqe")
 texture_mode = 1

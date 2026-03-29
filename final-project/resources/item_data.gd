@@ -6,6 +6,7 @@ enum ItemType { ITEM, UPGRADE, CURRENCY }
 
 enum ItemEffect {
 	FEATHER_FALLING,
+	BALLOON,
 	JUMP_BOOST,
 	NONE
 }

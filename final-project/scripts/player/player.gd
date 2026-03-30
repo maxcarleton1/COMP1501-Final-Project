@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var SPEED := 600
 @export var DASH_SPEED := 1200
 @export var ACCELERATION := 8000
-@export var FRICTION := 10000
-@export var AIR_FRICTION := 1000
+@export var FRICTION := 50000
+@export var AIR_FRICTION := 1500
 @export var JUMP_VELOCITY := -650.0
 @export var JUMP_HOLD_MULTIPLIER := 0.7
 

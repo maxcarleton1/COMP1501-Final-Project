@@ -27,15 +27,8 @@ scale = Vector2(4, 4)
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("3_vgsg1")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAD0/wEAAAAAAAAADQD5//b/AAAAAAAADQD///3/AAAAAAAADQAFAPP/AAAAAAAADQALAPr/AAAAAAAADQAHAAMAAAAAAAAADQA=")
+tile_map_data = PackedByteArray("AAD0/wEAAAAAAAAADgD///3/AAAAAAAADgAHAAMAAAAAAAAADgALAPr/AAAAAAAADgAFAPP/AAAAAAAADgD5//b/AAAAAAAADgA=")
 
 [node name="Sign" parent="." unique_id=786602650 instance=ExtResource("4_tsvyl")]
 position = Vector2(0, 408)
 text = "You're doing great, probably!"
-
-[connection signal="body_entered" from="ObsicalLayer/Exploder" to="ObsicalLayer/Exploder" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@55449" to="ObsicalLayer/@Area2D@55449" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@55450" to="ObsicalLayer/@Area2D@55450" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@55451" to="ObsicalLayer/@Area2D@55451" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@55452" to="ObsicalLayer/@Area2D@55452" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@55453" to="ObsicalLayer/@Area2D@55453" method="_on_body_entered"]

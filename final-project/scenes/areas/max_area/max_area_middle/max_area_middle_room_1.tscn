@@ -28,7 +28,7 @@ tile_map_data = PackedByteArray("AAD1//3/AAAFAAUAAAD0//3/AAAFAAUAAADz//3/AAAGAAU
 
 [node name="ObstacleLayer" parent="." unique_id=1844231585 instance=ExtResource("3_hhkd1")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAALAPT/AAAAAAAABQAHAO//AAAAAAAACgD9//b/AAAAAAAACgA=")
+tile_map_data = PackedByteArray("AAALAPT/AAAAAAAABQD9//b/AAAAAAAADQAHAO//AAAAAAAADQA=")
 
 [node name="Sign" parent="." unique_id=786602650 instance=ExtResource("4_41nmp")]
 position = Vector2(-253, -1000)

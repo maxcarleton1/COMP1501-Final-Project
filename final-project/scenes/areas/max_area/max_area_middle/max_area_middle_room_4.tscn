@@ -26,8 +26,4 @@ scale = Vector2(4, 4)
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("3_6fmiq")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAD0/wQAAAAAAAAABwAKAPL/AAAAAAAABwALAAQAAAAAAAAABwD6//v/AAAAAAAABwAGAPv/AAAAAAAADQD1//L/AAAAAAAADQD//wQAAAAAAAAADQAAAPL/AAAAAAAABwD///n/AAAAAAAACgA=")
-
-[connection signal="body_entered" from="ObsicalLayer/Exploder" to="ObsicalLayer/Exploder" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@39012" to="ObsicalLayer/@Area2D@39012" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@39013" to="ObsicalLayer/@Area2D@39013" method="_on_body_entered"]
+tile_map_data = PackedByteArray("AAD0/wQAAAAAAAAABwAKAPL/AAAAAAAABwALAAQAAAAAAAAABwD6//v/AAAAAAAABwAAAPL/AAAAAAAABwD//wQAAAAAAAAADgAGAPv/AAAAAAAADgD1//L/AAAAAAAADgD///n/AAAAAAAADQA=")

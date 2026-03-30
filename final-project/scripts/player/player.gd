@@ -19,6 +19,7 @@ var MAX_FALL_SPEED := 2000
 var MAX_DROP_SPEED := 1000
 var is_stunned := false
 
+@onready var cold_manager = $ColdManager
 #@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -42,6 +43,10 @@ const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
 # Signals
 signal player_start_fall
 signal unlocked(item: int)
+
+#Item Effects
+var feather_falling_active: bool = false
+var balloon_active: bool = false
 
 func _ready():
 	$BombCooldownBar.hide()
@@ -192,6 +197,12 @@ func _physics_process(delta: float):
 			var percentage_time: float = (1.0 - $BombCooldown.time_left / $BombCooldown.wait_time) * 100.0
 			$BombCooldownBar.value = 100.0 - percentage_time
 
+		if(feather_falling_active and velocity.y > 0):
+			velocity.y *= 0.9
+			
+		if(balloon_active):
+			velocity.y = -200
+			
 	else: # Falling
 		
 		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta * 0.5)
@@ -266,11 +277,27 @@ func _unhandled_input(event: InputEvent) -> void:
 			break
 	
 	if(event.is_action_pressed("Use_item")):
-		InventoryManager.use_selected_item()
-
+		InventoryManager.use_selected_item(self)
 func unlock_grapple():
 	var grappler = Grappler.instantiate()
 	call_deferred("add_child",grappler)
 	
 	# 2 = grapple
 	unlocked.emit(2)
+func activate_feather_falling(seconds: int) -> void:
+	seconds_invalid_check(seconds)
+	print("Feather falling activated")
+	feather_falling_active = true
+	await get_tree().create_timer(seconds).timeout
+	feather_falling_active = false
+	
+func activate_balloon(seconds: int) -> void:
+	seconds_invalid_check(seconds)
+	print("Balloon activated")
+	balloon_active = true
+	await get_tree().create_timer(seconds).timeout
+	balloon_active = false
+	
+func seconds_invalid_check(seconds: int):
+	if seconds <= 0:
+		print("Seconds should be > 0 for item effects")

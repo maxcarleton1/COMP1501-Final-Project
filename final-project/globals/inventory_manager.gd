@@ -100,7 +100,7 @@ func select_hotbar_slot(index: int):
 	selected_hotbar_index = index
 	selected_hotbar_index_updated.emit(index)
 	
-func use_selected_item():
+func use_selected_item(player: Node):
 	if(selected_hotbar_index < 0 || selected_hotbar_index >= items.size()):
 		return
 	
@@ -112,7 +112,7 @@ func use_selected_item():
 		return
 	
 	var used_item = item_slot.item
-	use_item_logic(used_item)
+	use_item_logic(used_item, player)
 	item_slot.quantity -= 1
 	
 	if(item_slot.quantity <= 0):
@@ -122,6 +122,12 @@ func use_selected_item():
 	inventory_updated.emit()
 	item_used.emit(item_slot.item, selected_hotbar_index)
 	
-func use_item_logic(item: ItemData):
+func use_item_logic(item: ItemData, player: Node):
 	print("Used item logic: ", item.name)
-	
+	match item.item_effect:
+		ItemData.ItemEffect.FEATHER_FALLING:
+			player.activate_feather_falling(item.seconds)
+		ItemData.ItemEffect.BALLOON:
+			player.activate_balloon(item.seconds)
+		_:
+			print("Item not found when attempting item logic: ", item.name)

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cngmtxuidwop2" path="res://scenes/obstacles/spike_1x2.tscn" id="2_wial1"]
 [ext_resource type="PackedScene" uid="uid://dckl2cklcq5yf" path="res://scenes/obstacles/falling_spike.tscn" id="3_gvol7"]
 [ext_resource type="PackedScene" uid="uid://dsrxilr4lhymd" path="res://scenes/obstacles/grapple_point.tscn" id="3_iue3m"]
+[ext_resource type="PackedScene" uid="uid://dq2erd48638ko" path="res://scenes/obstacles/Fire.tscn" id="4_mqfsj"]
 [ext_resource type="PackedScene" uid="uid://8y8jncun8w00" path="res://scenes/obstacles/pendulum_trap.tscn" id="4_qfdth"]
 [ext_resource type="PackedScene" uid="uid://c0qcvb2t3ksb2" path="res://scenes/obstacles/exploder.tscn" id="5_1gh35"]
 [ext_resource type="PackedScene" uid="uid://jsemmstk0c3n" path="res://scenes/obstacles/coin.tscn" id="5_gkn2c"]
@@ -24,10 +25,11 @@ scenes/6/scene = ExtResource("6_kbnnr")
 scenes/7/scene = ExtResource("7_g4bqq")
 scenes/8/scene = ExtResource("8_g4bqq")
 scenes/9/scene = ExtResource("11_7qlx8")
-scenes/10/scene = ExtResource("10_iue3m")
-scenes/11/scene = ExtResource("2_6oly2")
-scenes/12/scene = ExtResource("3_iue3m")
-scenes/13/scene = ExtResource("5_1gh35")
+scenes/10/scene = ExtResource("2_6oly2")
+scenes/11/scene = ExtResource("3_iue3m")
+scenes/12/scene = ExtResource("4_mqfsj")
+scenes/13/scene = ExtResource("10_iue3m")
+scenes/14/scene = ExtResource("5_1gh35")
 
 [sub_resource type="TileSet" id="TileSet_ok8ha"]
 sources/0 = SubResource("TileSetScenesCollectionSource_iecb2")

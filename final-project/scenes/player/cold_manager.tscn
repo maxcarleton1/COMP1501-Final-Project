@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://drafljej2cfkx"]
+
+[ext_resource type="Script" uid="uid://byo1fby2t6gkt" path="res://scripts/player/cold_manager.gd" id="1_wg7fm"]
+[ext_resource type="AudioStream" uid="uid://cadd4tytkpnqd" path="res://assets/audio/shivermetimbers 2.mp3" id="2_n3gss"]
+[ext_resource type="AudioStream" uid="uid://db3rggmqftq42" path="res://assets/audio/PGnot13ng 1.mp3" id="3_84wkc"]
+[ext_resource type="AudioStream" uid="uid://dcjw806qc7utp" path="res://assets/audio/Warm.mp3" id="4_v2esp"]
+[ext_resource type="Texture2D" uid="uid://b8gelgrdobalf" path="res://assets/art/custom_art/icicle.png" id="5_1lt08"]
+
+[sub_resource type="Curve" id="Curve_1lt08"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2rita"]
+curve = SubResource("Curve_1lt08")
+
+[sub_resource type="Gradient" id="Gradient_oxf76"]
+offsets = PackedFloat32Array(0.4262295, 0.55737704, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.8285714, 0.8285714, 0.8285714, 0.8285714, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jniul"]
+gradient = SubResource("Gradient_oxf76")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1lt08"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -500, 0)
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+gravity = Vector3(25, 98, 0)
+scale_min = 5.0
+scale_max = 16.0
+color_initial_ramp = SubResource("GradientTexture1D_jniul")
+alpha_curve = SubResource("CurveTexture_2rita")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.020000001
+turbulence_influence_max = 0.080000006
+
+[node name="ColdManager" type="Node2D" unique_id=1008056164]
+script = ExtResource("1_wg7fm")
+
+[node name="Timer" type="Timer" parent="." unique_id=1214874005]
+autostart = true
+
+[node name="Shiver" type="AudioStreamPlayer" parent="." unique_id=773662272]
+stream = ExtResource("2_n3gss")
+volume_db = -80.0
+
+[node name="PGnot13" type="AudioStreamPlayer" parent="." unique_id=1944570584]
+stream = ExtResource("3_84wkc")
+volume_db = -80.0
+
+[node name="Hotboy" type="AudioStreamPlayer" parent="." unique_id=1534121836]
+stream = ExtResource("4_v2esp")
+volume_db = -80.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=505310770]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=480703178]
+offset_left = -12.0
+offset_top = -53.0
+offset_right = 13.0
+offset_bottom = -28.0
+fill_mode = 2
+texture_progress = ExtResource("5_1lt08")
+
+[node name="Snow" type="GPUParticles2D" parent="." unique_id=1741186381]
+emitting = false
+amount = 300
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_1lt08")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

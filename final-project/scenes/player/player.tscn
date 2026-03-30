@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://3gjpa8japugu" path="res://assets/art/falling/particle.png" id="10_h17s1"]
 [ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="11_je7p5"]
 [ext_resource type="PackedScene" uid="uid://bwfxv1mifvbtv" path="res://scenes/particles/stun_particles.tscn" id="12_fm80t"]
+[ext_resource type="PackedScene" uid="uid://drafljej2cfkx" path="res://scenes/player/cold_manager.tscn" id="11_je7p5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -239,6 +240,7 @@ one_shot = true
 speed_scale = 1.5
 explosiveness = 0.7
 process_material = SubResource("ParticleProcessMaterial_fm80t")
+[node name="ColdManager" parent="." unique_id=1008056164 instance=ExtResource("11_je7p5")]
 
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DashSpeedBoost" to="." method="_on_dash_speed_boost_timeout"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://caad7y8pu7y0r"]
 
-[ext_resource type="Script" uid="uid://dt4jjb20v8sr0" path="res://scripts/player/grapple_pickup.gd" id="1_3bnio"]
+[ext_resource type="Script" path="res://scripts/player/grapple_pickup.gd" id="1_3bnio"]
 [ext_resource type="Texture2D" uid="uid://bnyfha4vf647w" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0109.png" id="2_a7cqc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttayj"]

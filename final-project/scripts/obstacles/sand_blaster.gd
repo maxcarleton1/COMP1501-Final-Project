@@ -19,10 +19,11 @@ func _ready() -> void:
 func _physics_process(delta: float):
 	var to_player := player.global_position - global_position
 	
-	if to_player.length() > VISION_RANGE:
-		activated = false
-	else:
+	# Deactivate when player falling
+	if to_player.length() <= VISION_RANGE and not player.falling:
 		activated = true
+	else:
+		activated = false
 	
 	if activated and not stunned:
 		if player.global_position.x > global_position.x:

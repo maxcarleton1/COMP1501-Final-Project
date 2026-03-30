@@ -14,6 +14,7 @@ func _ready():
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		in_range = true
+		open()
 
 func _on_body_exited(body: Node2D):
 	if body.is_in_group("Player"):

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ifqdif1rk3u" path="res://scripts/areas/level_template.gd" id="1_qgkkx"]
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="2_qfexk"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="3_hhkd1"]
+[ext_resource type="PackedScene" uid="uid://bo8me3ip4sqb" path="res://scenes/ui/interactive/sign.tscn" id="4_41nmp"]
 
 [node name="BombTest" type="Node2D" unique_id=668189479]
 script = ExtResource("1_qgkkx")
@@ -28,6 +29,10 @@ tile_map_data = PackedByteArray("AAD1//3/AAAFAAUAAAD0//3/AAAFAAUAAADz//3/AAAGAAU
 [node name="ObstacleLayer" parent="." unique_id=1844231585 instance=ExtResource("3_hhkd1")]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAALAPT/AAAAAAAABQAHAO//AAAAAAAACgD9//b/AAAAAAAACgA=")
+
+[node name="Sign" parent="." unique_id=786602650 instance=ExtResource("4_41nmp")]
+position = Vector2(-253, -1000)
+text = "Are these guys bothering you? There's probably a way to deal with them."
 
 [connection signal="area_entered" from="ObstacleLayer/Coin" to="ObstacleLayer/Coin" method="_on_area_entered"]
 [connection signal="body_entered" from="ObstacleLayer/Coin" to="ObstacleLayer/Coin" method="_on_body_entered"]

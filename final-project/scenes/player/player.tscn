@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://fdov2q23kknk" path="res://assets/art/bomb/cooldowntop.png" id="8_h17s1"]
 [ext_resource type="Texture2D" uid="uid://5w50e34xqjd2" path="res://assets/art/bomb/cooldownbackground.png" id="9_je7p5"]
 [ext_resource type="Texture2D" uid="uid://3gjpa8japugu" path="res://assets/art/falling/particle.png" id="10_h17s1"]
+[ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="11_je7p5"]
+[ext_resource type="PackedScene" uid="uid://bwfxv1mifvbtv" path="res://scenes/particles/stun_particles.tscn" id="12_fm80t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -96,6 +98,65 @@ scale_max = 10.0
 scale_curve = SubResource("CurveTexture_myrg7")
 color_ramp = SubResource("GradientTexture1D_fm80t")
 
+[sub_resource type="Gradient" id="Gradient_h17s1"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.62352943, 0.3529412, 0.32156864, 1, 0.8968711, 0.65980816, 0.5504222, 1, 0.991492, 0.8889919, 0.7983405, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_je7p5"]
+gradient = SubResource("Gradient_h17s1")
+
+[sub_resource type="Curve" id="Curve_fm80t"]
+_data = [Vector2(0.12745097, 0.92127186), 0.0, 0.0, 0, 0, Vector2(1, 0.17991424), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gx1jg"]
+curve = SubResource("Curve_fm80t")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ugbui"]
+lifetime_randomness = 0.3
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(4, 0, 0)
+direction = Vector3(1, -0.5, 0)
+spread = 15.0
+initial_velocity_min = 100.0
+initial_velocity_max = 104.82
+gravity = Vector3(0, 350, 0)
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_gx1jg")
+color_ramp = SubResource("GradientTexture1D_je7p5")
+
+[sub_resource type="Gradient" id="Gradient_fm80t"]
+colors = PackedColorArray(0.39164335, 0.16921642, 0.087352775, 1, 0.9470245, 0.5832382, 0.40542296, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gx1jg"]
+gradient = SubResource("Gradient_fm80t")
+
+[sub_resource type="Curve" id="Curve_ugbui"]
+_data = [Vector2(0.3669468, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.21912009), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fcs02"]
+curve = SubResource("Curve_ugbui")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_fm80t"]
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 10, 0)
+emission_shape = 3
+emission_box_extents = Vector3(15, 3, 1)
+direction = Vector3(0, -1, 0)
+spread = 20.0
+initial_velocity_min = 75.0
+initial_velocity_max = 100.0
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 54.459976
+gravity = Vector3(0, 200, 0)
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_fcs02")
+color_ramp = SubResource("GradientTexture1D_gx1jg")
+
 [node name="Player" type="CharacterBody2D" unique_id=1015420686 groups=["Player"]]
 z_index = 3
 scale = Vector2(3, 3)
@@ -144,7 +205,7 @@ tint_under = Color(1, 1, 1, 0.39215687)
 tint_over = Color(1, 1, 1, 0.39215687)
 tint_progress = Color(1, 1, 1, 0.39215687)
 
-[node name="MeteorEffect" type="GPUParticles2D" parent="." unique_id=1858367816]
+[node name="MeteorParticles" type="GPUParticles2D" parent="." unique_id=1858367816]
 z_index = -1
 scale = Vector2(4, 4)
 amount = 100
@@ -153,6 +214,33 @@ lifetime = 0.5
 visibility_rect = Rect2(-50, -50, 100, 100)
 process_material = SubResource("ParticleProcessMaterial_kvlxm")
 
+[node name="WalkEffect" type="GPUParticles2D" parent="." unique_id=1820046126]
+position = Vector2(-2.3841858e-07, 10.666667)
+texture = ExtResource("11_je7p5")
+lifetime = 0.5
+speed_scale = 2.0
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_ugbui")
+
+[node name="StunParticles" parent="." unique_id=1204181159 instance=ExtResource("12_fm80t")]
+
+[node name="StunTimer" type="Timer" parent="." unique_id=1530514159]
+one_shot = true
+
+[node name="StunCooldownTimer" type="Timer" parent="." unique_id=1561475930]
+wait_time = 1.5
+one_shot = true
+
+[node name="CraterParticles" type="GPUParticles2D" parent="." unique_id=184407555]
+emitting = false
+amount = 100
+texture = ExtResource("10_h17s1")
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.7
+process_material = SubResource("ParticleProcessMaterial_fm80t")
+
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="DashSpeedBoost" to="." method="_on_dash_speed_boost_timeout"]
 [connection signal="timeout" from="BombCooldown" to="." method="_on_bomb_cooldown_timeout"]
+[connection signal="timeout" from="StunTimer" to="." method="_on_stun_timer_timeout"]

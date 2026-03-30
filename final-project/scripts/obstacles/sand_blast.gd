@@ -19,4 +19,5 @@ func spawn(pos: Vector2, towards: Vector2):
 func _on_body_entered(body: Node2D):
 	# Push away
 	if body.is_in_group("Player"):
-		body.velocity += to_player * PUSH_FORCE
+		if not body.falling:
+			body.velocity += to_player * PUSH_FORCE

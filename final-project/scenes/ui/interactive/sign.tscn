@@ -11,6 +11,7 @@ size = Vector2(100, 50)
 script = ExtResource("1_1f3wi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1297705677]
+modulate = Color(1, 0.63, 0.63, 1)
 scale = Vector2(4, 4)
 texture = ExtResource("2_8aao4")
 
@@ -28,8 +29,9 @@ grow_vertical = 0
 theme_override_styles/panel = ExtResource("3_8aao4")
 
 [node name="Label" type="Label" parent="PanelContainer" unique_id=890669213]
-custom_minimum_size = Vector2(400, 50)
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 18
 text = "This is some text which looks really cool"
 horizontal_alignment = 1

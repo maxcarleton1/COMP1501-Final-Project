@@ -1,6 +1,9 @@
 extends Resource
 class_name DifficultyConfig
 
+# Player stun, replaced with instakill in hell mode
+@export var player_stun_duration: int = 1 # In seconds
+
 # Area 1
 @export var barrier_speed: int = 100
 
@@ -10,9 +13,3 @@ class_name DifficultyConfig
 @export var dust_devil_width_scale: float = 1 # For collision hitbox and sprite
 
 @export var sand_blaster_cooldown: float = 5 # Time between attacks
-
-# Number of rooms to generate per area, -1 means all
-# Could cause issues, might be better to leave it for now
-# @export var rooms_per_area: int
-
-# Whatever fun stuff to put here...

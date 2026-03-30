@@ -33,6 +33,9 @@ func _ready() -> void:
 	player.player_start_fall.connect(reset_dust_devil)
 	player.player_start_fall.connect(reset_timer)
 	
+	# Player (updating controls UI)
+	player.unlocked.connect($HUD/PauseMenu.unlocked)
+	
 	# This is just so the player doesn't drop on game startup
 	$Player.global_position = $LevelBuilder/StartRoom/StopFall/CollisionShape2D.global_position
 

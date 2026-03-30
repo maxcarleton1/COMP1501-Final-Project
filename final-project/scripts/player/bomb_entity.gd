@@ -14,7 +14,7 @@ func _ready() -> void:
 	$ExplosionParticles.emitting = false
 
 func _input(event: InputEvent):
-	if event.is_action_pressed("Interact"):
+	if event.is_action_pressed("Bomb"):
 		if not get_tree().get_first_node_in_group("Player").falling:
 			explode()
 

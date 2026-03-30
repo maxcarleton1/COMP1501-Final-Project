@@ -11,6 +11,11 @@ func _ready():
 	global_position.x = 0
 
 func _physics_process(delta: float):
+	if player.falling: # Track better when falling
+		tracking_speed = 3
+	else:
+		tracking_speed = 1.5
+		
 	var look_ahead = player.velocity.y * look_ahead_speed
 
 	# Tries to stay ahead of the player at some target

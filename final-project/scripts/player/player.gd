@@ -17,6 +17,7 @@ var MAX_FALL_SPEED := 2000
 
 # For not losing!
 var MAX_DROP_SPEED := 1000
+var is_stunned := false
 
 #@onready var inventory_manager = $InventoryManager
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -37,11 +38,19 @@ var is_jump_velocity := false
 
 #Grapple
 const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
+
+# Signals
 signal player_start_fall
+signal unlocked(item: int)
 
 func _ready():
 	$BombCooldownBar.hide()
-	$MeteorEffect.emitting = false
+	$MeteorParticles.emitting = false
+	$WalkEffect.emitting = false
+	$CraterParticles.emitting = false
+	
+	if GlobalStats.current_difficulty != GlobalStats.difficulty.HELL_MODE:
+		$StunTimer.wait_time = GlobalStats.difficulty_data.player_stun_duration
 
 func fall():
 	# Turn off most collision and fall, speeding up slowly
@@ -53,7 +62,19 @@ func fall():
 	set_collision_mask_value(1, false) # Layer 1 = most ground/interactable objects, not including walls (Layer 2 also)
 	set_collision_layer_value(5, true) # Layer 5 = stop lose barrier (in start_room)
 	
-	$MeteorEffect.emitting = true
+	$WalkEffect.emitting = false
+	$StunParticles.emitting = false
+	
+	unlocked.emit(0)
+	
+	var tween = create_tween()
+	if $AnimatedSprite2D.flip_h: # Always face downwards
+		tween.tween_property($AnimatedSprite2D, "rotation_degrees", 90, 1)
+	else:
+		tween.tween_property($AnimatedSprite2D, "rotation_degrees", -90, 1)
+		
+	await get_tree().create_timer(2).timeout
+	$MeteorParticles.emitting = true
 	
 func stop_fall():
 	# Turn on collision and restore movement
@@ -63,21 +84,40 @@ func stop_fall():
 	set_collision_mask_value(1, true) # Layer 1 = most ground/interactable objects
 	set_collision_layer_value(5, false) # Layer 5 = stop lose barrier (in start_room)
 	
-	$MeteorEffect.emitting = false
+	$MeteorParticles.emitting = false
+	
+	$AnimatedSprite2D.rotation_degrees = 0
+	
+	$CraterParticles.emitting = true
 
 # Called when an obstacle wants the player to lose on hit
-func get_hit_by_obstacle():
-	if not falling: # Seeing as this can be triggered by any obstacle
-		$PlayerSFXManager/Death.play()
-		# Emit to main, which will delegate resetting, etc. to individual scenes
-		player_start_fall.emit()
-		
-		# Resetting inventory stuff here
-		# Holding off until inventory is more fleshed out
-		# $InventoryManager.clearItems()
-		# $InventoryManager.clearUpgrades() ???
-		
-		fall()
+func get_hit_by_obstacle(insta_lose: bool = false):
+	if insta_lose or GlobalStats.current_difficulty == GlobalStats.difficulty.HELL_MODE: # Barrier, dust devil, cold, and hell mode obstacles
+		if not falling: # Seeing as this can be triggered by any obstacle
+			$PlayerSFXManager/Death.play()
+			# Emit to main, which will delegate resetting, etc. to individual scenes
+			player_start_fall.emit()
+			
+			# Resetting inventory stuff here
+			# Holding off until inventory is more fleshed out
+			# $InventoryManager.clearItems()
+			# $InventoryManager.clearUpgrades() ???
+			
+			fall()
+	else: # Most obstacles in normal/hard mode
+		get_stunned()
+
+# Called when an obstacle wants to temporarily stun the player
+func get_stunned():
+	if $StunCooldownTimer.is_stopped():
+		is_stunned = true
+		$StunTimer.start()
+		$StunParticles.emitting = true
+
+func _on_stun_timer_timeout():
+	is_stunned = false
+	$StunCooldownTimer.start()
+	$StunParticles.emitting = false
 
 func _physics_process(delta: float):
 	var direction := 0.0
@@ -92,7 +132,7 @@ func _physics_process(delta: float):
 		if is_on_floor():
 			is_jump_velocity = false
 
-		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote):
+		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote) and not is_stunned:
 			velocity.y = JUMP_VELOCITY
 			$PlayerSFXManager/Jump.play()
 			is_jump_velocity = true
@@ -100,15 +140,29 @@ func _physics_process(delta: float):
 			velocity.y *= JUMP_HOLD_MULTIPLIER
 		
 		direction = Input.get_axis("MoveLeft", "MoveRight")
-		if direction != 0 and !dash_speed_boost:
+		if direction != 0 and !dash_speed_boost and not is_stunned:
 			velocity.x = move_toward(velocity.x, get_speed() * direction, ACCELERATION * delta)
-		elif direction != 0:
+		elif direction != 0 and not is_stunned:
 			velocity.x = move_toward(velocity.x, (get_speed() + 500) * direction, ACCELERATION * delta)
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, AIR_FRICTION * delta)
-		if Input.is_action_just_pressed("Dash") and can_dash:
+			
+		# Walking particle effect
+		if is_on_floor():
+			if velocity.x < 0:
+				$WalkEffect.emitting = true
+				$WalkEffect.scale.x = 1
+			elif velocity.x > 0:
+				$WalkEffect.emitting = true
+				$WalkEffect.scale.x = -1
+			else:
+				$WalkEffect.emitting = false
+		else:
+			$WalkEffect.emitting = false
+			
+		if Input.is_action_just_pressed("Dash") and can_dash and not is_stunned:
 			can_dash = false
 			dash_speed_boost = true
 			$DashCooldown.start()
@@ -127,8 +181,8 @@ func _physics_process(delta: float):
 		# Clamp drop (NOT FALL) speed (lol)
 		velocity.y = clamp(velocity.y, -INF, MAX_DROP_SPEED)
 				
-		if unlocked_bomb:
-			if Input.is_action_just_pressed("Interact") and can_bomb and not bomb and not falling:
+		if unlocked_bomb and not is_stunned:
+			if Input.is_action_just_pressed("Bomb") and can_bomb and not bomb and not falling:
 				# bomb logic here
 				spawn_bomb()
 				
@@ -139,6 +193,7 @@ func _physics_process(delta: float):
 			$BombCooldownBar.value = 100.0 - percentage_time
 
 	else: # Falling
+		
 		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta * 0.5)
 	
 	move_and_slide()
@@ -179,6 +234,7 @@ func spawn_dash_ghost() -> void:
 	var tween := create_tween()
 	tween.tween_property(ghost, "modulate:a", 0.0, DASH_TRAIL_FADE_TIME)
 	tween.finished.connect(ghost.queue_free)
+
 func pickup_coin():
 	$PlayerSFXManager/PickupCoin.play()
 	
@@ -188,6 +244,9 @@ func unlock_bomb():
 	$BombCooldown.start()
 	
 	$BombCooldownBar.show()
+	
+	# 1 = bomb
+	unlocked.emit(1)
 
 func spawn_bomb():
 	if not bomb: # Just to prevent spawning one right when you explode one
@@ -208,6 +267,10 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if(event.is_action_pressed("Use_item")):
 		InventoryManager.use_selected_item()
+
 func unlock_grapple():
 	var grappler = Grappler.instantiate()
 	call_deferred("add_child",grappler)
+	
+	# 2 = grapple
+	unlocked.emit(2)

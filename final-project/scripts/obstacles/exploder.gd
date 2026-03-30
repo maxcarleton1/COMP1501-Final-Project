@@ -31,7 +31,8 @@ func blast_behaviour():
 
 func _on_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
-		explode()
+		if not body.falling:
+			explode()
 
 func _on_pre_regen_timer_timeout():
 	$RegenParticles.emitting = true
@@ -50,9 +51,12 @@ func _on_explosion_radius_body_entered(body: Node2D):
 		var direction_to_body = body.global_position - global_position
 		direction_to_body = direction_to_body.normalized()
 		
-		body.velocity = direction_to_body * blast_force
 		if body.is_in_group("Player"):
+			if body.falling: # Hopefully prevents weird falling explosion interactions
+				return
 			body.is_jump_velocity = false
+			
+		body.velocity = direction_to_body * blast_force
 		
 		# Call unique behaviour
 		if body.is_in_group("InteractiveObstacle"):

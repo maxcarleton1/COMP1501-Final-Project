@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_eo8qd")
+player_stun_duration = -1
 barrier_speed = 175
 dust_devil_cooldown = 3.0
 dust_devil_timer = 3.0

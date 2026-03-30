@@ -112,6 +112,11 @@ func _on_dust_devil_timer_timeout():
 # Lose and shit
 func _on_vortex_area_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
-		body.get_hit_by_obstacle()
+		body.get_hit_by_obstacle(true)
 	if body.is_in_group("InteractiveObstacle"):
 		body.blast_behaviour()
+
+# Edge case for exploders
+func _on_vortex_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("InteractiveObstacle"):
+		area.blast_behaviour()

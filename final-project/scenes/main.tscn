@@ -9,12 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://ciwgopc25eddt" path="res://scenes/player/altitude_tracker.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://jrfeun3riaij" path="res://scenes/economy/economy_display.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://dvo6rbxbs8ttq" path="res://scenes/player/parallax_background.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://b57q745n5mgey" path="res://scenes/obstacles/dust_devil.tscn" id="10_choun"]
 
 [node name="Main" type="Node" unique_id=974304658]
 script = ExtResource("1_jyhfs")
 
 [node name="Player" parent="." unique_id=1015420686 instance=ExtResource("1_sugp2")]
-scale = Vector2(3, 3)
 
 [node name="LevelBuilder" parent="." unique_id=769528092 instance=ExtResource("2_jyhfs")]
 
@@ -34,3 +34,6 @@ offset_right = -1715.0
 offset_bottom = -689.0
 
 [node name="ParallaxBackground" parent="." unique_id=681032578 instance=ExtResource("9_85g3d")]
+
+[node name="DustDevil" parent="." unique_id=1734531148 instance=ExtResource("10_choun")]
+position = Vector2(12, 1966)

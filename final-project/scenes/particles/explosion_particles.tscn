@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ct0fto5cknxuk"]
+
+[ext_resource type="Texture2D" uid="uid://3gjpa8japugu" path="res://assets/art/falling/particle.png" id="1_6dy78"]
+
+[sub_resource type="Gradient" id="Gradient_lxgys"]
+offsets = PackedFloat32Array(0, 0.22508591, 0.5343643, 0.8298969)
+colors = PackedColorArray(0.99999994, 0.7231133, 0.3880527, 1, 0.99215686, 0, 0, 1, 0.5589621, 0.4336279, 0.3936707, 1, 0.10629771, 0.08045206, 0.07311655, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xllnt"]
+gradient = SubResource("Gradient_lxgys")
+
+[sub_resource type="Curve" id="Curve_7hykc"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0.50617284, 1.2137964), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fb5ch"]
+curve = SubResource("Curve_7hykc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xuxy6"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 32.09
+angle_min = -89.99999
+angle_max = 90.000015
+direction = Vector3(0, 0, 0)
+radial_velocity_min = -2.2351742e-05
+radial_velocity_max = 199.99997
+gravity = Vector3(0, 98, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_fb5ch")
+color_ramp = SubResource("GradientTexture1D_xllnt")
+
+[node name="ExplosionParticles" type="GPUParticles2D" unique_id=1652986645]
+emitting = false
+amount = 50
+texture = ExtResource("1_6dy78")
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_xuxy6")

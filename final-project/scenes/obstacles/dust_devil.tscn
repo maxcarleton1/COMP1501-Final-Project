@@ -1,35 +1,168 @@
 [gd_scene format=3 uid="uid://b57q745n5mgey"]
 
 [ext_resource type="Script" uid="uid://5nmwoknduwc2" path="res://scripts/obstacles/dust_devil.gd" id="1_8g5u7"]
-[ext_resource type="Texture2D" uid="uid://c5s7gw0u7fgdp" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0011.png" id="2_wd151"]
-[ext_resource type="Texture2D" uid="uid://d2akl5kes5f4n" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0012.png" id="3_yamb2"]
-[ext_resource type="Texture2D" uid="uid://87ay88blbia0" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0010.png" id="4_4ystx"]
+[ext_resource type="Texture2D" uid="uid://bl6iwgc30exxh" path="res://assets/art/dust_devil/dust_devil.png" id="2_8g5u7"]
+[ext_resource type="Texture2D" uid="uid://0ag737n1tau7" path="res://assets/art/dust_devil/caution.png" id="3_8g5u7"]
+[ext_resource type="Texture2D" uid="uid://ck84ssf8vohqq" path="res://assets/art/dust_devil/vignette.png" id="3_wd151"]
+[ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="5_wd151"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd151"]
+atlas = ExtResource("2_8g5u7")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yamb2"]
+atlas = ExtResource("2_8g5u7")
+region = Rect2(17, 0, 17, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ei5cl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wd151")
+"texture": SubResource("AtlasTexture_wd151")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_yamb2")
+"texture": SubResource("AtlasTexture_yamb2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c1nwv"]
 size = Vector2(200, 1200)
 
+[sub_resource type="Gradient" id="Gradient_yamb2"]
+offsets = PackedFloat32Array(0, 0.36956522, 0.99122804)
+colors = PackedColorArray(0.68310577, 0.43965343, 0.13232398, 1, 0.8469155, 0.614074, 0.30575672, 1, 1, 0.79607844, 0.68235296, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4ystx"]
+gradient = SubResource("Gradient_yamb2")
+
+[sub_resource type="Curve" id="Curve_4ystx"]
+_limits = [-10.0, 10.0, 0.0, 0.5]
+_data = [Vector2(0, 0.049547195), 0.0, 0.0, 0, 0, Vector2(0.12268518, 10), 0.0, 0.0, 0, 0, Vector2(0.37499997, -10), 0.0, 0.0, 0, 0, Vector2(0.5, -0.1281395), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_ei5cl"]
+_limits = [-10.0, 0.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, -10), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8g5u7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_c1nwv"]
+curve_x = SubResource("Curve_4ystx")
+curve_y = SubResource("Curve_ei5cl")
+curve_z = SubResource("Curve_8g5u7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ei5cl"]
+lifetime_randomness = 0.05
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 90, 0)
+emission_shape = 3
+emission_box_extents = Vector3(90, 3, 1)
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 800.0
+initial_velocity_max = 1000.0
+angular_velocity_min = -45.000015
+angular_velocity_max = 44.999985
+directional_velocity_min = -30.000015
+directional_velocity_max = 29.999983
+directional_velocity_curve = SubResource("CurveXYZTexture_c1nwv")
+scale_min = 10.0
+scale_max = 20.0
+color_ramp = SubResource("GradientTexture1D_4ystx")
+
+[sub_resource type="Animation" id="Animation_8g5u7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VortexSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VortexSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.17453292]
+}
+
+[sub_resource type="Animation" id="Animation_wd151"]
+resource_name = "laugh"
+length = 2.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VortexSprite:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4, 0.93333334, 1.6666669, 2.1333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-65, 53), Vector2(-60, -27), Vector2(51, 47.000004), Vector2(57, -36)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VortexSprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.8, 1.2, 1.6, 2, 2.4333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [-0.17453292, 0.17453292, -0.17453292, 0.17453292, -0.17453292, 0.17453292]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yamb2"]
+_data = {
+&"RESET": SubResource("Animation_8g5u7"),
+&"laugh": SubResource("Animation_wd151")
+}
+
 [node name="DustDevil" type="Node2D" unique_id=1734531148]
 script = ExtResource("1_8g5u7")
 
 [node name="VortexSprite" type="AnimatedSprite2D" parent="." unique_id=1600423131]
+modulate = Color(1, 0.8235294, 0.49803922, 1)
+z_index = 1
+rotation = 0.17453292
+scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_ei5cl")
+frame_progress = 0.5927677
+
+[node name="Vignette" type="Sprite2D" parent="VortexSprite" unique_id=1999893715]
+modulate = Color(1, 1, 1, 0.21568628)
+show_behind_parent = true
+z_index = 1
+texture = ExtResource("3_wd151")
 
 [node name="WarningSprite" type="Sprite2D" parent="." unique_id=2119182895]
-texture = ExtResource("4_4ystx")
+z_index = 2
+texture_repeat = 2
+position = Vector2(0, 400)
+scale = Vector2(4, 4)
+texture = ExtResource("3_8g5u7")
+region_enabled = true
+region_rect = Rect2(0, 0, 69, 22)
 
 [node name="VortexArea" type="Area2D" parent="." unique_id=1178781848]
 
@@ -47,6 +180,18 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=58838962]
+position = Vector2(2, 491)
+amount = 250
+texture = ExtResource("5_wd151")
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_ei5cl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=612143112]
+libraries/ = SubResource("AnimationLibrary_yamb2")
+
+[connection signal="area_entered" from="VortexArea" to="." method="_on_vortex_area_area_entered"]
+[connection signal="body_entered" from="VortexArea" to="." method="_on_vortex_area_body_entered"]
 [connection signal="timeout" from="DustDevilTimer" to="." method="_on_dust_devil_timer_timeout"]
 [connection signal="timeout" from="DustDevilCooldown" to="." method="_on_dust_devil_cooldown_timeout"]
 [connection signal="timeout" from="WarnTimer" to="." method="_on_warn_timer_timeout"]

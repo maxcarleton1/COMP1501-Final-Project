@@ -11,7 +11,7 @@ func _physics_process(delta: float):
 func _on_area_2d_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
 		# Player loses, falls back to the start
-		body.get_hit_by_obstacle()
+		body.get_hit_by_obstacle(true)
 		started = false # Stop movement
 
 func start_moving():

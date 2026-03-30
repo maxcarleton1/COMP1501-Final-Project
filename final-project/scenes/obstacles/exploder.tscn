@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://c0qcvb2t3ksb2"]
+
+[ext_resource type="Script" uid="uid://crjh6bhf0pc5y" path="res://scripts/obstacles/exploder.gd" id="1_xf55o"]
+[ext_resource type="Texture2D" uid="uid://dc1rcqm3k46t6" path="res://assets/art/kenney_pixel-platformer/Tiles/Characters/tile_0008.png" id="2_m1naa"]
+[ext_resource type="PackedScene" uid="uid://ct0fto5cknxuk" path="res://scenes/particles/explosion_particles.tscn" id="3_ea40w"]
+[ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="4_fikug"]
+[ext_resource type="Texture2D" uid="uid://fdpiuh1abg2j" path="res://assets/art/bomb/explosion.png" id="5_fikug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ea40w"]
+radius = 20.0
+
+[sub_resource type="Gradient" id="Gradient_7oem1"]
+offsets = PackedFloat32Array(0.15182187, 1)
+colors = PackedColorArray(0, 0.83137256, 1, 0.10980392, 1, 1, 1, 0.70980394)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3jyga"]
+gradient = SubResource("Gradient_7oem1")
+
+[sub_resource type="Curve" id="Curve_6cnmh"]
+_data = [Vector2(0, 0.22865939), 0.0, 0.0, 0, 0, Vector2(1, 0.75258887), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_8csam"]
+curve = SubResource("Curve_6cnmh")
+
+[sub_resource type="Curve" id="Curve_iqyfs"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.40330255), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_ice02"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_fvkuf"]
+curve_x = SubResource("Curve_iqyfs")
+curve_y = SubResource("Curve_ice02")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wyfm5"]
+lifetime_randomness = 0.3
+particle_flag_align_y = true
+particle_flag_disable_z = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 40.0
+emission_ring_inner_radius = 30.0
+emission_ring_cone_angle = 90.0
+radial_velocity_min = -200.00002
+radial_velocity_max = -50.000023
+radial_velocity_curve = SubResource("CurveTexture_8csam")
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveXYZTexture_fvkuf")
+color_ramp = SubResource("GradientTexture1D_3jyga")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t08xy"]
+atlas = ExtResource("5_fikug")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxgys"]
+atlas = ExtResource("5_fikug")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xllnt"]
+atlas = ExtResource("5_fikug")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hykc"]
+atlas = ExtResource("5_fikug")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb5ch"]
+atlas = ExtResource("5_fikug")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuxy6"]
+atlas = ExtResource("5_fikug")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjsca"]
+atlas = ExtResource("5_fikug")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7oem1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t08xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxgys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xllnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hykc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb5ch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuxy6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjsca")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3jyga"]
+radius = 40.0
+
+[node name="Exploder" type="Area2D" unique_id=35136621 groups=["InteractiveObstacle"]]
+script = ExtResource("1_xf55o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1018719181]
+texture = ExtResource("2_m1naa")
+
+[node name="VisionRadius" type="CollisionShape2D" parent="." unique_id=1876854419]
+shape = SubResource("CircleShape2D_ea40w")
+
+[node name="ExplosionParticles" parent="." unique_id=1652986645 instance=ExtResource("3_ea40w")]
+
+[node name="RegenParticles" type="GPUParticles2D" parent="." unique_id=1688864902]
+emitting = false
+amount = 15
+texture = ExtResource("4_fikug")
+explosiveness = 0.25
+process_material = SubResource("ParticleProcessMaterial_wyfm5")
+
+[node name="RegenTimer" type="Timer" parent="." unique_id=1676073012]
+wait_time = 4.0
+one_shot = true
+
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="." unique_id=1126581909]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_7oem1")
+frame = 6
+frame_progress = 1.0
+speed_scale = 6.0
+
+[node name="PreRegenTimer" type="Timer" parent="." unique_id=156035487]
+wait_time = 3.0
+one_shot = true
+
+[node name="ExplosionRadius" type="Area2D" parent="." unique_id=1362022009]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionRadius" unique_id=1875127366]
+shape = SubResource("CircleShape2D_3jyga")
+disabled = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
+[connection signal="timeout" from="PreRegenTimer" to="." method="_on_pre_regen_timer_timeout"]
+[connection signal="body_entered" from="ExplosionRadius" to="." method="_on_explosion_radius_body_entered"]

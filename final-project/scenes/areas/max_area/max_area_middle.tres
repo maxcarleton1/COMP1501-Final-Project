@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="Area" format=3 uid="uid://du45xhlel3khl"]
 
 [ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_vrquw"]
+[ext_resource type="Resource" uid="uid://4q3n1qrksd3c" path="res://scenes/areas/max_area/max_area_middle/max_area_middle_room_5.tres" id="2_5fg5b"]
 [ext_resource type="Resource" uid="uid://bidjsf4d34tbo" path="res://scenes/areas/max_area/max_area_middle/max_area_middle_room_1.tres" id="2_godjq"]
+[ext_resource type="Resource" uid="uid://himgd8pd5o4" path="res://scenes/areas/max_area/max_area_middle/max_area_middle_room_3.tres" id="2_ihha2"]
 [ext_resource type="Resource" uid="uid://p0m0tadpkxjn" path="res://scenes/areas/max_area/max_area_middle/max_area_middle_room_2.tres" id="2_tx351"]
 [ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="2_uhcsx"]
+[ext_resource type="Resource" uid="uid://dt2dsjk6iva3i" path="res://scenes/areas/max_area/max_area_middle/max_area_middle_room_4.tres" id="6_83aqa"]
 
 [resource]
 script = ExtResource("2_uhcsx")
-rooms = Array[ExtResource("1_vrquw")]([ExtResource("2_godjq"), ExtResource("2_tx351")])
+rooms = Array[ExtResource("1_vrquw")]([ExtResource("2_5fg5b"), ExtResource("2_godjq"), ExtResource("2_tx351"), ExtResource("2_ihha2"), ExtResource("6_83aqa")])
+random_order = true
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

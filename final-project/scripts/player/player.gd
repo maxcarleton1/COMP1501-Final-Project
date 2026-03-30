@@ -12,7 +12,12 @@ extends CharacterBody2D
 @export var DASH_TRAIL_ALPHA := 0.55
 const PLAYER_GHOST_SCENE := preload("res://scenes/player/PlayerGhost.tscn")
 
-var MAX_FALL_SPEED := 750
+# For losing
+var MAX_FALL_SPEED := 2000
+
+# For not losing!
+var MAX_DROP_SPEED := 1000
+var is_stunned := false
 
 @onready var cold_manager = $ColdManager
 #@onready var inventory_manager = $InventoryManager
@@ -29,9 +34,15 @@ var bomb: RigidBody2D
 const BOMB_ENTITY := preload("res://scenes/player/bomb_entity.tscn")
 var unlocked_bomb := false
 var can_bomb := false
+# Fix???
+var is_jump_velocity := false
+
 #Grapple
 const Grappler: PackedScene = preload("res://scenes/player/grapple_hook.tscn")
+
+# Signals
 signal player_start_fall
+signal unlocked(item: int)
 
 #Item Effects
 var feather_falling_active: bool = false
@@ -39,9 +50,15 @@ var balloon_active: bool = false
 
 func _ready():
 	$BombCooldownBar.hide()
+	$MeteorParticles.emitting = false
+	$WalkEffect.emitting = false
+	$CraterParticles.emitting = false
+	
+	if GlobalStats.current_difficulty != GlobalStats.difficulty.HELL_MODE:
+		$StunTimer.wait_time = GlobalStats.difficulty_data.player_stun_duration
 
 func fall():
-	# Turn off most collision and fall at a constant rate
+	# Turn off most collision and fall, speeding up slowly
 	falling = true
 	velocity = Vector2.ZERO
 	
@@ -50,6 +67,20 @@ func fall():
 	set_collision_mask_value(1, false) # Layer 1 = most ground/interactable objects, not including walls (Layer 2 also)
 	set_collision_layer_value(5, true) # Layer 5 = stop lose barrier (in start_room)
 	
+	$WalkEffect.emitting = false
+	$StunParticles.emitting = false
+	
+	unlocked.emit(0)
+	
+	var tween = create_tween()
+	if $AnimatedSprite2D.flip_h: # Always face downwards
+		tween.tween_property($AnimatedSprite2D, "rotation_degrees", 90, 1)
+	else:
+		tween.tween_property($AnimatedSprite2D, "rotation_degrees", -90, 1)
+		
+	await get_tree().create_timer(2).timeout
+	$MeteorParticles.emitting = true
+	
 func stop_fall():
 	# Turn on collision and restore movement
 	falling = false
@@ -57,20 +88,41 @@ func stop_fall():
 	
 	set_collision_mask_value(1, true) # Layer 1 = most ground/interactable objects
 	set_collision_layer_value(5, false) # Layer 5 = stop lose barrier (in start_room)
+	
+	$MeteorParticles.emitting = false
+	
+	$AnimatedSprite2D.rotation_degrees = 0
+	
+	$CraterParticles.emitting = true
 
 # Called when an obstacle wants the player to lose on hit
-func get_hit_by_obstacle():
-	if not falling: # Seeing as this can be triggered by any obstacle
-		$PlayerSFXManager/Death.play()
-		# Emit to main, which will delegate resetting, etc. to individual scenes
-		player_start_fall.emit()
-		
-		# Resetting inventory stuff here
-		# Holding off until inventory is more fleshed out
-		# $InventoryManager.clearItems()
-		# $InventoryManager.clearUpgrades() ???
-		
-		fall()
+func get_hit_by_obstacle(insta_lose: bool = false):
+	if insta_lose or GlobalStats.current_difficulty == GlobalStats.difficulty.HELL_MODE: # Barrier, dust devil, cold, and hell mode obstacles
+		if not falling: # Seeing as this can be triggered by any obstacle
+			$PlayerSFXManager/Death.play()
+			# Emit to main, which will delegate resetting, etc. to individual scenes
+			player_start_fall.emit()
+			
+			# Resetting inventory stuff here
+			# Holding off until inventory is more fleshed out
+			# $InventoryManager.clearItems()
+			# $InventoryManager.clearUpgrades() ???
+			
+			fall()
+	else: # Most obstacles in normal/hard mode
+		get_stunned()
+
+# Called when an obstacle wants to temporarily stun the player
+func get_stunned():
+	if $StunCooldownTimer.is_stopped():
+		is_stunned = true
+		$StunTimer.start()
+		$StunParticles.emitting = true
+
+func _on_stun_timer_timeout():
+	is_stunned = false
+	$StunCooldownTimer.start()
+	$StunParticles.emitting = false
 
 func _physics_process(delta: float):
 	var direction := 0.0
@@ -79,41 +131,63 @@ func _physics_process(delta: float):
 		if dash_speed_boost:
 			spawn_dash_ghost()
 		
-		if not is_on_floor(): # Gravity
+		if not is_on_floor() and not dash_speed_boost: # Gravity
 			velocity += get_gravity() * 1.5 * delta
-		
-		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote):
+			
+		if is_on_floor():
+			is_jump_velocity = false
+
+		if Input.is_action_just_pressed("Jump") and (is_on_floor() or coyote) and not is_stunned:
 			velocity.y = JUMP_VELOCITY
 			$PlayerSFXManager/Jump.play()
-		if Input.is_action_just_released("Jump") and velocity.y < 0:
+			is_jump_velocity = true
+		if Input.is_action_just_released("Jump") and velocity.y < 0 and is_jump_velocity:
 			velocity.y *= JUMP_HOLD_MULTIPLIER
-
+		
 		direction = Input.get_axis("MoveLeft", "MoveRight")
-		if direction != 0 and !dash_speed_boost:
+		if direction != 0 and !dash_speed_boost and not is_stunned:
 			velocity.x = move_toward(velocity.x, get_speed() * direction, ACCELERATION * delta)
-		elif direction != 0:
+		elif direction != 0 and not is_stunned:
 			velocity.x = move_toward(velocity.x, (get_speed() + 500) * direction, ACCELERATION * delta)
 		elif is_on_floor():
 			velocity.x = move_toward(velocity.x, 0, FRICTION * delta)
 		else:
 			velocity.x = move_toward(velocity.x, 0, AIR_FRICTION * delta)
-		if Input.is_action_just_pressed("Dash") and can_dash:
+			
+		# Walking particle effect
+		if is_on_floor():
+			if velocity.x < 0:
+				$WalkEffect.emitting = true
+				$WalkEffect.scale.x = 1
+			elif velocity.x > 0:
+				$WalkEffect.emitting = true
+				$WalkEffect.scale.x = -1
+			else:
+				$WalkEffect.emitting = false
+		else:
+			$WalkEffect.emitting = false
+			
+		if Input.is_action_just_pressed("Dash") and can_dash and not is_stunned:
 			can_dash = false
 			dash_speed_boost = true
 			$DashCooldown.start()
 			$DashSpeedBoost.start()
 			$PlayerSFXManager/Dash.play()
 			if Input.is_action_pressed("Down") and direction == 0:
-				velocity.y += get_dashspeed()
+				velocity.y = get_dashspeed()
 				velocity.x = 0
 			elif Input.is_action_pressed("Down"):
-				velocity.y += get_dashspeed() / 1.7
+				velocity.y = get_dashspeed() / 1.7
 				velocity.x = get_dashspeed() * direction
 			else:
 				velocity.x = direction * get_dashspeed()
+				velocity.y = 0
 				
-		if unlocked_bomb:
-			if Input.is_action_just_pressed("Interact") and can_bomb and not bomb and not falling:
+		# Clamp drop (NOT FALL) speed (lol)
+		velocity.y = clamp(velocity.y, -INF, MAX_DROP_SPEED)
+				
+		if unlocked_bomb and not is_stunned:
+			if Input.is_action_just_pressed("Bomb") and can_bomb and not bomb and not falling:
 				# bomb logic here
 				spawn_bomb()
 				
@@ -130,7 +204,8 @@ func _physics_process(delta: float):
 			velocity.y = -200
 			
 	else: # Falling
-		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta)
+		
+		velocity = velocity.move_toward(Vector2(0, MAX_FALL_SPEED), get_gravity().y * delta * 0.5)
 	
 	move_and_slide()
 
@@ -170,6 +245,7 @@ func spawn_dash_ghost() -> void:
 	var tween := create_tween()
 	tween.tween_property(ghost, "modulate:a", 0.0, DASH_TRAIL_FADE_TIME)
 	tween.finished.connect(ghost.queue_free)
+
 func pickup_coin():
 	$PlayerSFXManager/PickupCoin.play()
 	
@@ -179,6 +255,9 @@ func unlock_bomb():
 	$BombCooldown.start()
 	
 	$BombCooldownBar.show()
+	
+	# 1 = bomb
+	unlocked.emit(1)
 
 func spawn_bomb():
 	if not bomb: # Just to prevent spawning one right when you explode one
@@ -203,6 +282,8 @@ func unlock_grapple():
 	var grappler = Grappler.instantiate()
 	call_deferred("add_child",grappler)
 	
+	# 2 = grapple
+	unlocked.emit(2)
 func activate_feather_falling(seconds: int) -> void:
 	seconds_invalid_check(seconds)
 	print("Feather falling activated")

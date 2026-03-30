@@ -1,7 +1,10 @@
 extends Node
 
+# Obstacles
 var barrier_spawn_pos: Vector2 = Vector2(0, 800)
 @onready var barrier := $LoseBarrier
+@onready var dust_devil := $DustDevil
+
 @onready var start_room := $LevelBuilder/StartRoom
 @onready var end_room := $LevelBuilder/EndRoom
 @onready var player := $Player
@@ -19,7 +22,7 @@ func _ready() -> void:
 	shop_stand.economy_display_close_requested.connect(economy_display.close_economy_display)
 	
 	# Start room (starting the run, resetting levels upon hitting the bottom/loss)
-	start_room.start_run.connect(start_run)
+	start_room.start_run.connect(start_barrier)
 	start_room.hit_bottom.connect(reset_run)
 	
 	# End room (winning the game by reaching the top)
@@ -27,6 +30,11 @@ func _ready() -> void:
 	
 	# Player (beginning the fall)
 	player.player_start_fall.connect(reset_barrier)
+	player.player_start_fall.connect(reset_dust_devil)
+	player.player_start_fall.connect(reset_timer)
+	
+	# Player (updating controls UI)
+	player.unlocked.connect($HUD/PauseMenu.unlocked)
 	
 	# This is just so the player doesn't drop on game startup
 	$Player.global_position = $LevelBuilder/StartRoom/StopFall/CollisionShape2D.global_position
@@ -34,18 +42,34 @@ func _ready() -> void:
 # Resets rooms, barrier, stats, etc.
 func reset_run():
 	if player.falling: # Just to be sure 
-		barrier.reset(barrier_spawn_pos, true)
+		# Obstacles
+		reset_barrier()
+		reset_dust_devil()
+		
 		$LevelBuilder.regenerate()
 		
 		$AltitudeTracker.reset() # Needed?
 
-func start_run():
-	# Start barrier
-	barrier.start_moving()
+func start_barrier():
+	if not barrier.started:
+		barrier.start_moving()
+		# Doin this here cause whatever
+		$HUD/TimerLayer.started = true
 
 func reset_barrier():
-	# Reset barrier
 	barrier.reset(barrier_spawn_pos, true)
+	
+func reset_dust_devil():
+	dust_devil.stop()
+
+func reset_timer():
+	$HUD/TimerLayer.reset()
+
+func start_dust_devil():
+	if not dust_devil.enabled:
+		dust_devil.start()
 	
 func win():
 	print("You win!")
+	$HUD/TimerLayer.started = false
+	$HUD/TimerLayer.check_best_time()

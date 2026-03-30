@@ -4,8 +4,10 @@
 
 [resource]
 script = ExtResource("1_ln2pb")
+player_stun_duration = 2
 barrier_speed = 125
-dust_devil_cooldown = 6.0
-dust_devil_timer = 1.5
+dust_devil_cooldown = 4.0
+dust_devil_timer = 2.5
 dust_devil_width_scale = 1.25
+sand_blaster_cooldown = 4.0
 metadata/_custom_type_script = "uid://blr81y3y31dvu"

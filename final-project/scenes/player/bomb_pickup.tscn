@@ -2,9 +2,39 @@
 
 [ext_resource type="Script" uid="uid://c0mf3b7bnlsc5" path="res://scripts/player/bomb_pickup.gd" id="1_ttayj"]
 [ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="2_ttayj"]
+[ext_resource type="Texture2D" uid="uid://3gjpa8japugu" path="res://assets/art/falling/particle.png" id="3_tt85b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttayj"]
 size = Vector2(70, 90)
+
+[sub_resource type="Gradient" id="Gradient_tt85b"]
+offsets = PackedFloat32Array(0.21477664, 1)
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o2rnf"]
+gradient = SubResource("Gradient_tt85b")
+
+[sub_resource type="Curve" id="Curve_24r0l"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.50617284, 0.4840539), 0.0, 0.0, 0, 0, Vector2(1, 0.7358847), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_q6nvh"]
+curve = SubResource("Curve_24r0l")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tt85b"]
+lifetime_randomness = 0.3
+particle_flag_disable_z = true
+angle_min = -89.99999
+angle_max = 90.000015
+angular_velocity_min = -104.80001
+angular_velocity_max = 116.43998
+radial_velocity_min = 221.01997
+radial_velocity_max = 296.48996
+gravity = Vector3(0, 0, 0)
+scale_min = 2.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_q6nvh")
+color_ramp = SubResource("GradientTexture1D_o2rnf")
 
 [node name="BombPickup" type="Area2D" unique_id=417895954]
 script = ExtResource("1_ttayj")
@@ -13,7 +43,15 @@ script = ExtResource("1_ttayj")
 shape = SubResource("RectangleShape2D_ttayj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1383825103]
-scale = Vector2(2, 2)
+scale = Vector2(4.5, 4.5)
 texture = ExtResource("2_ttayj")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=827307797]
+emitting = false
+amount = 20
+texture = ExtResource("3_tt85b")
+one_shot = true
+explosiveness = 0.5
+process_material = SubResource("ParticleProcessMaterial_tt85b")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

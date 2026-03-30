@@ -43,15 +43,12 @@ autostart = true
 
 [node name="Shiver" type="AudioStreamPlayer" parent="." unique_id=773662272]
 stream = ExtResource("2_n3gss")
-volume_db = -80.0
 
 [node name="PGnot13" type="AudioStreamPlayer" parent="." unique_id=1944570584]
 stream = ExtResource("3_84wkc")
-volume_db = -80.0
 
 [node name="Hotboy" type="AudioStreamPlayer" parent="." unique_id=1534121836]
 stream = ExtResource("4_v2esp")
-volume_db = -80.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=505310770]
 

@@ -39,6 +39,7 @@ func set_hotbar_slot(item: ItemData, index: int, quantity: int = 1) -> bool:
 	items[index].item = item
 	items[index].quantity = quantity
 	inventory_updated.emit()
+	selected_hotbar_index_updated.emit(selected_hotbar_index)
 	return true
 	
 func get_hotbar_slot(index: int):

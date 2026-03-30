@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://d2m1tgl6hy0km" path="res://scenes/ui/hud/hotbar/hotbar_slot.tscn" id="1_5wafi"]
 
 [node name="HotbarLayer" type="HBoxContainer" unique_id=1862772098]
+offset_right = 105.0
+offset_bottom = 567.0
 
 [node name="HotbarContainer" type="VBoxContainer" parent="." unique_id=800392002]
 layout_mode = 2
@@ -21,4 +23,10 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="HotbarSlot5" parent="HotbarContainer" unique_id=620203127 instance=ExtResource("1_5wafi")]
+layout_mode = 2
+
+[node name="SelectedTextContainer" type="VBoxContainer" parent="." unique_id=912525331]
+layout_mode = 2
+
+[node name="ItemSelectedName" type="Label" parent="SelectedTextContainer" unique_id=1766151619]
 layout_mode = 2

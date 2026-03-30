@@ -4,7 +4,7 @@ extends Node2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
-		if not body.falling:
+		if not body.falling and not body.is_stunned:
 			$Bounce.play()
 			var jump_velocity = -sqrt(2 * 980.0 * jump_height)
 			body.velocity.y = jump_velocity

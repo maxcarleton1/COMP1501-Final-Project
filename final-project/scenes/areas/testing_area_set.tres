@@ -9,10 +9,11 @@
 [ext_resource type="Resource" uid="uid://w5rjs2i71vv6" path="res://scenes/areas/BradyLeftRight/LeftRight.tres" id="2_y0ba0"]
 [ext_resource type="Resource" uid="uid://ckhy0s2q71rml" path="res://scenes/areas/BradyRightMiddle/RightMiddle.tres" id="3_0us53"]
 [ext_resource type="Resource" uid="uid://cvk61m41ule6r" path="res://scenes/areas/siri_area/siri_area.tres" id="3_fbkl2"]
+[ext_resource type="Resource" uid="uid://d12ryifncnym2" path="res://scenes/areas/BradySnowArea/BradySnowArea.tres" id="3_pu4wn"]
 [ext_resource type="Resource" uid="uid://5xhoxspt5mhn" path="res://scenes/areas/BradyMidMid/brady_new_area.tres" id="3_y0ba0"]
 [ext_resource type="Resource" uid="uid://du1qil2jta1xf" path="res://scenes/areas/BradyLeftLeft/LeftLeft.tres" id="7_xifyu"]
 
 [resource]
 script = ExtResource("2_ai6lg")
-areas = Array[ExtResource("1_3j8vd")]([ExtResource("7_xifyu"), ExtResource("2_y0ba0"), ExtResource("2_fbkl2"), ExtResource("3_0us53"), ExtResource("3_y0ba0"), ExtResource("2_e0k7x"), ExtResource("2_m200w"), ExtResource("2_hqcyw"), ExtResource("3_fbkl2")])
+areas = Array[ExtResource("1_3j8vd")]([ExtResource("7_xifyu"), ExtResource("2_y0ba0"), ExtResource("2_fbkl2"), ExtResource("3_0us53"), ExtResource("3_y0ba0"), ExtResource("2_e0k7x"), ExtResource("2_m200w"), ExtResource("2_hqcyw"), ExtResource("3_pu4wn"), ExtResource("3_fbkl2")])
 metadata/_custom_type_script = "uid://dop3f51mb3gtn"

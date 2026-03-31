@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="3_g1pch"]
 [ext_resource type="PackedScene" uid="uid://caad7y8pu7y0r" path="res://scenes/player/grapple_pickup.tscn" id="4_sff2a"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="5_erfyd"]
-[ext_resource type="PackedScene" uid="uid://brvjuo5lunom2" path="res://scenes/player/bomb_pickup.tscn" id="6_hogok"]
+[ext_resource type="PackedScene" uid="uid://bo8me3ip4sqb" path="res://scenes/ui/interactive/sign.tscn" id="5_m5txs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ugtsc"]
 size = Vector2(2000, 50)
@@ -53,14 +53,15 @@ position = Vector2(754, 234)
 rotation = 3.1415927
 scale = Vector2(1.2, 1.2)
 
-[node name="BombPickup" parent="." unique_id=968754878 instance=ExtResource("6_hogok")]
-position = Vector2(755, 355)
-
 [node name="EnterArea" type="Area2D" parent="." unique_id=504396152]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea" unique_id=87076668]
 position = Vector2(0, 400)
 shape = SubResource("RectangleShape2D_cycbl")
+
+[node name="Sign" parent="." unique_id=786602650 instance=ExtResource("5_m5txs")]
+position = Vector2(413, 288)
+text = "Press Q to grapple to the nearest grapple point"
 
 [connection signal="body_entered" from="FallArea" to="." method="_on_fall_area_body_entered"]
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]

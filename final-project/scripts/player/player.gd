@@ -85,7 +85,7 @@ func stop_fall():
 	# Turn on collision and restore movement
 	falling = false
 	$PlayerSFXManager/Landing.play()
-	
+	$ColdManager.coldness = 0
 	set_collision_mask_value(1, true) # Layer 1 = most ground/interactable objects
 	set_collision_layer_value(5, false) # Layer 5 = stop lose barrier (in start_room)
 	

@@ -5,10 +5,12 @@ var temp := 0
 @onready var snow = $Snow
 func _on_timer_timeout() -> void:
 	if coldness <0:
-		coldness += temp
+		coldness += temp/2
 	elif temp <0:
-		coldness += temp
+		coldness += temp/2
 	$TextureProgressBar.value = coldness*-1
+	if coldness < -100 and not get_parent().falling:
+		get_parent().fall()
 
 func _process(delta: float) -> void:
 	if GlobalStats.current_difficulty == GlobalStats.difficulty.HELL_MODE:

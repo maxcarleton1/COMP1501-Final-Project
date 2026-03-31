@@ -10,9 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://fdov2q23kknk" path="res://assets/art/bomb/cooldowntop.png" id="8_h17s1"]
 [ext_resource type="Texture2D" uid="uid://5w50e34xqjd2" path="res://assets/art/bomb/cooldownbackground.png" id="9_je7p5"]
 [ext_resource type="Texture2D" uid="uid://3gjpa8japugu" path="res://assets/art/falling/particle.png" id="10_h17s1"]
-[ext_resource type="Texture2D" uid="uid://cw2ekq8a3y2ai" path="res://assets/art/dust_devil/dust_particle.png" id="11_je7p5"]
-[ext_resource type="PackedScene" uid="uid://bwfxv1mifvbtv" path="res://scenes/particles/stun_particles.tscn" id="12_fm80t"]
 [ext_resource type="PackedScene" uid="uid://drafljej2cfkx" path="res://scenes/player/cold_manager.tscn" id="11_je7p5"]
+[ext_resource type="PackedScene" uid="uid://bwfxv1mifvbtv" path="res://scenes/particles/stun_particles.tscn" id="12_fm80t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
 animations = [{
@@ -217,7 +216,6 @@ process_material = SubResource("ParticleProcessMaterial_kvlxm")
 
 [node name="WalkEffect" type="GPUParticles2D" parent="." unique_id=1820046126]
 position = Vector2(-2.3841858e-07, 10.666667)
-texture = ExtResource("11_je7p5")
 lifetime = 0.5
 speed_scale = 2.0
 explosiveness = 0.5
@@ -240,6 +238,7 @@ one_shot = true
 speed_scale = 1.5
 explosiveness = 0.7
 process_material = SubResource("ParticleProcessMaterial_fm80t")
+
 [node name="ColdManager" parent="." unique_id=1008056164 instance=ExtResource("11_je7p5")]
 
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]

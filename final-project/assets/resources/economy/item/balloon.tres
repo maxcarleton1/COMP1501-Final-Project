@@ -8,6 +8,6 @@ script = ExtResource("2_2npny")
 name = "Balloon"
 description = "Slowly move upwards"
 icon = ExtResource("1_cp6a4")
-seconds = 5
+seconds = 3
 item_effect = 1
 metadata/_custom_type_script = "uid://chlog57n1vam5"

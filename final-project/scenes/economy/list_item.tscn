@@ -29,7 +29,10 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="ItemIcon" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainerMiddle" unique_id=29402195]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxContainerPrice" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1629992528]
 layout_mode = 2

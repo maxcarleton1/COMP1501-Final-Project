@@ -14,27 +14,31 @@ offset_right = 272.5
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="HotbarContainer" type="HBoxContainer" parent="." unique_id=1499222710]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2146526317]
+layout_mode = 2
+
+[node name="SelectedTextContainer" type="CenterContainer" parent="VBoxContainer" unique_id=214334590]
+layout_mode = 2
+
+[node name="ItemSelectedName" type="Label" parent="VBoxContainer/SelectedTextContainer" unique_id=1766151619]
+layout_mode = 2
+
+[node name="HotbarContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1499222710]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="HotbarSlot" parent="HotbarContainer" unique_id=1371411699 instance=ExtResource("1_5wafi")]
+[node name="HotbarSlot" parent="VBoxContainer/HotbarContainer" unique_id=1371411699 instance=ExtResource("1_5wafi")]
 layout_mode = 2
 
-[node name="HotbarSlot2" parent="HotbarContainer" unique_id=701785575 instance=ExtResource("1_5wafi")]
+[node name="HotbarSlot2" parent="VBoxContainer/HotbarContainer" unique_id=701785575 instance=ExtResource("1_5wafi")]
 layout_mode = 2
 
-[node name="HotbarSlot3" parent="HotbarContainer" unique_id=75914377 instance=ExtResource("1_5wafi")]
+[node name="HotbarSlot3" parent="VBoxContainer/HotbarContainer" unique_id=75914377 instance=ExtResource("1_5wafi")]
 layout_mode = 2
 
-[node name="HotbarSlot4" parent="HotbarContainer" unique_id=1906654513 instance=ExtResource("1_5wafi")]
+[node name="HotbarSlot4" parent="VBoxContainer/HotbarContainer" unique_id=1906654513 instance=ExtResource("1_5wafi")]
 layout_mode = 2
 
-[node name="HotbarSlot5" parent="HotbarContainer" unique_id=620203127 instance=ExtResource("1_5wafi")]
-layout_mode = 2
-
-[node name="SelectedTextContainer" type="VBoxContainer" parent="." unique_id=912525331]
-layout_mode = 2
-
-[node name="ItemSelectedName" type="Label" parent="SelectedTextContainer" unique_id=1766151619]
+[node name="HotbarSlot5" parent="VBoxContainer/HotbarContainer" unique_id=620203127 instance=ExtResource("1_5wafi")]
 layout_mode = 2

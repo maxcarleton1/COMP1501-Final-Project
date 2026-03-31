@@ -29,9 +29,9 @@ position = Vector2(0, 800)
 
 [node name="EconomyDisplay" parent="." unique_id=1476314222 instance=ExtResource("8_tipki")]
 offset_left = -206.0
-offset_top = -107.0
+offset_top = -403.0
 offset_right = -1715.0
-offset_bottom = -689.0
+offset_bottom = -985.0
 
 [node name="ParallaxBackground" parent="." unique_id=681032578 instance=ExtResource("9_85g3d")]
 

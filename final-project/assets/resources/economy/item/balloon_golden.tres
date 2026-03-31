@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://xnbrgmiudbby"]
+
+[ext_resource type="Texture2D" uid="uid://c3ebvvay5osdt" path="res://assets/art/economy/items/balloons_golden.png" id="1_0fc03"]
+[ext_resource type="Script" uid="uid://chlog57n1vam5" path="res://resources/item_data.gd" id="2_ingbh"]
+
+[resource]
+script = ExtResource("2_ingbh")
+name = "Golden Balloon"
+description = "Slowly move upwards"
+icon = ExtResource("1_0fc03")
+seconds = 5
+item_effect = 1
+metadata/_custom_type_script = "uid://chlog57n1vam5"

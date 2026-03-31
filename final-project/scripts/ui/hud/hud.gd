@@ -5,9 +5,9 @@ extends CanvasLayer
 
 @onready var player := get_tree().get_first_node_in_group("Player")
 
-@onready var hotbar_slots = $MarginContainer/VBoxContainer/HotbarLayer/HotbarContainer.get_children()
+@onready var hotbar_slots = $MarginContainer/VBoxContainer/HotbarLayer/VBoxContainer/HotbarContainer.get_children()
 
-@onready var hotbar_item_selected_name = $MarginContainer/VBoxContainer/HotbarLayer/SelectedTextContainer/ItemSelectedName
+@onready var hotbar_item_selected_name = $MarginContainer/VBoxContainer/HotbarLayer/VBoxContainer/SelectedTextContainer/ItemSelectedName
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CurrencyManager.coins_update.connect(coin_update)

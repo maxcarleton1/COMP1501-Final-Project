@@ -3,9 +3,10 @@ extends Control
 @onready var shop_window = $PanelContainer/MarginContainer/VBoxContainer/EconomyPage/ShopWindow
 
 var item_list: Array[ItemData] = [
-	#preload("res://assets/resources/economy/item/jump_boost.tres"),
 	preload("res://assets/resources/economy/item/balloon.tres"),
+	preload("res://assets/resources/economy/item/balloon_golden.tres"),
 	preload("res://assets/resources/economy/item/feather_falling.tres"),
+	preload("res://assets/resources/economy/item/feather_falling_golden.tres"),
 ]
 var upgrade_list: Array[ItemData] = [
 	preload("res://assets/resources/economy/upgrade/speed_boost.tres")

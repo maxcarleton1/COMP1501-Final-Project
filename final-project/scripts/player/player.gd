@@ -276,8 +276,15 @@ func _unhandled_input(event: InputEvent) -> void:
 			InventoryManager.select_hotbar_slot(i)
 			break
 	
+	# Controller support
+	if event.is_action_pressed("HotbarNext"):
+		InventoryManager.select_hotbar_slot((InventoryManager.selected_hotbar_index + 1) % InventoryManager.HOTBAR_SIZE)
+	elif event.is_action_pressed("HotbarPrevious"):
+		InventoryManager.select_hotbar_slot((InventoryManager.selected_hotbar_index - 1 + InventoryManager.HOTBAR_SIZE) % InventoryManager.HOTBAR_SIZE)
+	
 	if(event.is_action_pressed("Use_item")):
 		InventoryManager.use_selected_item(self)
+
 func unlock_grapple():
 	var grappler = Grappler.instantiate()
 	call_deferred("add_child",grappler)

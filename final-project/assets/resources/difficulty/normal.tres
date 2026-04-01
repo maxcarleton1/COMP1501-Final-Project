@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_yayb1")
+barrier_speed = 75
 dust_devil_cooldown = 5.0
 dust_devil_timer = 2.0
 metadata/_custom_type_script = "uid://blr81y3y31dvu"

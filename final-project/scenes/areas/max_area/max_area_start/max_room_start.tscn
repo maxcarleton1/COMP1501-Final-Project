@@ -63,11 +63,11 @@ shape = SubResource("RectangleShape2D_oedtr")
 
 [node name="Sign" parent="." unique_id=786602650 instance=ExtResource("4_oedtr")]
 position = Vector2(-424, 287)
-text = "Press 'E' to drop a bomb. Side effects of acute contact with explosives may include having too much fun."
+text = "Press 'E' to drop a bomb. Side effects of acute contact with explosives may include: Increased velocity, discouraging small animals, and having too much fun."
 
 [node name="Sign2" parent="." unique_id=834737679 instance=ExtResource("4_oedtr")]
 position = Vector2(520, -608)
-text = "Here's a tip: If it looks evil, it's probably evil..."
+text = "Here's a tip: If it looks evil, it's probably evil, and you shouldn't touch evil stuff."
 
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]
 [connection signal="body_entered" from="FallArea" to="." method="_on_fall_area_body_entered"]

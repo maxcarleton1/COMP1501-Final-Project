@@ -18,6 +18,7 @@ func _input(event: InputEvent):
 		if not get_tree().paused:
 			show()
 			get_tree().paused = true
+			$VBoxContainer/HBoxContainer/VBoxContainer/Resume.grab_focus()
 		else:
 			hide()
 			get_tree().paused = false

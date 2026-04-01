@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Area" format=3 uid="uid://uv7owpjicw1r"]
+
+[ext_resource type="Script" uid="uid://0u6dlawkgsme" path="res://resources/room_data.gd" id="1_cqffy"]
+[ext_resource type="Resource" uid="uid://b2sc56i0awry0" path="res://scenes/areas/max_area/max_area_start/max_room_start.tres" id="3_c8p88"]
+[ext_resource type="Resource" uid="uid://ci62dvtyerjv8" path="res://scenes/areas/siri_area/siri_level_4.tres" id="5_k2bod"]
+[ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="6_sab8p"]
+
+[resource]
+script = ExtResource("6_sab8p")
+rooms = Array[ExtResource("1_cqffy")]([ExtResource("5_k2bod"), ExtResource("3_c8p88")])
+metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

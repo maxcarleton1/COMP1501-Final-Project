@@ -1,7 +1,7 @@
 extends CanvasLayer
 
-@onready var coin_label = $MarginContainer/VBoxContainer/CurrencyLayer/CoinAmount
-@onready var altitude_label = $MarginContainer/VBoxContainer/AltitudeLayer/AltitudeAmount
+@onready var coin_label = $InfoLayer/PanelContainer/CoinHBoxContainer/CoinAmount
+@onready var altitude_label = $InfoLayer/PanelContainer/AltitudeHBoxContainer/AltitudeAmount
 
 @onready var player := get_tree().get_first_node_in_group("Player")
 

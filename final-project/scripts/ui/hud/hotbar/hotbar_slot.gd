@@ -9,7 +9,7 @@ var default_icon_not_found = preload("res://assets/art/icon.svg")
 func set_item_slot(item: ItemData, quantity: int):
 	
 	if(item == null):
-		set_item_texture(default_icon_not_found)
+		#set_item_texture(default_icon_not_found)
 		set_item_quantity(0)
 		return
 	

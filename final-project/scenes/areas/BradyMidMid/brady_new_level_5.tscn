@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://6qbpc5r8qk4o"]
 
 [ext_resource type="Script" uid="uid://ifqdif1rk3u" path="res://scripts/areas/level_template.gd" id="1_7ndi6"]
-[ext_resource type="Texture2D" uid="uid://bd7sthxofrsuu" path="res://assets/art/icon.svg" id="2_30e3b"]
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="4_eahh6"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="5_30e3b"]
 [ext_resource type="PackedScene" uid="uid://gvh0bp682lt0" path="res://scenes/obstacles/jump_pad.tscn" id="5_i068b"]
@@ -17,16 +16,6 @@ size = Vector2(2000, 1100)
 
 [node name="BradyLevel2" type="Node2D" unique_id=668189479]
 script = ExtResource("1_7ndi6")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1023353773]
-position = Vector2(-975, 1.5)
-scale = Vector2(0.39062455, 8.6328125)
-texture = ExtResource("2_30e3b")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2112515524]
-position = Vector2(975, -0.5)
-scale = Vector2(0.39062455, 8.585938)
-texture = ExtResource("2_30e3b")
 
 [node name="SideHitboxes" type="StaticBody2D" parent="." unique_id=95022218]
 
@@ -45,16 +34,16 @@ disabled = true
 [node name="Entries" type="Node2D" parent="." unique_id=1962119952]
 
 [node name="Marker2D" type="Marker2D" parent="Entries" unique_id=1651751332]
-position = Vector2(0, 550)
+position = Vector2(0, 576)
 
 [node name="Exits" type="Node2D" parent="." unique_id=964654294]
 
 [node name="Marker2D" type="Marker2D" parent="Exits" unique_id=220438535]
-position = Vector2(0, -550)
+position = Vector2(0, -576)
 
 [node name="ForegroundLayer2" parent="." unique_id=557791485 instance=ExtResource("4_eahh6")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAD8/wcAAAACAAEAAAD7/wcAAAACAAEAAAD6/wcAAAACAAEAAAD5/wcAAAACAAEAAAD4/wcAAAACAAEAAAD3/wcAAAACAAEAAAD2/wcAAAACAAEAAAD1/wcAAAACAAEAAAD0/wcAAAACAAcAAADz/wcAAAACAAcAAADy/wcAAAACAAcAAAADAAcAAAACAAEAAAAEAAcAAAACAAEAAAAFAAcAAAACAAEAAAAGAAcAAAACAAEAAAAHAAcAAAACAAEAAAAIAAcAAAACAAEAAAAJAAcAAAACAAEAAAAKAAcAAAACAAEAAAALAAcAAAACAAEAAAAMAAcAAAACAAEAAAANAAcAAAACAAEAAAAOAAcAAAABAAYAAAACAAcAAAABAAEAAAD9/wcAAAADAAEAAAACAAgAAAABAAcAAAD9/wgAAAADAAcAAAD8/wgAAAACAAcAAAD7/wgAAAACAAcAAAD6/wgAAAACAAcAAAD5/wgAAAACAAcAAAD4/wgAAAACAAcAAAD3/wgAAAACAAcAAAD2/wgAAAACAAcAAAD1/wgAAAACAAcAAAD0/wgAAAACAAcAAADz/wgAAAACAAcAAADy/wgAAAACAAcAAADx/wgAAAACAAcAAADx/wcAAAADAAYAAAAOAAgAAAABAAYAAAANAAgAAAACAAcAAAAMAAgAAAACAAcAAAALAAgAAAACAAcAAAAKAAgAAAACAAcAAAAJAAgAAAACAAcAAAAIAAgAAAACAAcAAAAHAAgAAAACAAcAAAAGAAgAAAACAAcAAAAFAAgAAAACAAcAAAAEAAgAAAACAAcAAAADAAgAAAACAAcAAADx/wYAAAADAAYAAADx/wUAAAADAAYAAADx/wQAAAADAAYAAADx/wMAAAADAAYAAADx/wIAAAADAAYAAADx/wEAAAADAAYAAADx/wAAAAADAAYAAADx////AAADAAYAAADx//7/AAADAAYAAADx//3/AAADAAYAAADx//z/AAADAAYAAADx//v/AAADAAYAAADx//r/AAADAAYAAADx//n/AAADAAYAAADx//j/AAADAAYAAADx//f/AAADAAYAAAAOAAYAAAABAAYAAAAOAAUAAAABAAYAAAAOAAQAAAABAAYAAAAOAAMAAAABAAYAAAAOAAIAAAABAAYAAAAOAAEAAAABAAYAAAAOAAAAAAABAAYAAAAOAP//AAABAAYAAAAOAP7/AAABAAYAAAAOAP3/AAABAAYAAAAOAPz/AAABAAYAAAAOAPv/AAABAAYAAAAOAPr/AAABAAYAAAAOAPn/AAABAAYAAAAOAPj/AAABAAYAAAAOAPf/AAACAAcAAFD+/wEAAAACAAAAAAD//wEAAAACAAAAAAAAAAEAAAACAAAAAAABAAEAAAACAAAAAAACAAEAAAADAAAAAAD9/wEAAAABAAAAAAD+//v/AAACAAAAAAD///v/AAACAAAAAAAAAPv/AAACAAAAAAABAPv/AAADAAAAAAD+/wAAAAAEAAYAAAABAAAAAAAEAAYAAAD+//r/AAAFAAYAAAABAPr/AAAFAAYAAADy/wUAAAACAAcAAADz/wUAAAACAAcAAAD0/wUAAAADAAAAAADy/wMAAAACAAcAAADz/wMAAAADAAAAAADy/wEAAAADAAAAAADy/wIAAAADAAYAAADz/wQAAAADAAYAAADy/wQAAAACAAYAAADy/wYAAAACAAYAAADz/wYAAAACAAYAAAD0/wYAAAADAAYAAAALAAAAAAABAAEAAAAMAAAAAAAFAAEAAAANAAAAAAACAAYAAAAMAP7/AAABAAEAAAANAPz/AAABAAEAAAAMAP//AAABAAYAAAANAP3/AAABAAYAAAANAP7/AAAFAAEAAAANAP//AAACAAYAAAANAAEAAAACAAYAAAANAAIAAAACAAYAAAANAAMAAAACAAYAAAANAAQAAAACAAYAAAANAAUAAAACAAYAAAANAAYAAAACAAYAAAAMAAEAAAACAAYAAAAMAAIAAAACAAYAAAAMAAMAAAACAAYAAAAMAAQAAAACAAYAAAAMAAUAAAACAAYAAAAMAAYAAAACAAYAAAALAAEAAAABAAYAAAALAAIAAAABAAYAAAALAAMAAAABAAYAAAALAAQAAAABAAYAAAALAAUAAAABAAYAAAALAAYAAAABAAYAAAACAPv/AAADAAAAAAD9//v/AAABAAAAAAAFAAYAAAAFAAYAAAAGAAYAAAAFAAYAAAAEAAYAAAAEAAYAAAD6/wYAAAAEAAYAAAD7/wYAAAAFAAYAAAD8/wYAAAAEAAYAAAD4/wYAAAAEAAYAAADz/wIAAAAEAAYAAAALAP//AAAEAAYAAAAIAAYAAAAGAAYAAAACAAAAAAAIAAQAAADy/wAAAAAIAAQAAAANAPv/AAAHAAQAAAA=")
+tile_map_data = PackedByteArray("AAD8/wcAAAACAAEAAAD7/wcAAAACAAEAAAD6/wcAAAACAAEAAAD5/wcAAAACAAEAAAD4/wcAAAACAAEAAAD3/wcAAAACAAEAAAD2/wcAAAACAAEAAAD1/wcAAAACAAEAAAD0/wcAAAACAAcAAADz/wcAAAACAAcAAADy/wcAAAACAAcAAAADAAcAAAACAAEAAAAEAAcAAAACAAEAAAAFAAcAAAACAAEAAAAGAAcAAAACAAEAAAAHAAcAAAACAAEAAAAIAAcAAAACAAEAAAAJAAcAAAACAAEAAAAKAAcAAAACAAEAAAALAAcAAAACAAEAAAAMAAcAAAACAAEAAAANAAcAAAACAAEAAAAOAAcAAAABAAYAAAACAAcAAAABAAEAAAD9/wcAAAADAAEAAAACAAgAAAABAAcAAAD9/wgAAAADAAcAAAD8/wgAAAACAAcAAAD7/wgAAAACAAcAAAD6/wgAAAACAAcAAAD5/wgAAAACAAcAAAD4/wgAAAACAAcAAAD3/wgAAAACAAcAAAD2/wgAAAACAAcAAAD1/wgAAAACAAcAAAD0/wgAAAACAAcAAADz/wgAAAACAAcAAADy/wgAAAACAAcAAADx/wgAAAACAAcAAADx/wcAAAADAAYAAAAOAAgAAAABAAYAAAANAAgAAAACAAcAAAAMAAgAAAACAAcAAAALAAgAAAACAAcAAAAKAAgAAAACAAcAAAAJAAgAAAACAAcAAAAIAAgAAAACAAcAAAAHAAgAAAACAAcAAAAGAAgAAAACAAcAAAAFAAgAAAACAAcAAAAEAAgAAAACAAcAAAADAAgAAAACAAcAAADx/wYAAAADAAYAAADx/wUAAAADAAYAAADx/wQAAAADAAYAAADx/wMAAAADAAYAAADx/wIAAAADAAYAAADx/wEAAAADAAYAAADx/wAAAAADAAYAAADx////AAADAAYAAADx//7/AAADAAYAAADx//3/AAADAAYAAADx//z/AAADAAYAAADx//v/AAADAAYAAADx//r/AAADAAYAAADx//n/AAADAAYAAADx//j/AAADAAYAAADx//f/AAADAAYAAAAOAAYAAAABAAYAAAAOAAUAAAABAAYAAAAOAAQAAAABAAYAAAAOAAMAAAABAAYAAAAOAAIAAAABAAYAAAAOAAEAAAABAAYAAAAOAAAAAAABAAYAAAAOAP//AAABAAYAAAAOAP7/AAABAAYAAAAOAP3/AAABAAYAAAAOAPz/AAABAAYAAAAOAPv/AAABAAYAAAAOAPr/AAABAAYAAAAOAPn/AAABAAYAAAAOAPj/AAABAAYAAAAOAPf/AAACAAcAAFD+/wEAAAACAAAAAAD//wEAAAACAAAAAAAAAAEAAAACAAAAAAABAAEAAAACAAAAAAACAAEAAAADAAAAAAD9/wEAAAABAAAAAAD+//v/AAACAAAAAAD///v/AAACAAAAAAAAAPv/AAACAAAAAAABAPv/AAADAAAAAAD+/wAAAAAEAAYAAAABAAAAAAAEAAYAAAD+//r/AAAFAAYAAAABAPr/AAAFAAYAAADy/wUAAAACAAcAAADz/wUAAAACAAcAAAD0/wUAAAADAAAAAADy/wMAAAACAAcAAADz/wMAAAADAAAAAADy/wEAAAADAAAAAADy/wIAAAADAAYAAADz/wQAAAADAAYAAADy/wQAAAACAAYAAADy/wYAAAACAAYAAADz/wYAAAACAAYAAAD0/wYAAAADAAYAAAALAAAAAAABAAEAAAAMAAAAAAAFAAEAAAANAAAAAAACAAYAAAAMAP7/AAABAAEAAAANAPz/AAABAAEAAAAMAP//AAABAAYAAAANAP3/AAABAAYAAAANAP7/AAAFAAEAAAANAP//AAACAAYAAAANAAEAAAACAAYAAAANAAIAAAACAAYAAAANAAMAAAACAAYAAAANAAQAAAACAAYAAAANAAUAAAACAAYAAAANAAYAAAACAAYAAAAMAAEAAAACAAYAAAAMAAIAAAACAAYAAAAMAAMAAAACAAYAAAAMAAQAAAACAAYAAAAMAAUAAAACAAYAAAAMAAYAAAACAAYAAAALAAEAAAABAAYAAAALAAIAAAABAAYAAAALAAMAAAABAAYAAAALAAQAAAABAAYAAAALAAUAAAABAAYAAAALAAYAAAABAAYAAAACAPv/AAADAAAAAAD9//v/AAABAAAAAAAFAAYAAAAFAAYAAAAGAAYAAAAFAAYAAAAEAAYAAAAEAAYAAAD6/wYAAAAEAAYAAAD7/wYAAAAFAAYAAAD8/wYAAAAEAAYAAAD4/wYAAAAEAAYAAADz/wIAAAAEAAYAAAALAP//AAAEAAYAAAAIAAYAAAAGAAYAAAACAAAAAAAIAAQAAADy/wAAAAAIAAQAAAANAPv/AAAHAAQAAADw//f/AAACAAYAAADv//f/AAACAAYAAADu//f/AAACAAYAAADu//j/AAACAAYAAADu//n/AAACAAYAAADu//r/AAACAAYAAADu//v/AAACAAYAAADu//z/AAACAAYAAADu//3/AAACAAYAAADu//7/AAACAAYAAADu////AAACAAYAAADu/wAAAAACAAYAAADu/wEAAAACAAYAAADu/wIAAAACAAYAAADu/wMAAAACAAYAAADu/wQAAAACAAYAAADu/wUAAAACAAYAAADu/wYAAAACAAYAAADu/wcAAAACAAYAAADu/wgAAAACAAYAAADv/wgAAAACAAYAAADw/wgAAAACAAYAAADw/wcAAAACAAYAAADw/wYAAAACAAYAAADw/wUAAAACAAYAAADw/wQAAAACAAYAAADw/wMAAAACAAYAAADw/wIAAAACAAYAAADw/wEAAAACAAYAAADw/wAAAAACAAYAAADw////AAACAAYAAADw//7/AAACAAYAAADw//3/AAACAAYAAADw//z/AAACAAYAAADw//v/AAACAAYAAADw//r/AAACAAYAAADw//n/AAACAAYAAADw//j/AAACAAYAAADv//j/AAACAAYAAADv//n/AAACAAYAAADv//r/AAACAAYAAADv//v/AAACAAYAAADv//z/AAACAAYAAADv//3/AAACAAYAAADv//7/AAACAAYAAADv////AAACAAYAAADv/wAAAAACAAYAAADv/wEAAAACAAYAAADv/wIAAAACAAYAAADv/wMAAAACAAYAAADv/wQAAAACAAYAAADv/wUAAAACAAYAAADv/wYAAAACAAYAAADv/wcAAAACAAYAAAAPAAgAAAACAAYAAAAQAAgAAAACAAYAAAARAAgAAAACAAYAAAARAAcAAAACAAYAAAARAAYAAAACAAYAAAARAAUAAAACAAYAAAARAAQAAAACAAYAAAARAAMAAAACAAYAAAARAAIAAAACAAYAAAARAAEAAAACAAYAAAARAAAAAAACAAYAAAARAP//AAACAAYAAAAQAP//AAACAAYAAAAQAP7/AAACAAYAAAAQAP3/AAACAAYAAAARAP7/AAACAAYAAAARAP3/AAACAAYAAAARAPz/AAACAAYAAAARAPv/AAACAAYAAAARAPr/AAACAAYAAAARAPn/AAACAAYAAAARAPj/AAACAAYAAAARAPf/AAACAAYAAAAQAPf/AAACAAYAAAAPAPf/AAACAAYAAAAPAPj/AAACAAYAAAAPAPn/AAACAAYAAAAPAPr/AAACAAYAAAAQAPr/AAACAAYAAAAQAPv/AAACAAYAAAAQAPz/AAACAAYAAAAPAP3/AAACAAYAAAAPAP7/AAACAAYAAAAPAP//AAACAAYAAAAPAPz/AAACAAYAAAAPAPv/AAACAAYAAAAQAPj/AAACAAYAAAAQAPn/AAACAAYAAAAQAAAAAAACAAYAAAAQAAEAAAACAAYAAAAPAAEAAAACAAYAAAAPAAIAAAACAAYAAAAPAAMAAAACAAYAAAAPAAQAAAACAAYAAAAPAAUAAAACAAYAAAAPAAYAAAACAAYAAAAPAAcAAAACAAYAAAAQAAcAAAACAAYAAAAQAAYAAAACAAYAAAAQAAUAAAACAAYAAAAQAAQAAAACAAYAAAAQAAMAAAACAAYAAAAQAAIAAAACAAYAAAAPAAAAAAACAAYAAAA=")
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("5_30e3b")]
 scale = Vector2(4, 4)
@@ -65,26 +54,26 @@ position = Vector2(0, -347)
 scale = Vector2(1.5, 1.5)
 
 [connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50246" to="ObsicalLayer/@Area2D@50246" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50247" to="ObsicalLayer/@Area2D@50247" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50248" to="ObsicalLayer/@Area2D@50248" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50249" to="ObsicalLayer/@Area2D@50249" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50250" to="ObsicalLayer/@Area2D@50250" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50251" to="ObsicalLayer/@Area2D@50251" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50252" to="ObsicalLayer/@Area2D@50252" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50253" to="ObsicalLayer/@Area2D@50253" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50254" to="ObsicalLayer/@Area2D@50254" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50255" to="ObsicalLayer/@Area2D@50255" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50256" to="ObsicalLayer/@Area2D@50256" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50259" to="ObsicalLayer/@Area2D@50259" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50260" to="ObsicalLayer/@Area2D@50260" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50261" to="ObsicalLayer/@Area2D@50261" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50262" to="ObsicalLayer/@Area2D@50262" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50263" to="ObsicalLayer/@Area2D@50263" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50264" to="ObsicalLayer/@Area2D@50264" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50265" to="ObsicalLayer/@Area2D@50265" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50266" to="ObsicalLayer/@Area2D@50266" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50267" to="ObsicalLayer/@Area2D@50267" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50268" to="ObsicalLayer/@Area2D@50268" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50271" to="ObsicalLayer/@Area2D@50271" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@50272" to="ObsicalLayer/@Area2D@50272" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43700" to="ObsicalLayer/@Area2D@43700" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43701" to="ObsicalLayer/@Area2D@43701" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43702" to="ObsicalLayer/@Area2D@43702" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43703" to="ObsicalLayer/@Area2D@43703" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43704" to="ObsicalLayer/@Area2D@43704" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43705" to="ObsicalLayer/@Area2D@43705" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43706" to="ObsicalLayer/@Area2D@43706" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43707" to="ObsicalLayer/@Area2D@43707" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43708" to="ObsicalLayer/@Area2D@43708" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43709" to="ObsicalLayer/@Area2D@43709" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43710" to="ObsicalLayer/@Area2D@43710" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43711" to="ObsicalLayer/@Area2D@43711" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43712" to="ObsicalLayer/@Area2D@43712" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43713" to="ObsicalLayer/@Area2D@43713" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43714" to="ObsicalLayer/@Area2D@43714" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43715" to="ObsicalLayer/@Area2D@43715" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43716" to="ObsicalLayer/@Area2D@43716" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43717" to="ObsicalLayer/@Area2D@43717" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43718" to="ObsicalLayer/@Area2D@43718" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43719" to="ObsicalLayer/@Area2D@43719" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43720" to="ObsicalLayer/@Area2D@43720" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43721" to="ObsicalLayer/@Area2D@43721" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@43722" to="ObsicalLayer/@Area2D@43722" method="_on_body_entered"]

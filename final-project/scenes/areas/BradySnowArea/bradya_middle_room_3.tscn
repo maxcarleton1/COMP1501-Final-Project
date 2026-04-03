@@ -16,7 +16,7 @@ position = Vector2(0, 550)
 [node name="Exits" type="Node2D" parent="." unique_id=964654294]
 
 [node name="Marker2D" type="Marker2D" parent="Exits" unique_id=220438535]
-position = Vector2(0, -4099)
+position = Vector2(0, -4100)
 
 [node name="Foreground" parent="." unique_id=557791485 instance=ExtResource("2_iu0k4")]
 scale = Vector2(4, 4)
@@ -30,9 +30,13 @@ tile_map_data = PackedByteArray("AAD0/wIAAAAAAAAADAD+/wcAAAAAAAAACQD4/wMAAAAAAAA
 position = Vector2(-733, -1057)
 text = "Its a bit chilly you better hury up."
 
+[connection signal="body_entered" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="ObsicalLayer/Exploder" to="ObsicalLayer/Exploder" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@41223" to="ObsicalLayer/@Area2D@41223" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44892" to="ObsicalLayer/@Area2D@44892" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44894" to="ObsicalLayer/@Area2D@44894" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@49790" to="ObsicalLayer/@Area2D@49790" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@52741" to="ObsicalLayer/@Area2D@52741" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@24074" to="ObsicalLayer/@Area2D@24074" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@24076" to="ObsicalLayer/@Area2D@24076" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@24078" to="ObsicalLayer/@Area2D@24078" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@24079" to="ObsicalLayer/@Area2D@24079" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/@Area2D@24079" to="ObsicalLayer/@Area2D@24079" method="_on_body_exited"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@24080" to="ObsicalLayer/@Area2D@24080" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@24082" to="ObsicalLayer/@Area2D@24082" method="_on_body_entered"]

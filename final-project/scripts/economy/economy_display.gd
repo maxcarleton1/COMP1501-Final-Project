@@ -71,8 +71,9 @@ func display_upgrades() -> void:
 func _on_items_pressed() -> void:
 	display_items()
 
-func _on_upgrades_pressed() -> void:
-	display_upgrades()
+#To re-add upgrades, add button named "Upgrades" to HBoxContainerButtons
+#func _on_upgrades_pressed() -> void:
+	#display_upgrades()
 	
 func open_economy_display():
 	show()

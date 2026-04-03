@@ -61,7 +61,11 @@ shape = SubResource("RectangleShape2D_cycbl")
 
 [node name="Sign" parent="." unique_id=786602650 instance=ExtResource("5_m5txs")]
 position = Vector2(413, 288)
-text = "Press Q to grapple to the nearest grapple point"
+text = "Press 'P' to grapple to the nearest grapple point. You'll know you're close enough by the little tracking indicator."
+
+[node name="Sign2" parent="." unique_id=1952884668 instance=ExtResource("5_m5txs")]
+position = Vector2(-419, 288)
+text = "This place is freezing! Better stay warm, or you won't like what happens..."
 
 [connection signal="body_entered" from="FallArea" to="." method="_on_fall_area_body_entered"]
 [connection signal="body_entered" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_entered"]

@@ -12,16 +12,9 @@ var upgrade_list: Array[ItemData] = [
 	preload("res://assets/resources/economy/upgrade/speed_boost.tres")
 ]
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#print(shop_window)	
 	shop_window.shop_item_selected.connect(item_selected)
 	display_items()
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func item_selected(item: ItemData) -> void:
 	match item.item_type:
@@ -53,27 +46,13 @@ func add_item_to_inventory(item: ItemData):
 func add_upgrade_to_inventory(item: ItemData):
 	#print("Success: Upgrade item: " + item.name)
 	InventoryManager.addUpgrade(item)
-	
-
 
 func display_items() -> void:
 	shop_window.create_items(item_list)
 
 func display_upgrades() -> void:
 	shop_window.create_items(upgrade_list)
-	
-#func setup_items_array() -> void:
-	#pass
-	#
-#func setup_upgrades_array() -> void:
-	#pass
 
-func _on_items_pressed() -> void:
-	display_items()
-
-func _on_upgrades_pressed() -> void:
-	display_upgrades()
-	
 func open_economy_display():
 	show()
 

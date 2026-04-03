@@ -3,6 +3,10 @@ extends PanelContainer
 var current_time: float = 0.0
 var started: bool = false
 
+func _ready():
+	if GlobalStats.best_time != INF:
+		$PanelContainer/BestTime.text = "Best time: " + time_to_str(GlobalStats.best_time)
+
 # Keeps track of current time, gets reset on 
 func _physics_process(delta: float):
 	if started:
@@ -25,4 +29,3 @@ func check_best_time():
 	if current_time < GlobalStats.best_time:
 		GlobalStats.best_time = current_time
 		$PanelContainer/BestTime.text = "Best time: " + time_to_str(current_time)
-		print($PanelContainer/CurrentTime.text)

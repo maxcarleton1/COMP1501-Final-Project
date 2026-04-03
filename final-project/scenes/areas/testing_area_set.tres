@@ -15,5 +15,5 @@
 
 [resource]
 script = ExtResource("2_ai6lg")
-areas = Array[ExtResource("1_3j8vd")]([ExtResource("7_xifyu"), ExtResource("2_y0ba0"), ExtResource("2_fbkl2"), ExtResource("3_0us53"), ExtResource("3_y0ba0"), ExtResource("2_e0k7x"), ExtResource("2_m200w"), ExtResource("2_hqcyw"), ExtResource("3_pu4wn"), ExtResource("3_fbkl2")])
+areas = Array[ExtResource("1_3j8vd")]([ExtResource("7_xifyu"), ExtResource("2_y0ba0"), ExtResource("2_fbkl2"), ExtResource("3_0us53"), ExtResource("3_y0ba0"), ExtResource("3_fbkl2"), ExtResource("2_e0k7x"), ExtResource("2_m200w"), ExtResource("2_hqcyw"), ExtResource("3_pu4wn")])
 metadata/_custom_type_script = "uid://dop3f51mb3gtn"

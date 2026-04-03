@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dgwsokxeiulj2" path="res://scripts/player/bomb_entity.gd" id="1_y7f2k"]
 [ext_resource type="Texture2D" uid="uid://xlig6ce3ho12" path="res://assets/art/bomb/bomb.png" id="2_p1qbp"]
 [ext_resource type="Texture2D" uid="uid://fdpiuh1abg2j" path="res://assets/art/bomb/explosion.png" id="3_p1qbp"]
+[ext_resource type="AudioStream" uid="uid://8k567v7em3d5" path="res://assets/audio/explosion3.mp3" id="4_lxgys"]
 [ext_resource type="PackedScene" uid="uid://ct0fto5cknxuk" path="res://scenes/particles/explosion_particles.tscn" id="4_t08xy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y7f2k"]
@@ -94,6 +95,8 @@ sprite_frames = SubResource("SpriteFrames_atsdy")
 speed_scale = 6.0
 
 [node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1467167981]
+stream = ExtResource("4_lxgys")
+volume_db = -5.0
 
 [node name="ExplosionDuration" type="Timer" parent="." unique_id=1093871024]
 wait_time = 0.1

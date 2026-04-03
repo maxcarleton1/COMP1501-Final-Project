@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cm10cejm3hmob" path="res://scenes/ui/hud/layers/timer_layer.tscn" id="6_4m4yb"]
 [ext_resource type="PackedScene" uid="uid://b1qyi2sxru1fq" path="res://scenes/ui/hud/layers/info_layer.tscn" id="7_e7gie"]
 [ext_resource type="PackedScene" uid="uid://b6wxgndtsd5vj" path="res://scenes/ui/hud/layers/pause_menu.tscn" id="7_todbw"]
+[ext_resource type="PackedScene" uid="uid://cqoq32vbu5spa" path="res://scenes/ui/hud/layers/win_screen.tscn" id="8_e7gie"]
 
 [node name="HUD" type="CanvasLayer" unique_id=1806229052]
 script = ExtResource("1_ax4tw")
@@ -42,3 +43,17 @@ size_flags_vertical = 8
 offset_left = -200.0
 offset_top = 45.0
 offset_bottom = 115.0
+[node name="WinScreen" parent="." unique_id=747905867 instance=ExtResource("8_e7gie")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -71.5
+offset_right = 118.0
+offset_bottom = 71.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4

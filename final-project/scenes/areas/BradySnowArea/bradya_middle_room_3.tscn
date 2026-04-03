@@ -28,11 +28,11 @@ tile_map_data = PackedByteArray("AAD0/wIAAAAAAAAADAD+/wcAAAAAAAAACQD4/wMAAAAAAAA
 
 [node name="Sign" parent="." unique_id=786602650 instance=ExtResource("4_iu0k4")]
 position = Vector2(-733, -1057)
-text = "Its a bit chilly you better hury up."
+text = "It's a bit chilly, you'd better hurry up!"
 
 [connection signal="body_entered" from="ObsicalLayer/Exploder" to="ObsicalLayer/Exploder" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@41223" to="ObsicalLayer/@Area2D@41223" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44892" to="ObsicalLayer/@Area2D@44892" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44894" to="ObsicalLayer/@Area2D@44894" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@49790" to="ObsicalLayer/@Area2D@49790" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@52741" to="ObsicalLayer/@Area2D@52741" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@31906" to="ObsicalLayer/@Area2D@31906" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@31908" to="ObsicalLayer/@Area2D@31908" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@31910" to="ObsicalLayer/@Area2D@31910" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@31912" to="ObsicalLayer/@Area2D@31912" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@31914" to="ObsicalLayer/@Area2D@31914" method="_on_body_entered"]

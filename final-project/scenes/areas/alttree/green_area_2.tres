@@ -7,5 +7,4 @@
 [resource]
 script = ExtResource("3_4plgc")
 rooms = Array[ExtResource("2_aom1j")]([ExtResource("2_ih5q5")])
-num_to_generate = 0
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

@@ -8,6 +8,7 @@
 
 [resource]
 script = ExtResource("5_nn2e3")
-rooms = Array[ExtResource("1_l3c4t")]([ExtResource("2_l1ila"), ExtResource("3_m1cr3"), ExtResource("4_el0co")])
-num_to_generate = 1
+rooms = Array[ExtResource("1_l3c4t")]([ExtResource("4_el0co"), ExtResource("3_m1cr3"), ExtResource("2_l1ila")])
+random_order = true
+num_to_generate = 0
 metadata/_custom_type_script = "uid://cwvq0oy5vtb45"

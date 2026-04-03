@@ -28,4 +28,4 @@ pitch_scale = 0.8
 
 [node name="PickupCoin" type="AudioStreamPlayer2D" parent="." unique_id=1243272831]
 stream = ExtResource("4_ycmhg")
-volume_db = -5.0
+volume_db = -10.0

@@ -10,4 +10,4 @@ func _on_quit_pressed() -> void:
 
 func _on_difficulty_pressed() -> void:
 	GlobalStats.cycle_difficulty()
-	$PanelContainer/PanelContainer/VBoxContainer/Difficulty.text = "Difficulty: %s" % GlobalStats.dif_to_str(GlobalStats.current_difficulty)
+	$PanelContainer/VBoxContainer/Difficulty.text = "Difficulty: %s" % GlobalStats.dif_to_str(GlobalStats.current_difficulty)

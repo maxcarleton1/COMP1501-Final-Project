@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dxj2hgqqmc5io"]
+[gd_scene format=3 uid="uid://cvguox8wkftw5"]
 
 [ext_resource type="Texture2D" uid="uid://bfh1ff538j60e" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0011.png" id="1_7dir2"]
 [ext_resource type="Script" uid="uid://d0crfg2dpnncb" path="res://scripts/ui/hud/layers/currency_layer.gd" id="1_rwgo5"]

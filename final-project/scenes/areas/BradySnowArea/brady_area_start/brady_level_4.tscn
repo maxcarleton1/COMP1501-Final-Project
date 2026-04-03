@@ -64,4 +64,10 @@ position = Vector2(413, 288)
 text = "Press Q to grapple to the nearest grapple point"
 
 [connection signal="body_entered" from="FallArea" to="." method="_on_fall_area_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@380521" to="ObsicalLayer/@Area2D@380521" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/@Area2D@380521" to="ObsicalLayer/@Area2D@380521" method="_on_body_exited"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@380522" to="ObsicalLayer/@Area2D@380522" method="_on_body_entered"]
+[connection signal="body_exited" from="ObsicalLayer/@Area2D@380522" to="ObsicalLayer/@Area2D@380522" method="_on_body_exited"]
 [connection signal="body_entered" from="EnterArea" to="." method="_on_enter_area_body_entered"]

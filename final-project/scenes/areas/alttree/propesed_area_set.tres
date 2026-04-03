@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="AreaSet" format=3 uid="uid://daqfaws43d40g"]
+
+[ext_resource type="Script" uid="uid://cwvq0oy5vtb45" path="res://resources/area.gd" id="1_eii3b"]
+[ext_resource type="Resource" uid="uid://uv7owpjicw1r" path="res://scenes/areas/alttree/green_area_end.tres" id="2_xsube"]
+[ext_resource type="Resource" uid="uid://coqt43gi50q47" path="res://scenes/areas/alttree/green_area_5.tres" id="3_7p07x"]
+[ext_resource type="Script" uid="uid://dop3f51mb3gtn" path="res://resources/area_set.gd" id="12_65xrj"]
+
+[resource]
+script = ExtResource("12_65xrj")
+areas = Array[ExtResource("1_eii3b")]([ExtResource("3_7p07x"), ExtResource("2_xsube")])
+metadata/_custom_type_script = "uid://dop3f51mb3gtn"

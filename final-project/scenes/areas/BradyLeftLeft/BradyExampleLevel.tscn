@@ -48,10 +48,10 @@ tile_map_data = PackedByteArray("AADx/wcAAAACAAEAAAD3/wcAAAABAAAAAADy/wcAAAADAAE
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAABAAYAAAAAAAAAAQACAAYAAAAAAAAAAQADAAYAAAAAAAAAAQAEAAYAAAAAAAAAAQD2//3/AAAAAAAAAQD6/wQAAAAAAAAABQABAPn/AAAAAAAAAwACAPn/AAAAAAAAAwADAPn/AAAAAAAAAwAEAPn/AAAAAAAAAwA=")
 
-[connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@62712" to="ObsicalLayer/@Area2D@62712" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@62713" to="ObsicalLayer/@Area2D@62713" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@62714" to="ObsicalLayer/@Area2D@62714" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@62715" to="ObsicalLayer/@Area2D@62715" method="_on_body_entered"]
-[connection signal="area_entered" from="ObsicalLayer/Coin" to="ObsicalLayer/Coin" method="_on_area_entered"]
-[connection signal="body_entered" from="ObsicalLayer/Coin" to="ObsicalLayer/Coin" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@28904" to="ObsicalLayer/@Area2D@28904" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@28905" to="ObsicalLayer/@Area2D@28905" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@28906" to="ObsicalLayer/@Area2D@28906" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@28907" to="ObsicalLayer/@Area2D@28907" method="_on_body_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@28908" to="ObsicalLayer/@Area2D@28908" method="_on_body_entered"]
+[connection signal="area_entered" from="ObsicalLayer/@Area2D@28909" to="ObsicalLayer/@Area2D@28909" method="_on_area_entered"]
+[connection signal="body_entered" from="ObsicalLayer/@Area2D@28909" to="ObsicalLayer/@Area2D@28909" method="_on_body_entered"]

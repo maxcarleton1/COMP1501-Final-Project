@@ -5,9 +5,9 @@ var temp := 0
 @onready var snow = $Snow
 func _on_timer_timeout() -> void:
 	if coldness <0:
-		coldness += temp/2
+		coldness += temp/3
 	elif temp <0:
-		coldness += temp/2
+		coldness += temp
 	$TextureProgressBar.value = coldness*-1
 	if coldness < -100 and not get_parent().falling:
 		get_parent().fall()

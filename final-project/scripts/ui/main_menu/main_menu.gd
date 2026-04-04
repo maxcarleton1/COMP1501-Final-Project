@@ -3,7 +3,7 @@ extends Control
 var main_scene := preload("res://scenes/main.tscn") 
 
 func _ready():
-	$PanelContainer/PanelContainer/VBoxContainer/StartGame.grab_focus()
+	$PanelContainer/VBoxContainer/StartGame.grab_focus()
 
 func _on_start_game_pressed():
 	get_tree().change_scene_to_packed(main_scene)

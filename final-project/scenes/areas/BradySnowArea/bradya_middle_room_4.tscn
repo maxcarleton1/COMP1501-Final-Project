@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://ifqdif1rk3u" path="res://scripts/areas/level_template.gd" id="1_220h1"]
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="2_bgdn3"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="3_pm618"]
-[ext_resource type="PackedScene" uid="uid://c64apnm77bvxd" path="res://scenes/player/player.tscn" id="4_pm618"]
-[ext_resource type="PackedScene" uid="uid://dep6njy6mhlaa" path="res://scenes/player/camera.tscn" id="5_o322k"]
-[ext_resource type="PackedScene" uid="uid://caad7y8pu7y0r" path="res://scenes/player/grapple_pickup.tscn" id="6_ru0sv"]
-[ext_resource type="PackedScene" uid="uid://brvjuo5lunom2" path="res://scenes/player/bomb_pickup.tscn" id="7_1sbay"]
 
 [node name="BradyaMiddleRoom4" type="Node2D" unique_id=668189479]
 script = ExtResource("1_220h1")
@@ -28,46 +24,3 @@ tile_map_data = PackedByteArray("AADw/wgAAAACAAcAAADw/wcAAAACAAYAAADw/wYAAAACAAY
 [node name="ObsicalLayer" parent="." unique_id=1615348282 instance=ExtResource("3_pm618")]
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAD+/wcAAAAAAAAACQAHAAYAAAAAAAAAC1D4/wMAAAAAAAAAC2D0/wIAAAAAAAAADAD0/9//AAAAAAAADAD6/+//AAAAAAAACQAJAOD/AAAAAAAACQAFAMH/AAAAAAAACQAFAMv/AAAAAAAADgD0/9j/AAAAAAAADgD//+P/AAAAAAAADgAEAOz/AAAAAAAADgADAP//AAAAAAAADgD6//n/AAAAAAAADgD3//D/AAAAAAAACgD2//D/AAAAAAAACgD0/9L/AAAAAAAACgD+/9H/AAAAAAAADgD+/8j/AAAAAAAACQD3/+b/AAAAAAAAATD2/+b/AAAAAAAAATD1/+b/AAAAAAAAATD0/+b/AAAAAAAAATDz/+b/AAAAAAAAATDy/+b/AAAAAAAAATDx/+b/AAAAAAAAATAOAPz/AAAAAAAAAQANAPz/AAAAAAAAAQAMAPz/AAAAAAAAAQALAPz/AAAAAAAAAQAKAPz/AAAAAAAAAQAJAPz/AAAAAAAAAQAIAPz/AAAAAAAAAQAEAPT/AAAAAAAACQALAPv/AAAAAAAADgDx/+//AAAAAAAAC2AEAPX/AAAAAAAAAQADAPX/AAAAAAAAAQACAPb/AAAAAAAAAWACAPf/AAAAAAAAAWACAPj/AAAAAAAAAWA=")
-
-[node name="Player" parent="." unique_id=1015420686 instance=ExtResource("4_pm618")]
-position = Vector2(-763, 0)
-
-[node name="Camera2D" parent="." unique_id=607304812 instance=ExtResource("5_o322k")]
-
-[node name="Grapple Pickup" parent="." unique_id=417895954 instance=ExtResource("6_ru0sv")]
-position = Vector2(-752, 0)
-
-[node name="BombPickup" parent="." unique_id=1370847644 instance=ExtResource("7_1sbay")]
-position = Vector2(-759, -61)
-
-[connection signal="body_entered" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40080" to="ObsicalLayer/@Area2D@40080" method="_on_body_entered"]
-[connection signal="body_exited" from="ObsicalLayer/@Area2D@40080" to="ObsicalLayer/@Area2D@40080" method="_on_body_exited"]
-[connection signal="body_entered" from="ObsicalLayer/Exploder" to="ObsicalLayer/Exploder" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40084" to="ObsicalLayer/@Area2D@40084" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40085" to="ObsicalLayer/@Area2D@40085" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40086" to="ObsicalLayer/@Area2D@40086" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40087" to="ObsicalLayer/@Area2D@40087" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40088" to="ObsicalLayer/@Area2D@40088" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40091" to="ObsicalLayer/@Area2D@40091" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/Spike_1x1" to="ObsicalLayer/Spike_1x1" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40093" to="ObsicalLayer/@Area2D@40093" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40094" to="ObsicalLayer/@Area2D@40094" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40095" to="ObsicalLayer/@Area2D@40095" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40096" to="ObsicalLayer/@Area2D@40096" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40097" to="ObsicalLayer/@Area2D@40097" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40098" to="ObsicalLayer/@Area2D@40098" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40107" to="ObsicalLayer/@Area2D@40107" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40108" to="ObsicalLayer/@Area2D@40108" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40109" to="ObsicalLayer/@Area2D@40109" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40110" to="ObsicalLayer/@Area2D@40110" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40111" to="ObsicalLayer/@Area2D@40111" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40112" to="ObsicalLayer/@Area2D@40112" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40113" to="ObsicalLayer/@Area2D@40113" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@40898" to="ObsicalLayer/@Area2D@40898" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44794" to="ObsicalLayer/@Area2D@44794" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44795" to="ObsicalLayer/@Area2D@44795" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44796" to="ObsicalLayer/@Area2D@44796" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44797" to="ObsicalLayer/@Area2D@44797" method="_on_body_entered"]
-[connection signal="body_entered" from="ObsicalLayer/@Area2D@44798" to="ObsicalLayer/@Area2D@44798" method="_on_body_entered"]

@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bi8kj1ata4cf5" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0080.png" id="14_idvnp"]
 [ext_resource type="Texture2D" uid="uid://d1p0dypccn8r5" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0145.png" id="15_idvnp"]
 [ext_resource type="Texture2D" uid="uid://yejd303tp1sx" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0144.png" id="16_fnkq8"]
-[ext_resource type="Script" uid="uid://tyk6t1wnft22" path="res://scripts/MainMenuSnow.gd" id="17_8i8ns"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8i8ns"]
 bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
@@ -288,7 +287,6 @@ amount = 300
 lifetime = 20.0
 preprocess = 10.0
 process_material = SubResource("ParticleProcessMaterial_wv6bh")
-script = ExtResource("17_8i8ns")
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Difficulty" to="." method="_on_difficulty_pressed"]

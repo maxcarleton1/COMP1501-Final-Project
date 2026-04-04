@@ -5,7 +5,7 @@ func _on_body_entered(body: Node2D) -> void:
 		body.cold_manager.temp = 20
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and not body.falling:
 		body.cold_manager.temp = -10
 
 

@@ -1,8 +1,8 @@
 extends PanelContainer
 
-var controls_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n"
-var bomb_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n Drop/Detonate Bomb: O \n"
-var grapple_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n Drop/Detonate Bomb: O \n Grappling Hook: P \n"
+var controls_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Items: 1-5 + G \n Pause Menu: Escape \n"
+var bomb_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Items: 1-5 + G \n Pause Menu: Escape \n Drop/Detonate Bomb: O \n"
+var grapple_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Items: 1-5 + G \n Pause Menu: Escape \n Drop/Detonate Bomb: O \n Grappling Hook: P \n"
 
 func _ready():
 	hide()

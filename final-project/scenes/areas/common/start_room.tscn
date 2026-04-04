@@ -49,7 +49,7 @@ text = "Once you reach the end of this room, you'd better move quick! Lava isn't
 
 [node name="Sign2" parent="." unique_id=2018256556 instance=ExtResource("6_vm2cq")]
 position = Vector2(-479, 416)
-text = "This is a shop. Capitalism always prevails. Press 'E' to open it."
+text = "This is a shop. Capitalism always prevails. Press 'E' to open it. Items can be used with the number keys + G."
 
 [node name="Sign3" parent="." unique_id=1753734768 instance=ExtResource("6_vm2cq")]
 position = Vector2(-1, 416)

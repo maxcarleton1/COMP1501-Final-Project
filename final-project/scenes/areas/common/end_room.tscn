@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://kbykx4cbnvbd"]
 
 [ext_resource type="Script" uid="uid://knjdy1e01ei0" path="res://scripts/areas/common/end_room.gd" id="1_buc22"]
+[ext_resource type="Texture2D" uid="uid://daciqrcn0t56q" path="res://assets/art/TA.jpg" id="2_erply"]
 [ext_resource type="PackedScene" uid="uid://bg8hyow8wcw7m" path="res://scenes/areas/common/tilemaps/ForegroundLayer.tscn" id="3_buc22"]
-[ext_resource type="Texture2D" uid="uid://mc2pr3u6wqbs" path="res://assets/art/funny.png" id="3_jby35"]
 [ext_resource type="PackedScene" uid="uid://dgjbspkurlj6p" path="res://scenes/obstacles/tilemaps/obstacle_layer.tscn" id="4_ji2vw"]
 [ext_resource type="Texture2D" uid="uid://3gjpa8japugu" path="res://assets/art/falling/particle.png" id="5_jby35"]
+[ext_resource type="PackedScene" uid="uid://d3cee27bitwv3" path="res://scenes/obstacles/flag.tscn" id="6_erply"]
+[ext_resource type="Texture2D" uid="uid://c2y4i1sanw0ov" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0111.png" id="7_bi1sd"]
+[ext_resource type="Texture2D" uid="uid://cltr0rih8sur0" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0112.png" id="8_ymj2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngxw1"]
 size = Vector2(2000, 1100)
@@ -18,13 +21,23 @@ colors = PackedColorArray(1, 0.9708333, 0.65, 0.60784316, 1, 1, 1, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_03cmn"]
 gradient = SubResource("Gradient_mc00a")
 
+[sub_resource type="Curve" id="Curve_cgv25"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="Curve" id="Curve_mc00a"]
 _limits = [0.0, 5.0, 0.0, 1.0]
 _data = [Vector2(0, 5), 0.0, 0.0, 0, 0, Vector2(1, 1.696873), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="Curve" id="Curve_enf2r"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_03cmn"]
+curve_x = SubResource("Curve_cgv25")
 curve_y = SubResource("Curve_mc00a")
+curve_z = SubResource("Curve_enf2r")
 
 [sub_resource type="Curve" id="Curve_erply"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -34,9 +47,14 @@ point_count = 2
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
 point_count = 1
 
+[sub_resource type="Curve" id="Curve_re7vo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
 [sub_resource type="CurveXYZTexture" id="CurveXYZTexture_ymj2l"]
 curve_x = SubResource("Curve_erply")
 curve_y = SubResource("Curve_bi1sd")
+curve_z = SubResource("Curve_re7vo")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ymj2l"]
 particle_flag_disable_z = true
@@ -85,6 +103,36 @@ scale_max = 5.0
 scale_curve = SubResource("CurveTexture_erply")
 color_initial_ramp = SubResource("GradientTexture1D_mc00a")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_b3fe6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bi1sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ymj2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p5fd"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bi1sd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ymj2l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="EndRoom" type="Node2D" unique_id=668189479]
 script = ExtResource("1_buc22")
 
@@ -96,9 +144,8 @@ disabled = true
 position = Vector2(0, 550)
 
 [node name="yippee" type="Sprite2D" parent="." unique_id=319678281]
-visible = false
-scale = Vector2(3, 3)
-texture = ExtResource("3_jby35")
+scale = Vector2(0.58624995, 0.58624995)
+texture = ExtResource("2_erply")
 
 [node name="WinHitbox" type="Area2D" parent="." unique_id=489043299]
 collision_layer = 0
@@ -109,7 +156,7 @@ shape = SubResource("RectangleShape2D_avya5")
 
 [node name="TileMapLayer" parent="." unique_id=557791485 instance=ExtResource("3_buc22")]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AADw/wgAAAADAAYAAADw/wcAAAADAAYAAADw/wYAAAADAAYAAADw/wUAAAADAAYAAADw/wQAAAADAAYAAADw/wEAAAADAAYAAADw/wMAAAADAAYAAADw/wIAAAADAAYAAADw/wAAAAADAAYAAADw////AAADAAYAAADw//7/AAADAAYAAADw//3/AAADAAYAAADw//z/AAADAAYAAADw//v/AAADAAYAAADw//r/AAADAAYAAADw//n/AAADAAYAAADw//j/AAADAAYAAADw//f/AAADAAYAAAAPAAgAAAABAAYAAAAPAAcAAAABAAYAAAAPAAYAAAABAAYAAAAPAAUAAAABAAYAAAAPAAQAAAABAAYAAAAPAAMAAAABAAYAAAAPAAIAAAABAAYAAAAPAAEAAAABAAYAAAAPAAAAAAABAAYAAAAPAP//AAABAAYAAAAPAP7/AAABAAYAAAAPAP3/AAABAAYAAAAPAPz/AAABAAYAAAAPAPv/AAABAAYAAAAPAPr/AAABAAYAAAAPAPn/AAABAAYAAAAPAPj/AAABAAYAAAAPAPf/AAABAAYAAAAPAPb/AAABAAYAAAAPAPX/AAABAAYAAAAPAPT/AAABAAYAAAAPAPP/AAABAAYAAAAPAPL/AAABAAYAAAAPAPH/AAABAAYAAAAPAPD/AAABAAYAAAAPAO//AAABAAYAAADw//b/AAADAAYAAADw//X/AAADAAYAAADw//T/AAADAAYAAADw//P/AAADAAYAAADw//L/AAADAAYAAADw//H/AAADAAYAAADw//D/AAADAAYAAADw/+//AAADAAYAAADw/+7/AAADAAYAAAD//wUAAAACAAUAAAAAAAUAAAACAAUAAAD//wYAAAACAAcAAAAAAAYAAAACAAcAAAD7/wQAAAALAAYAABD7/wUAAAABAAUAAAD7/wYAAAABAAcAAAD8/wUAAAACAAUAAAD8/wYAAAACAAcAAAD7/wMAAAAMAAUAABADAAUAAAACAAUAAAADAAYAAAACAAcAAAAEAAMAAAALAAUAAAAEAAQAAAALAAYAAAAEAAUAAAADAAUAAAAEAAYAAAADAAcAAAD9/wUAAAACAAUAAAD9/wYAAAACAAcAAAD+/wUAAAACAAUAAAD+/wYAAAACAAcAAAABAAUAAAACAAUAAAABAAYAAAACAAcAAAACAAUAAAACAAUAAAACAAYAAAACAAcAAAA=")
+tile_map_data = PackedByteArray("AADw/wgAAAADAAYAAADw/wcAAAADAAYAAADw/wYAAAADAAYAAADw/wUAAAADAAYAAADw/wQAAAADAAYAAADw/wEAAAADAAYAAADw/wMAAAADAAYAAADw/wIAAAADAAYAAADw/wAAAAADAAYAAADw////AAADAAYAAADw//7/AAADAAYAAADw//3/AAADAAYAAADw//z/AAADAAYAAADw//v/AAADAAYAAADw//r/AAADAAYAAADw//n/AAADAAYAAADw//j/AAADAAYAAADw//f/AAADAAYAAAAPAAgAAAABAAYAAAAPAAcAAAABAAYAAAAPAAYAAAABAAYAAAAPAAUAAAABAAYAAAAPAAQAAAABAAYAAAAPAAMAAAABAAYAAAAPAAIAAAABAAYAAAAPAAEAAAABAAYAAAAPAAAAAAABAAYAAAAPAP//AAABAAYAAAAPAP7/AAABAAYAAAAPAP3/AAABAAYAAAAPAPz/AAABAAYAAAAPAPv/AAABAAYAAAAPAPr/AAABAAYAAAAPAPn/AAABAAYAAAAPAPj/AAABAAYAAAAPAPf/AAABAAYAAAAPAPb/AAABAAYAAAAPAPX/AAABAAYAAAAPAPT/AAABAAYAAAAPAPP/AAABAAYAAAAPAPL/AAABAAYAAAAPAPH/AAABAAYAAAAPAPD/AAABAAYAAAAPAO//AAABAAYAAADw//b/AAADAAYAAADw//X/AAADAAYAAADw//T/AAADAAYAAADw//P/AAADAAYAAADw//L/AAADAAYAAADw//H/AAADAAYAAADw//D/AAADAAYAAADw/+//AAADAAYAAADw/+7/AAADAAYAAAD//wUAAAACAAUAAAAAAAUAAAACAAUAAAD//wYAAAACAAcAAAAAAAYAAAACAAcAAAD7/wQAAAALAAYAABD7/wUAAAABAAUAAAD7/wYAAAABAAcAAAD8/wUAAAACAAUAAAD8/wYAAAACAAcAAAADAAUAAAACAAUAAAADAAYAAAACAAcAAAAEAAQAAAALAAYAAAAEAAUAAAADAAUAAAAEAAYAAAADAAcAAAD9/wUAAAACAAUAAAD9/wYAAAACAAcAAAD+/wUAAAACAAUAAAD+/wYAAAACAAcAAAABAAUAAAACAAUAAAABAAYAAAACAAcAAAACAAUAAAACAAUAAAACAAYAAAACAAcAAAA=")
 
 [node name="ObsicalLayer" parent="." unique_id=1844231585 instance=ExtResource("4_ji2vw")]
 scale = Vector2(4, 4)
@@ -135,5 +182,17 @@ speed_scale = 1.5
 explosiveness = 0.8
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_cgv25")
+
+[node name="Flag" parent="." unique_id=1166921745 instance=ExtResource("6_erply")]
+position = Vector2(288, 216)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_b3fe6")
+frame_progress = 0.5017595
+
+[node name="Flag2" parent="." unique_id=168533409 instance=ExtResource("6_erply")]
+position = Vector2(-288, 216)
+scale = Vector2(-4, 4)
+sprite_frames = SubResource("SpriteFrames_4p5fd")
+frame_progress = 0.7723467
 
 [connection signal="body_entered" from="WinHitbox" to="." method="_on_win_hitbox_body_entered"]

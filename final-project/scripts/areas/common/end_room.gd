@@ -2,6 +2,10 @@ extends Node2D
 
 signal win_hitbox
 
+func _ready():
+	$FireworkTrail.emitting = false
+	$FireworkBoom.emitting = false
+
 func get_entry_pos() -> Vector2:
 	return $Entry.global_position
 
@@ -11,6 +15,15 @@ func get_entry_pos_difference() -> Vector2:
 
 func _on_win_hitbox_body_entered(body: Node2D):
 	if body.is_in_group("Player"):
-		win_hitbox.emit() # Send signal to what?
+		win_hitbox.emit()
 	
-		# Do anything else for end room specific win logic here 
+		$FireworkTrail.emitting = true
+		
+		# Stop coldness
+		body.cold_manager.temp = 20
+		body.cold_manager.coldness = 0
+		
+		# Show victory screen, jank central
+		$"../../HUD/WinScreen".update()
+		$"../../HUD/WinScreen".show()
+		$"../../HUD/WinScreen/VBoxContainer/Button".grab_focus()

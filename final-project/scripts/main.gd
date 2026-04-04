@@ -70,6 +70,5 @@ func start_dust_devil():
 		dust_devil.start()
 	
 func win():
-	print("You win!")
 	$HUD/TimerLayer.started = false
 	$HUD/TimerLayer.check_best_time()

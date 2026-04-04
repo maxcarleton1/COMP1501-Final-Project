@@ -1,8 +1,8 @@
 extends PanelContainer
 
 var controls_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n"
-var bomb_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n Drop/Detonate Bomb: E \n"
-var grapple_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n Drop/Detonate Bomb: E \n Grappling Hook: Q \n"
+var bomb_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n Drop/Detonate Bomb: O \n"
+var grapple_str := " Movement: WASD \n Jump: Space \n Dash: Shift \n Pause Menu: Escape \n Drop/Detonate Bomb: O \n Grappling Hook: P \n"
 
 func _ready():
 	hide()
@@ -18,6 +18,7 @@ func _input(event: InputEvent):
 		if not get_tree().paused:
 			show()
 			get_tree().paused = true
+			$VBoxContainer/HBoxContainer/VBoxContainer/Resume.grab_focus()
 		else:
 			hide()
 			get_tree().paused = false

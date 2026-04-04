@@ -28,7 +28,7 @@ tile_map_data = PackedByteArray("AAD0/wIAAAAAAAAADAD+/wcAAAAAAAAACQD4/wMAAAAAAAA
 
 [node name="Sign" parent="." unique_id=786602650 instance=ExtResource("4_iu0k4")]
 position = Vector2(-733, -1057)
-text = "Its a bit chilly you better hury up."
+text = "It's a bit chilly, you'd better hurry up!"
 
 [connection signal="body_entered" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="ObsicalLayer/Area2D" to="ObsicalLayer/Area2D" method="_on_body_exited"]

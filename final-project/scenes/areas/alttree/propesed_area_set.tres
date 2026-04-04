@@ -7,9 +7,14 @@
 [ext_resource type="Resource" uid="uid://xb36yhh264bh" path="res://scenes/areas/alttree/green_area_3.tres" id="4_7p07x"]
 [ext_resource type="Resource" uid="uid://bkwsofteiy3g3" path="res://scenes/areas/alttree/green_area_4.tres" id="5_3iiet"]
 [ext_resource type="Resource" uid="uid://uv7owpjicw1r" path="res://scenes/areas/alttree/green_area_end.tres" id="7_3cym4"]
+[ext_resource type="Resource" uid="uid://bw1ead31m6m0o" path="res://scenes/areas/max_area/max_area_start.tres" id="8_00lh3"]
+[ext_resource type="Resource" uid="uid://du45xhlel3khl" path="res://scenes/areas/max_area/max_area_middle.tres" id="9_i6wmu"]
+[ext_resource type="Resource" uid="uid://du3gin1go4xdc" path="res://scenes/areas/max_area/max_area_end.tres" id="10_wn857"]
+[ext_resource type="Resource" uid="uid://d2gdtnuj8s863" path="res://scenes/areas/BradySnowArea/brady_area_start/StartArea.tres" id="11_at66n"]
+[ext_resource type="Resource" uid="uid://d12ryifncnym2" path="res://scenes/areas/BradySnowArea/BradySnowArea.tres" id="12_3o0fm"]
 [ext_resource type="Script" uid="uid://dop3f51mb3gtn" path="res://resources/area_set.gd" id="12_65xrj"]
 
 [resource]
 script = ExtResource("12_65xrj")
-areas = Array[ExtResource("1_eii3b")]([ExtResource("2_xsube"), ExtResource("3_bqeny"), ExtResource("4_7p07x"), ExtResource("5_3iiet"), ExtResource("3_7p07x"), ExtResource("7_3cym4")])
+areas = Array[ExtResource("1_eii3b")]([ExtResource("2_xsube"), ExtResource("3_bqeny"), ExtResource("4_7p07x"), ExtResource("5_3iiet"), ExtResource("3_7p07x"), ExtResource("7_3cym4"), ExtResource("8_00lh3"), ExtResource("9_i6wmu"), ExtResource("10_wn857"), ExtResource("11_at66n"), ExtResource("12_3o0fm")])
 metadata/_custom_type_script = "uid://dop3f51mb3gtn"

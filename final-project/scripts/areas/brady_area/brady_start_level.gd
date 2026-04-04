@@ -29,12 +29,13 @@ func _on_enter_area_body_entered(body: Node2D):
 		# Switch parallax background, janky but whatever
 		$"../../ParallaxBackground".switch_background($"../../ParallaxBackground".possible_background.SNOW)
 		
-		# Ts janky ahh hell but who gaf
-		$"../../../Main".reset_barrier()
+		# Stop dust devil
+		$"../../../Main".reset_dust_devil()
 		
 func extend_platform():
 	if not platform_extended:
-		$Platform.global_position.x = 0
+		var tween = create_tween()
+		tween.tween_property($Platform, "global_position:x", $Platform.global_position.x + 400, 0.25)
 		platform_extended = true
 
 func retract_platform():

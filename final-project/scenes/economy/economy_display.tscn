@@ -45,15 +45,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(400, 50)
 layout_mode = 2
 
-[node name="Items" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons" unique_id=594739436]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Items"
-
 [node name="Exit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons" unique_id=904019757]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Exit"
 
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Items" to="." method="_on_items_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainerButtons/Exit" to="." method="_on_exit_pressed"]

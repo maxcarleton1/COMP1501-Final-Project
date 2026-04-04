@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var temp_area_set := preload("res://scenes/areas/alttree/propesed_area_set.tres")
+@onready var temp_area_set := preload("res://scenes/areas/testing_area_set.tres")
 @onready var start_room_scene := preload("res://scenes/areas/common/start_room.tscn")
 @onready var end_room_scene := preload("res://scenes/areas/common/end_room.tscn")
 

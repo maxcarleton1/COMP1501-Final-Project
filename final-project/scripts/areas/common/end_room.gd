@@ -5,6 +5,7 @@ signal win_hitbox
 func _ready():
 	$FireworkTrail.emitting = false
 	$FireworkBoom.emitting = false
+	$yippee.hide()
 
 func get_entry_pos() -> Vector2:
 	return $Entry.global_position
@@ -22,6 +23,9 @@ func _on_win_hitbox_body_entered(body: Node2D):
 		# Stop coldness
 		body.cold_manager.temp = 20
 		body.cold_manager.coldness = 0
+		
+		if GlobalStats.current_difficulty == GlobalStats.difficulty.HELL_MODE:
+			$yippee.show()
 		
 		# Show victory screen, jank central
 		$"../../HUD/WinScreen".update()

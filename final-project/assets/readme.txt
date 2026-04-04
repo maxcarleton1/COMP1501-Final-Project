@@ -19,3 +19,6 @@ Balloon and Feather images from game-icons.net:
 https://game-icons.net/1x1/lorc/feather.html
 https://game-icons.net/1x1/lorc/balloons.html
 Bomb explosion is from https://enprimer.itch.io/spaceship-sound-effects-pack
+
+
+William Graham (our TA) gave consent for his likeness to be used for the hell mode easter egg

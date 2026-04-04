@@ -30,6 +30,7 @@ func _on_resume_pressed():
 func _on_quit_pressed():
 	get_tree().paused = false
 	GlobalStats.current_difficulty = GlobalStats.difficulty.NORMAL # Fixes UI bug
+	GlobalStats._update_difficulty_data()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu/main_menu.tscn")
 
 func unlocked(item: int = 0):

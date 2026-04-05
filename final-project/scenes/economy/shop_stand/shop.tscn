@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://co6efiubus0kt" path="res://scripts/economy/shop_stand/shop.gd" id="1_x1b5k"]
 [ext_resource type="Texture2D" uid="uid://cd4gcue6bt7oi" path="res://assets/art/shop_sign.png" id="3_jpsxt"]
 [ext_resource type="Script" uid="uid://5pib2c7n3yjc" path="res://scripts/ui/interactive/shop_sign.gd" id="4_hqp3m"]
+[ext_resource type="PackedScene" uid="uid://d3cee27bitwv3" path="res://scenes/obstacles/flag.tscn" id="5_0jfvw"]
+[ext_resource type="Texture2D" uid="uid://c2y4i1sanw0ov" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0111.png" id="6_70sts"]
+[ext_resource type="Texture2D" uid="uid://cltr0rih8sur0" path="res://assets/art/kenney_pixel-platformer/Tiles/tile_0112.png" id="7_jbqpr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6edp"]
 size = Vector2(503, 390)
@@ -30,6 +33,21 @@ animations = [{
 "speed": 1.5
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_px442"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_70sts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jbqpr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Shop" type="Node2D" unique_id=902585992]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1430664161]
@@ -39,7 +57,7 @@ tile_set = ExtResource("1_n6edp")
 
 [node name="Details" type="TileMapLayer" parent="." unique_id=904821120]
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAAAAAAAAwAKAAYAAAAAAP3/AwAQAAYAAAAAAPz/AwAQAAUAAAAAAPv/AwARAAQAAAD+//v/AwARAAIAAAACAPz/AwATAAIAAAACAPv/AwATAAEAAAACAPr/AwATAAAAAAABAPr/AwASAAAAAAABAPz/AwARAAIAAAD///v/AwASAAIAAAD+//r/AwARAAAAAAD///n/AwARAAAAAAAAAPn/AwATAAAAAAD///3/AwALAAYAABAAAPr/AwATAAMAAAD///r/AwARAAMAAAABAPv/AwAQAAAAAAD///z/AwALAAUAABD//wAAAwAGAAcAAHD/////AwAGAAcAAHABAAAAAwAGAAcAAGABAP//AwAGAAcAAGAAAP//AwAKAAUAAAA=")
+tile_map_data = PackedByteArray("AAAAAAAAAwAKAAYAAAAAAP3/AwAQAAYAAAAAAPz/AwAQAAUAAAAAAPv/AwARAAQAAAD+//v/AwARAAIAAAACAPz/AwATAAIAAAACAPv/AwATAAEAAAACAPr/AwATAAAAAAABAPr/AwASAAAAAAABAPz/AwARAAIAAAD///v/AwASAAIAAAD+//r/AwARAAAAAAD///n/AwARAAAAAAAAAPn/AwATAAAAAAD///3/AwALAAYAABAAAPr/AwATAAMAAAD///r/AwARAAMAAAABAPv/AwAQAAAAAAD//wAAAwAGAAcAAHD/////AwAGAAcAAHABAAAAAwAGAAcAAGABAP//AwAGAAcAAGAAAP//AwAKAAUAAAA=")
 tile_set = ExtResource("1_n6edp")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1245270022]
@@ -55,6 +73,12 @@ scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_pg8rn")
 frame_progress = 0.10344845
 script = ExtResource("4_hqp3m")
+
+[node name="Flag" parent="." unique_id=1166921745 instance=ExtResource("5_0jfvw")]
+position = Vector2(-36, -252)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_px442")
+flip_h = true
 
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]

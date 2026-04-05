@@ -20,6 +20,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8i8ns"]
 bg_color = Color(0.20871013, 0.20871016, 0.20871004, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_fnkq8"]
+font_size = 50
+outline_size = 5
+outline_color = Color(0.46929687, 0.46929634, 0.46929687, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.6392157)
+
 [sub_resource type="Gradient" id="Gradient_chxti"]
 offsets = PackedFloat32Array(0, 0.36956522, 0.99122804)
 colors = PackedColorArray(0.68310577, 0.43965343, 0.13232398, 1, 0.8469155, 0.614074, 0.30575672, 1, 1, 0.79607844, 0.68235296, 1)
@@ -153,7 +160,8 @@ size_flags_vertical = 0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 25
-text = "Climb up the big thing game!!"
+text = "ALTURA"
+label_settings = SubResource("LabelSettings_fnkq8")
 horizontal_alignment = 1
 vertical_alignment = 1
 

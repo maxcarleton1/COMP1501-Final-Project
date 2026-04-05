@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bnybx5jj5gakm"]
+
+[ext_resource type="Script" uid="uid://c6fx5r74xmry5" path="res://scripts/soundtrack.gd" id="1_pm2w5"]
+[ext_resource type="AudioStream" uid="uid://b4dbiwh13unx5" path="res://assets/audio/Soundtrack/06 - Ezuode - The clockmaker's escapism (The end of a reverie).ogg" id="2_eeapa"]
+[ext_resource type="AudioStream" uid="uid://cb5ek06x1yaot" path="res://assets/audio/Soundtrack/05 - panegoism - Husk.ogg" id="2_orf8r"]
+[ext_resource type="AudioStream" uid="uid://cttfa853ffchg" path="res://assets/audio/Soundtrack/01 - BackspinZX - Malevolent Machine.ogg" id="3_ugpcd"]
+[ext_resource type="AudioStream" uid="uid://bgu12531m8ofy" path="res://assets/audio/Soundtrack/07 - Milau - Jade & Mechanics.ogg" id="5_i5wvw"]
+
+[node name="Soundtrack" type="Node2D" unique_id=1843340949]
+script = ExtResource("1_pm2w5")
+
+[node name="Menu" type="AudioStreamPlayer" parent="." unique_id=1221041912]
+stream = ExtResource("2_orf8r")
+playback_type = 1
+parameters/looping = true
+
+[node name="Green" type="AudioStreamPlayer" parent="." unique_id=1549199504]
+stream = ExtResource("3_ugpcd")
+playback_type = 1
+parameters/looping = true
+
+[node name="Sand" type="AudioStreamPlayer" parent="." unique_id=77918066]
+stream = ExtResource("2_eeapa")
+playback_type = 1
+parameters/looping = true
+
+[node name="Snow" type="AudioStreamPlayer" parent="." unique_id=340860057]
+stream = ExtResource("5_i5wvw")
+playback_type = 1
+parameters/looping = true

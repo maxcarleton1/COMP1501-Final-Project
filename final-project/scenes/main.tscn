@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://jrfeun3riaij" path="res://scenes/economy/economy_display.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://dvo6rbxbs8ttq" path="res://scenes/player/parallax_background.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://b57q745n5mgey" path="res://scenes/obstacles/dust_devil.tscn" id="10_choun"]
+[ext_resource type="AudioStream" uid="uid://cttfa853ffchg" path="res://assets/audio/Soundtrack/01 - BackspinZX - Malevolent Machine.ogg" id="11_ya4ey"]
 
 [node name="Main" type="Node" unique_id=974304658]
 script = ExtResource("1_jyhfs")
@@ -37,3 +38,8 @@ offset_bottom = -985.0
 
 [node name="DustDevil" parent="." unique_id=1734531148 instance=ExtResource("10_choun")]
 position = Vector2(12, 1966)
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1073662300]
+stream = ExtResource("11_ya4ey")
+volume_db = -20.0
+autoplay = true

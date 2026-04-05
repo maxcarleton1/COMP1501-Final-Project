@@ -9,11 +9,13 @@ Most particle effects by Max Sobota
 
 Snow particle effect by Brady Kearley
 
-Some obstacle sprites by Siri Strassner
+Art in custom_art folder by Siri Strassner
 
 Audio is also from Kenney's packs, except:
 
 Hot/Cold sound effects by Brady Kearley and Isaac Benzvi (roommate)
+
+Soundtrack has its licences in it folder
 
 Balloon and Feather images from game-icons.net:
 https://game-icons.net/1x1/lorc/feather.html
